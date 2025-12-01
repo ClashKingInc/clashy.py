@@ -26,7 +26,6 @@ from typing import Optional, List, TYPE_CHECKING
 from .miscmodels import BaseLeague, PlayerHouseElement, try_enum, Achievement, Label, League, LegendStatistics
 from .enums import (
     Role,
-    UNRANKED_LEAGUE_DATA,
 )
 
 from .constants import (
