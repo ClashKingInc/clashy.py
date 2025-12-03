@@ -29,6 +29,7 @@ Installing
 **Python 3.10 or higher is required**
 
 .. code:: sh
+
     # UV (recommended)
     uv add clashy.py
 
