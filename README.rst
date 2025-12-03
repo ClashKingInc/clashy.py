@@ -153,7 +153,7 @@ If you wish to run linting, pylint, black and flake8 have been setup and can be 
 
 Links
 ------
-- `clashy.py Documentation <https://clashy.readthedocs.io/en/latest/?>`_
+- `clashy.py Documentation <https://clashy.clashk.ing/en/latest/?>`_
 - `Official Clash of Clans API Page <https://developer.clashofclans.com/>`_
 - `Clash of Clans API Discord Server <https://discord.gg/Eaja7gJ>`_
 

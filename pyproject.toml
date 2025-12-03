@@ -18,9 +18,9 @@ classifiers = ["Development Status :: 5 - Production/Stable",
     "Operating System :: OS Independent",]
 dependencies = ["aiohttp", "orjson"]
 [project.urls]
-documentation = "https://clashy.readthedocs.io/en/latest/"
+documentation = "https://clashy.clashk.ing/en/latest/"
 repository = "https://github.com/ClashKingInc/clashy.py"
-changelog = "https://clashy.readthedocs.io/en/latest/miscellaneous/changelog.html"
+changelog = "https://clashy.clashk.ing/en/latest/miscellaneous/changelog.html"
 
 [project.optional-dependencies]
 docs = ["sphinx",
