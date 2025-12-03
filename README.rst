@@ -29,12 +29,14 @@ Installing
 **Python 3.10 or higher is required**
 
 .. code:: sh
+    # UV (recommended)
+    uv add clashy.py
 
     # Linux/macOS
     python3 -m pip install -U clashy.py
 
     # Windows
-    py -3 -m pip install -U clashy.py
+    py -3 -m pip install -U clashy.py}
 
     # to install the development version:
     python3 -m pip install -U git+https://github.com/ClashKingInc/clashy.py
