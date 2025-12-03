@@ -213,7 +213,7 @@ async def maybe_coroutine(function_, *args, **kwargs):
     return value
 
 
-def get_season_start(month: Optional[int] = None, year: Optional[int] = None) -> datetime:
+def get_season_start(month: Optional[int] = None, year: Optional[int] = None, legacy: bool = False) -> datetime:
     """Get the datetime that the season started.
 
     This goes by the assumption that SC resets the season on the last monday of every month at 5am UTC.
@@ -229,24 +229,39 @@ def get_season_start(month: Optional[int] = None, year: Optional[int] = None) ->
         The month to get the season start for. Defaults to the current month/season.
     year: Optional[int]
         The year to get the season start for. Defaults to the current year/season.
+    legacy: bool
+        Whether to use the old season start method. Defaults to ``False``.
 
     Returns
     -------
     season_start: :class:`datetime.datetime`
         The start of the season.
     """
+
     # Start date is the last Monday of the month. That's when SC resets the season values
-    def get_start_for_month_year(m, y):
+    def get_old_start_for_month_year(m, y):
         (weekday_of_first_day, days_in_month) = calendar.monthrange(y, m)
         season_start_day = days_in_month - datetime(year=y, month=m, day=days_in_month).weekday()
-        return datetime(year=y, month=m, day=season_start_day, hour=5, minute=0, second=0, microsecond=0)
+        return datetime(year=y, month=m, day=season_start_day, hour=5, minute=0, second=0, microsecond=0, tzinfo=timezone.utc)
+
+
+    # Start date is the first Monday of the month. That's when SC resets the season values
+    def get_start_for_month_year(m, y):
+        (weekday_of_first_day, days_in_month) = calendar.monthrange(y, m)
+        # weekday_of_first_day: 0=Monday, 1=Tuesday, ..., 6=Sunday
+        # Calculate days to add to get to the first Monday
+        days_until_monday = (7 - weekday_of_first_day) % 7
+        season_start_day = 1 + days_until_monday
+        return datetime(year=y, month=m, day=season_start_day, hour=5, minute=0, second=0, microsecond=0, tzinfo=timezone.utc)
+
+    start_method = get_start_for_month_year if not legacy else get_old_start_for_month_year
 
     if month and year:
         # they want a specific month/year combo
-        return get_start_for_month_year(month, year)
+        return start_method(month, year)
 
-    now = datetime.now(tz=timezone.utc).replace(tzinfo=None)
-    start = get_start_for_month_year(now.month, now.year)
+    now = datetime.now(tz=timezone.utc)
+    start = start_method(now.month, now.year)
     if now > start:
         # we got the right one, season started this month
         return start
@@ -258,10 +273,10 @@ def get_season_start(month: Optional[int] = None, year: Optional[int] = None) ->
     else:
         month = now.month - 1
         year = now.year
-    return get_start_for_month_year(month, year)
+    return start_method(month, year)
 
 
-def get_season_end(month: Optional[int] = None, year: Optional[int] = None) -> datetime:
+def get_season_end(month: Optional[int] = None, year: Optional[int] = None, legacy: bool = False) -> datetime:
     """Get the datetime that the season ends.
 
     This goes by the assumption that SC resets the season on the last monday of every month at 5am UTC.
@@ -277,6 +292,8 @@ def get_season_end(month: Optional[int] = None, year: Optional[int] = None) -> d
         The month to get the season end for. Defaults to the current month/season.
     year: Optional[int]
         The year to get the season end for. Defaults to the current year/season.
+    legacy: bool
+        Whether to use the old season end method. Defaults to ``False``.
 
     Returns
     -------
@@ -290,10 +307,10 @@ def get_season_end(month: Optional[int] = None, year: Optional[int] = None) -> d
         else:
             next_month = month + 1
             next_year = year
-        return get_season_start(next_month, next_year)
+        return get_season_start(next_month, next_year, legacy)
 
-    now = datetime.now(tz=timezone.utc).replace(tzinfo=None)
-    end = get_season_start(now.month, now.year)
+    now = datetime.now(tz=timezone.utc)
+    end = get_season_start(now.month, now.year, legacy)
     if end > now:
         return end
 
@@ -304,7 +321,7 @@ def get_season_end(month: Optional[int] = None, year: Optional[int] = None) -> d
     else:
         month = now.month + 1
         year = now.year
-    return get_season_start(month, year)
+    return get_season_start(month, year, legacy)
 
 
 def get_clan_games_start(time: Optional[datetime] = None) -> datetime:
