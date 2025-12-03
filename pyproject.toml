@@ -3,11 +3,10 @@ requires = ["setuptools>=61.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "coc.py"
-authors = [{ name = "mathsman5133" }]
-maintainers = [{ name = "majordoobie" }, { name = "MagicTheDev" }, { name = "Kuchenmampfer" },
-    { name = "lukasthaler"}, { name = "doluk"}]
-version = "4.0.0"
+name = "clash.py"
+authors = [{ name = "MagicTheDev" }]
+maintainers = [{ name = "Destinea" }]
+version = "25.12.0"
 description = "A python wrapper for the Clash of Clans API"
 requires-python = ">=3.10.0"
 readme = "README.rst"
@@ -20,7 +19,7 @@ classifiers = ["Development Status :: 5 - Production/Stable",
 dependencies = ["aiohttp", "orjson"]
 [project.urls]
 documentation = "https://cocpy.readthedocs.io/en/latest/"
-repository = "https://github.com/mathsman5133/coc.py"
+repository = "https://github.com/ClashKingInc/clash.py"
 changelog = "https://cocpy.readthedocs.io/en/latest/miscellaneous/changelog.html"
 
 [project.optional-dependencies]
