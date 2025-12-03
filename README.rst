@@ -1,14 +1,14 @@
-coc.py
+clash.py
 ======
 
 .. image:: https://discordapp.com/api/guilds/566451504332931073/embed.png
     :target: https://discord.gg/Eaja7gJ
     :alt: Discord Server Invite
-.. image:: https://img.shields.io/pypi/v/coc.py.svg
-   :target: https://pypi.python.org/pypi/coc.py
+.. image:: https://img.shields.io/pypi/v/clash.py.svg
+   :target: https://pypi.python.org/pypi/clash.py
    :alt: PyPI version info
 .. image:: https://img.shields.io/pypi/pyversions/discord.py.svg
-   :target: https://pypi.python.org/pypi/coc.py
+   :target: https://pypi.python.org/pypi/clasj.py
    :alt: PyPI supported Python versions
 
 
@@ -26,18 +26,18 @@ Getting Started
 
 Installing
 -----------
-**Python 3.9 or higher is required**
+**Python 3.10 or higher is required**
 
 .. code:: sh
 
     # Linux/macOS
-    python3 -m pip install -U coc.py
+    python3 -m pip install -U clash.py
 
     # Windows
-    py -3 -m pip install -U coc.py
+    py -3 -m pip install -U clash.py
 
     # to install the development version:
-    python3 -m pip install -U git+https://github.com/mathsman5133/coc.py
+    python3 -m pip install -U git+https://github.com/ClashKingInc/clash.py
 
 
 Quick Example
@@ -153,7 +153,7 @@ If you wish to run linting, pylint, black and flake8 have been setup and can be 
 
 Links
 ------
-- `coc.py Documentation <https://cocpy.readthedocs.io/en/latest/?>`_
+- `clash.py Documentation <https://clashpy.readthedocs.io/en/latest/?>`_
 - `Official Clash of Clans API Page <https://developer.clashofclans.com/>`_
 - `Clash of Clans API Discord Server <https://discord.gg/Eaja7gJ>`_
 

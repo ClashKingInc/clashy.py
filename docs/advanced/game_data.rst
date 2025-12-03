@@ -4,7 +4,7 @@
 Game Data
 =========
 
-The following provides a detailed how-to for use of static game data that is loaded into coc.py.
+The following provides a detailed how-to for use of static game data that is loaded into clash.py.
 
 All game data has been retrieved from https://coc.guide and is freely available.
 
@@ -14,8 +14,8 @@ While the API provides all data about a player's current troops and spells, ofte
 have a maxed Barbarian for their TH level?" or "how much does it cost to upgrade all a player's spells to max?".
 
 This then results in an often clumsy and hard-to-maintain dictionary, csv, json or other form of static data being made
-and utilised. The integration of these game files into coc.py means there's less need to duplicate this process, and
-upgrading/updating code should be as easy as upgrading versions of coc.py whenever an update lands.
+and utilised. The integration of these game files into clash.py means there's less need to duplicate this process, and
+upgrading/updating code should be as easy as upgrading versions of clash.py whenever an update lands.
 
 Other benefits include integration into existing :class:`Troop` and other data models, meaning the process for getting
 a troop's upgrade cost for a player is the exact same as getting the troop's name, or level. But more on that later.
@@ -28,13 +28,13 @@ Additionally, speed and memory consumption has been prioritised and optimised wh
 Initialising the Client
 -----------------------
 
-There are a few options you can choose from as to how coc.py will handle when to inject game data and when not to.
+There are a few options you can choose from as to how clash.py will handle when to inject game data and when not to.
 Although all efforts have been made to minimise overheads, some may prefer to only use game data when they choose to.
 
 
 1. Always
 
-    If you want coc.py to always inject game metadata, regardless of when or where you call :meth:`Client.get_player`,
+    If you want clash.py to always inject game metadata, regardless of when or where you call :meth:`Client.get_player`,
     including in events, use this option.
 
     Game metadata will be loaded on startup using this option, which means you can use :meth:`Client.parse_army_link` etc.
@@ -47,7 +47,7 @@ Although all efforts have been made to minimise overheads, some may prefer to on
 
 2. Default
 
-    In this option, coc.py will always inject game metadata when using :meth:`Client.get_player`, however will not
+    In this option, clash.py will always inject game metadata when using :meth:`Client.get_player`, however will not
     load game metadata for any events dispatched. Instead see :ref:`loading_game_data` for how to load it
     when using events.
 
@@ -61,7 +61,7 @@ Although all efforts have been made to minimise overheads, some may prefer to on
 
 3. Startup Only
 
-    With this option, coc.py will load game metadata on startup, but will **never** automatically load it into Player
+    With this option, clash.py will load game metadata on startup, but will **never** automatically load it into Player
     objects. This means you must manually call :meth:`Player.load_game_data` to load game data for a player.
 
     Using this option means game metadata is loaded on startup, which means :meth:`Client.parse_army_link` etc. will
@@ -89,7 +89,7 @@ Although all efforts have been made to minimise overheads, some may prefer to on
 Loading Game Data Manually
 --------------------------
 
-The preferred way of telling coc.py that you want to load game data for player requests is either through setting
+The preferred way of telling clash.py that you want to load game data for player requests is either through setting
 ``load_game_metadata`` to ``Always`` or ``Default``, or by passing ``load_game_data=True`` into your :meth:`Client.get_player` call.
 
 .. code-block:: python3

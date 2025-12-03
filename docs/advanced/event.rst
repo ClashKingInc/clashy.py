@@ -11,7 +11,7 @@ The Clash of Clans API, currently, provides no reasonable way to know when
 for example, someone upgrades a troop, or attacks in war, without making repeated
 calls and comparing objects over time.
 
-The coc.py events client does exactly that: making requests to the API every X seconds,
+The clash.py events client does exactly that: making requests to the API every X seconds,
 comparing the results internally and dispatching relevant "events".
 
 Functions are called, known as "callbacks" when these events occur, and are named as such.
@@ -36,7 +36,7 @@ You just create a :class:`EventsClient` instead of :class:`Client` before you lo
 Decorators
 ~~~~~~~~~~
 
-Decorators are a simple, easy way to interact with coc.py events. They are grouped into 4 categories:
+Decorators are a simple, easy way to interact with clash.py events. They are grouped into 4 categories:
 
     - ``coc.PlayerEvents``: Events for players.
     - ``coc.ClanEvents``: Events for clans.
@@ -201,7 +201,7 @@ Unless you wish to only check for new events once every hour or 6 hours, or any 
 for objects in the API, **it is suggested to omit the ``retry_interval`` parameter.** The library will automatically
 determine when the next fresh object is available, and instead of sleeping for a predefined 60seconds between every loop,
 it will instead sleep until a fresh object is available from the API. This means some events could see an up to 50% reduction in
-latency between when the event happens in game and when coc.py reports it.
+latency between when the event happens in game and when clash.py reports it.
 
 For example:
 
@@ -293,9 +293,10 @@ Custom Classes
 --------------
 For more information on custom class support, please see :ref:`custom_classes`.
 
-Client (coc.py) Events
-----------------------
-coc.py has a few events that are unique to the library, and which provide some useful information. They are:
+Client (clash.py) Events
+------------------------
+
+clash.py has a few events that are unique to the library, and which provide some useful information. They are:
 
 +------------------------------------------------+-------------------------+--------------------------------------------------+
 |      Event                                     |        Parameter(s)     |    Description                                   |

@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-coc.py: A Clash of Clans API Wrapper
-====================================
+clash.py: A Clash of Clans API Wrapper
+======================================
+
 
 .. _getting_started:
 .. toctree::
@@ -65,8 +66,4 @@ coc.py: A Clash of Clans API Wrapper
    :caption: Miscellaneous
 
    miscellaneous/changelog
-   miscellaneous/migrating_to_v4
-   miscellaneous/migrating_to_v3
-   miscellaneous/migrating_to_v2
-   miscellaneous/migrating_to_v1
    miscellaneous/acknowledgements

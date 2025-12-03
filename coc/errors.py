@@ -3,7 +3,7 @@ from aiohttp import ClientResponse
 
 
 class ClashOfClansException(Exception):
-    """Base exception for coc.py
+    """Base exception for clash.py
     """
 
 

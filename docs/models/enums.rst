@@ -105,11 +105,3 @@ SkinTier
     :members:
     :undoc-members:
     :member-order: bysource
-
-
-Gender
-~~~~~~
-.. autoclass:: Gender()
-    :members:
-    :undoc-members:
-    :member-order: bysource

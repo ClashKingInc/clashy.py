@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/coc.py
+      url: https://pypi.org/p/clash.py
     permissions:
       id-token: write
     if: github.event_name != 'workflow_dispatch' || (github.event_name == 'workflow_dispatch' &&  github.event.inputs.confirmation != 'false')

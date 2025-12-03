@@ -64,7 +64,7 @@ class Client:
         Default name for keys created to use for this client.
         All keys created or to be used with this client must
         have this name.
-        Defaults to "Created with coc.py Client".
+        Defaults to "Created with clash.py Client".
 
     throttle_limit : int
         The number of requests per token per second to send to the API.
@@ -102,18 +102,18 @@ class Client:
         The max size of the internal cache layer. Defaults to 10 000. Set this to ``None`` to remove any cache layer.
 
     load_game_data: :class:`LoadGameData`
-        The option for how coc.py will load game data. See :ref:`initialising_game_data` for more info.
+        The option for how clash.py will load game data. See :ref:`initialising_game_data` for more info.
 
     realtime: :class:`bool`
         Some developers are given special access to an uncached API access by
         Super Cell. If you are one of those developers, your account will have
-        special flags that will only be interpreted by coc.py if you set this
+        special flags that will only be interpreted by clash.py if you set this
         bool to True.
 
     raw_attribute: :class:`bool`
         The option to enable the _raw_data attribute for most objects in the library. This attribute will contain
         the original json data as returned by the API. This can be useful if you want to store a response in a database
-        for later use or are interested in new things that coc.py does not support otherwise yet. But because this
+        for later use or are interested in new things that clash.py does not support otherwise yet. But because this
         increases the memory footprint and is not needed for most use cases, this defaults to ``False``.
 
     base_url: :class:`str`
@@ -194,7 +194,7 @@ class Client:
         self,
         *,
         key_count: int = 1,
-        key_names: str = "Created with coc.py Client",
+        key_names: str = "Created with clash.py Client",
         throttle_limit: int = 30,
         loop: asyncio.AbstractEventLoop = None,
         correct_tags: bool = True,

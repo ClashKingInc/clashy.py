@@ -30,7 +30,7 @@ async def test_raid_log(client: coc.Client, clan_tag: str):
     # once you iterate beyond the cached amount, it will fetch the next set
     raid_with_page = await client.get_raid_log(clan_tag, page=True, limit=page_limit)
 
-    # Iterate over war_logs like the current version of coc.py
+    # Iterate over war_logs like the current version of clash.py
     for i, e in enumerate(raid_no_page):
         e: RaidLogEntry
         # print(f"[{i}]-sync limit: {limit} page: False {e.start_time.time}")
@@ -69,7 +69,7 @@ async def test_war_log(client: coc.Client, clan_tag: str):
     # once you iterate beyond the cached amount, it will fetch the next set
     war_logs_with_page = await client.get_war_log(clan_tag, page=True, limit=pagination_limit)
 
-    # # Iterate over war_logs like the current version of coc.py
+    # # Iterate over war_logs like the current version of clash.py
     # for i, e in enumerate(war_logs_no_page):
     #     print(f"[{i}]-sync limit: {limit} page: False")
 

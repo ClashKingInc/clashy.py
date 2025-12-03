@@ -1,4 +1,4 @@
-name: coc.py Workflows
+name: clash.py Workflows
 
 on:
   push:

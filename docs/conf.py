@@ -12,10 +12,10 @@ root_project = pathlib.Path(__file__).parents[1].resolve()
 sys.path.insert(0, root_project.as_posix())
 sys.path.append((root_project / "docs").as_posix())
 
-project = 'coc'
-copyright = '2022, mathsman5133'
-author = 'mathsman5133'
-release = '4.0.0'
+project = 'clash.py'
+copyright = '2025, ClashKing'
+author = 'ClashKing'
+release = '25.12.0'
 
 
 # -- General configuration ---------------------------------------------------

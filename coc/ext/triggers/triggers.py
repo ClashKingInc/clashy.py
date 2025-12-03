@@ -491,7 +491,7 @@ async def start_triggers():
             pass
 
         if __name__ = '__main__':
-            # login to coc.py and/or load other required resources here
+            # login to clash.py and/or load other required resources here
             event_loop = asyncio.get_event_loop()
             # then start trigger execution
             event_loop.run_until_complete(start_triggers())

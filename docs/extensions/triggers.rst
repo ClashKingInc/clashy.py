@@ -8,9 +8,9 @@ Triggers Extension
 Overview
 --------
 
-coc.py's events are an extremely powerful framework, but they are not particularly well suited for periodic bulk-update
+clash.py's events are an extremely powerful framework, but they are not particularly well suited for periodic bulk-update
 style tasks, and employing the use of ``APScheduler`` or similar modules feels excessive for such a simple job. That is
-where the triggers extension for coc.py comes into play.
+where the triggers extension for clash.py comes into play.
 
 This extension provides you with powerful and easy to use decorators that turn your coroutines into periodically
 repeating tasks without the need for any additional modifications. It is as simple as putting a trigger decorator on

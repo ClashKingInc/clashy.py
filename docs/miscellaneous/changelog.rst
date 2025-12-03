@@ -8,7 +8,7 @@ This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
 v25.12.0
-------
+--------
 
 Changes:
 ~~~~~~~~
@@ -19,13 +19,14 @@ Changes:
 
 
 v3.10.0
-------
+-------
 
 Changes:
 ~~~~~~~~
 - Support for Th18
     - New Spell: Totem Spell
     - New Troop: Meteor Golem
+
 Bugs Fixed:
 ~~~~~~~~~~~
 - Documentation fix for a couple functions in clans.py and players.py which in newer python versions were complaining invalid escape sequence
@@ -299,7 +300,7 @@ Bugs Fixed:
 
 v3.0.0
 ------
-Please see :ref:`migrating_to_v3_0` for more info, as changes are described more in-depth there.
+Please see migrating_to_v3_0 for more info, as changes are described more in-depth there.
 
 
 v2.4.1
@@ -537,7 +538,7 @@ v2.0.1
 
 v2.0
 -----
-Please see :ref:`migrating_to_v2_0` for more info, as changes are described more in-depth there.
+Please see migrating_to_v2_0 for more info, as changes are described more in-depth there.
 
 v1.3.0
 ------
@@ -638,7 +639,7 @@ v1.0.1
 
 v1.0
 -----
-Please see :ref:`migrating_to_v1_0` for more info, as the change-set is too large to describe here.
+Please see migrating_to_v1_0 for more info, as the change-set is too large to describe here.
 
 v0.3.3
 -------

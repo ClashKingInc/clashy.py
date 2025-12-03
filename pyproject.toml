@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "clash.py"
-authors = [{ name = "MagicTheDev" }]
-maintainers = [{ name = "Destinea" }]
+authors = [{ name = "ClashKing" }]
+maintainers = [{ name = "MagicTheDev" }]
 version = "25.12.0"
 description = "A python wrapper for the Clash of Clans API"
 requires-python = ">=3.10.0"
 readme = "README.rst"
 license = { text = "MIT" }
-keywords = ["coc", "clash of clans", "coc.py", "clash api"]
+keywords = ["coc", "clash of clans", "clash.py", "clash api"]
 classifiers = ["Development Status :: 5 - Production/Stable",
     "Programming Language :: Python",
     "Natural Language :: English",
