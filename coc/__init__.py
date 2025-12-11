@@ -1,5 +1,5 @@
 
-__version__ = "25.12.2"
+from ._version import __version__
 
 from .abc import BasePlayer, BaseClan
 from .buildings import (
@@ -32,7 +32,8 @@ from .enums import (
     VillageType,
     SceneryType,
     EquipmentRarity,
-    SkinTier
+    SkinTier,
+    ClanType
 )
 from .errors import (
     ClashOfClansException,

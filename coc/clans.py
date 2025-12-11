@@ -5,6 +5,7 @@ import typing
 from .players import ClanMember
 from .miscmodels import try_enum, ChatLanguage, Location, Label, BaseLeague, CapitalDistrict
 from .utils import get, cached_property, correct_tag
+from .enums import ClanType
 from .abc import BaseClan
 
 
@@ -79,7 +80,7 @@ class Clan(BaseClan):
         The clan's badge
     level: :class:`int`
         The clan's level.
-    type: :class:`str`
+    type: :class:`ClanType`
         The clan's type for accepting members.
         This could be ``open``, ``inviteOnly`` or ``closed``.
     family_friendly: :class:`bool`
@@ -189,7 +190,7 @@ class Clan(BaseClan):
         self.location = try_enum(Location, data=data_get("location"))
 
         # only available via /clans/{clanTag} or /clans endpoint
-        self.type: str = data_get("type")
+        self.type = ClanType(value=data_get("type"))
         self.family_friendly = data_get("isFamilyFriendly")
         self.required_trophies: int = data_get("requiredTrophies")
         self.required_builder_base_trophies: int = data_get("requiredBuilderBaseTrophies")

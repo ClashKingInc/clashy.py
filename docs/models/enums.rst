@@ -19,6 +19,14 @@ Role
     :member-order: bysource
 
 
+ClanType
+~~~~~~~~
+.. autoclass:: ClanType()
+    :members:
+    :undoc-members:
+    :member-order: bysource
+
+
 WarRound
 ~~~~~~~~
 .. autoclass:: WarRound()

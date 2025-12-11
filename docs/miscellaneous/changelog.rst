@@ -7,6 +7,13 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
+v25.12.3
+--------
+
+Changes:
+~~~~~~~~
+- Add :class:`coc.enums.ClanType` enum for :attr:`coc.Clan.type`
+
 v25.12.0
 --------
 

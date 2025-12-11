@@ -117,6 +117,12 @@ class WarResult(ExtendedEnum):
         return lookup[self.value]
 
 
+class ClanType(ExtendedEnum):
+    open = "open"
+    closed = "closed"
+    invite_only = "inviteOnly"
+
+
 class ProductionBuildingType(ExtendedEnum):
     barracks = "Barracks"
     dark_barracks = "Dark Barracks"
