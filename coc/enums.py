@@ -122,6 +122,11 @@ class ClanType(ExtendedEnum):
     closed = "closed"
     invite_only = "inviteOnly"
 
+    @property
+    def in_game_name(self) -> str:
+        """Get a neat client-facing string value for the clan type."""
+        lookup = {"open": "Open", "closed": "Closed", "inviteOnly": "Invite Only"}
+        return lookup[self.value]
 
 class ProductionBuildingType(ExtendedEnum):
     barracks = "Barracks"
