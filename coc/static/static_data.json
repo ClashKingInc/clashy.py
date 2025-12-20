@@ -20,8 +20,7 @@
           "build_time": 60,
           "required_townhall": 1,
           "hitpoints": 100,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -29,8 +28,7 @@
           "build_time": 300,
           "required_townhall": 2,
           "hitpoints": 150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -38,8 +36,7 @@
           "build_time": 1800,
           "required_townhall": 3,
           "hitpoints": 200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -47,8 +44,7 @@
           "build_time": 7200,
           "required_townhall": 4,
           "hitpoints": 250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -56,8 +52,7 @@
           "build_time": 21600,
           "required_townhall": 5,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -65,8 +60,7 @@
           "build_time": 43200,
           "required_townhall": 6,
           "hitpoints": 330,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -74,8 +68,7 @@
           "build_time": 172800,
           "required_townhall": 9,
           "hitpoints": 400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -83,8 +76,7 @@
           "build_time": 259200,
           "required_townhall": 10,
           "hitpoints": 500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -92,8 +84,7 @@
           "build_time": 302400,
           "required_townhall": 11,
           "hitpoints": 600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -101,8 +92,7 @@
           "build_time": 345600,
           "required_townhall": 12,
           "hitpoints": 700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -110,8 +100,7 @@
           "build_time": 432000,
           "required_townhall": 13,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -119,8 +108,7 @@
           "build_time": 518400,
           "required_townhall": 15,
           "hitpoints": 850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 13,
@@ -128,8 +116,7 @@
           "build_time": 864000,
           "required_townhall": 17,
           "hitpoints": 900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -154,7 +141,6 @@
           "required_townhall": 0,
           "hitpoints": 400,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Army Camp",
@@ -215,7 +201,6 @@
           "required_townhall": 1,
           "hitpoints": 800,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -251,7 +236,6 @@
           "required_townhall": 2,
           "hitpoints": 1600,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Army Camp",
@@ -302,7 +286,6 @@
           "required_townhall": 3,
           "hitpoints": 2000,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -338,7 +321,6 @@
           "required_townhall": 4,
           "hitpoints": 2400,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Army Camp",
@@ -389,7 +371,6 @@
           "required_townhall": 5,
           "hitpoints": 2800,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -435,7 +416,6 @@
           "required_townhall": 6,
           "hitpoints": 3300,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Army Camp",
@@ -501,7 +481,6 @@
           "required_townhall": 7,
           "hitpoints": 3900,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Storage",
@@ -567,7 +546,6 @@
           "required_townhall": 8,
           "hitpoints": 4600,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Storage",
@@ -643,7 +621,6 @@
           "required_townhall": 9,
           "hitpoints": 5500,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Cannon",
@@ -684,7 +661,6 @@
           "required_townhall": 10,
           "hitpoints": 6800,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Cannon",
@@ -725,7 +701,6 @@
           "required_townhall": 11,
           "hitpoints": 7500,
           "dps": 140,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Hidden Tesla",
@@ -751,7 +726,6 @@
           "required_townhall": 12,
           "hitpoints": 8200,
           "dps": 220,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Scattershot",
@@ -767,7 +741,6 @@
           "required_townhall": 13,
           "hitpoints": 8900,
           "dps": 280,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -788,7 +761,6 @@
           "required_townhall": 14,
           "hitpoints": 9600,
           "dps": 300,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Spell Tower",
@@ -809,7 +781,6 @@
           "required_townhall": 15,
           "hitpoints": 10000,
           "dps": 300,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Multi-Archer Tower",
@@ -830,7 +801,6 @@
           "required_townhall": 16,
           "hitpoints": 10400,
           "dps": 0,
-          "strength_weight": 0,
           "merge_requirement": [
             {
               "name": "Eagle Artillery",
@@ -916,7 +886,6 @@
           "required_townhall": 17,
           "hitpoints": 10800,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wizard Tower",
@@ -962,8 +931,7 @@
           "build_time": 5,
           "required_townhall": 1,
           "hitpoints": 75,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -971,8 +939,7 @@
           "build_time": 15,
           "required_townhall": 2,
           "hitpoints": 150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -980,8 +947,7 @@
           "build_time": 60,
           "required_townhall": 2,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -989,8 +955,7 @@
           "build_time": 120,
           "required_townhall": 2,
           "hitpoints": 400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -998,8 +963,7 @@
           "build_time": 300,
           "required_townhall": 3,
           "hitpoints": 500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -1007,8 +971,7 @@
           "build_time": 900,
           "required_townhall": 3,
           "hitpoints": 550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -1016,8 +979,7 @@
           "build_time": 1800,
           "required_townhall": 4,
           "hitpoints": 600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -1025,8 +987,7 @@
           "build_time": 3600,
           "required_townhall": 4,
           "hitpoints": 660,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -1034,8 +995,7 @@
           "build_time": 7200,
           "required_townhall": 5,
           "hitpoints": 720,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -1043,8 +1003,7 @@
           "build_time": 10800,
           "required_townhall": 5,
           "hitpoints": 780,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -1052,8 +1011,7 @@
           "build_time": 14400,
           "required_townhall": 7,
           "hitpoints": 860,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -1061,8 +1019,7 @@
           "build_time": 21600,
           "required_townhall": 8,
           "hitpoints": 960,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 13,
@@ -1070,8 +1027,7 @@
           "build_time": 28800,
           "required_townhall": 10,
           "hitpoints": 1080,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 14,
@@ -1079,8 +1035,7 @@
           "build_time": 36000,
           "required_townhall": 11,
           "hitpoints": 1180,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 15,
@@ -1088,8 +1043,7 @@
           "build_time": 64800,
           "required_townhall": 12,
           "hitpoints": 1280,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 16,
@@ -1097,8 +1051,7 @@
           "build_time": 172800,
           "required_townhall": 14,
           "hitpoints": 1350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 17,
@@ -1107,7 +1060,6 @@
           "required_townhall": 16,
           "hitpoints": 1400,
           "dps": 0,
-          "strength_weight": 0,
           "supercharge": {
             "upgrade_resource": "Gold",
             "levels": [
@@ -1157,8 +1109,7 @@
           "build_time": 10,
           "required_townhall": 1,
           "hitpoints": 150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -1166,8 +1117,7 @@
           "build_time": 120,
           "required_townhall": 2,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -1175,8 +1125,7 @@
           "build_time": 300,
           "required_townhall": 2,
           "hitpoints": 450,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -1184,8 +1133,7 @@
           "build_time": 900,
           "required_townhall": 3,
           "hitpoints": 600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -1193,8 +1141,7 @@
           "build_time": 1800,
           "required_townhall": 3,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -1202,8 +1149,7 @@
           "build_time": 3600,
           "required_townhall": 3,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -1211,8 +1157,7 @@
           "build_time": 7200,
           "required_townhall": 4,
           "hitpoints": 1250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -1220,8 +1165,7 @@
           "build_time": 10800,
           "required_townhall": 4,
           "hitpoints": 1500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -1229,8 +1173,7 @@
           "build_time": 14400,
           "required_townhall": 5,
           "hitpoints": 1700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -1238,8 +1181,7 @@
           "build_time": 18000,
           "required_townhall": 6,
           "hitpoints": 1900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -1247,8 +1189,7 @@
           "build_time": 21600,
           "required_townhall": 7,
           "hitpoints": 2100,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -1256,8 +1197,7 @@
           "build_time": 43200,
           "required_townhall": 11,
           "hitpoints": 2500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 13,
@@ -1265,8 +1205,7 @@
           "build_time": 86400,
           "required_townhall": 12,
           "hitpoints": 2900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 14,
@@ -1274,8 +1213,7 @@
           "build_time": 172800,
           "required_townhall": 13,
           "hitpoints": 3300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 15,
@@ -1283,8 +1221,7 @@
           "build_time": 259200,
           "required_townhall": 14,
           "hitpoints": 3700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 16,
@@ -1292,8 +1229,7 @@
           "build_time": 345600,
           "required_townhall": 15,
           "hitpoints": 3900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 17,
@@ -1301,8 +1237,7 @@
           "build_time": 432000,
           "required_townhall": 16,
           "hitpoints": 4050,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 18,
@@ -1310,8 +1245,7 @@
           "build_time": 604800,
           "required_townhall": 17,
           "hitpoints": 4200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 19,
@@ -1319,8 +1253,7 @@
           "build_time": 1080000,
           "required_townhall": 18,
           "hitpoints": 4300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -1344,8 +1277,7 @@
           "build_time": 5,
           "required_townhall": 1,
           "hitpoints": 75,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -1353,8 +1285,7 @@
           "build_time": 15,
           "required_townhall": 2,
           "hitpoints": 150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -1362,8 +1293,7 @@
           "build_time": 60,
           "required_townhall": 2,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -1371,8 +1301,7 @@
           "build_time": 120,
           "required_townhall": 2,
           "hitpoints": 400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -1380,8 +1309,7 @@
           "build_time": 300,
           "required_townhall": 3,
           "hitpoints": 500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -1389,8 +1317,7 @@
           "build_time": 900,
           "required_townhall": 3,
           "hitpoints": 550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -1398,8 +1325,7 @@
           "build_time": 1800,
           "required_townhall": 4,
           "hitpoints": 600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -1407,8 +1333,7 @@
           "build_time": 3600,
           "required_townhall": 4,
           "hitpoints": 660,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -1416,8 +1341,7 @@
           "build_time": 7200,
           "required_townhall": 5,
           "hitpoints": 720,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -1425,8 +1349,7 @@
           "build_time": 10800,
           "required_townhall": 5,
           "hitpoints": 780,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -1434,8 +1357,7 @@
           "build_time": 14400,
           "required_townhall": 7,
           "hitpoints": 860,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -1443,8 +1365,7 @@
           "build_time": 21600,
           "required_townhall": 8,
           "hitpoints": 960,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 13,
@@ -1452,8 +1373,7 @@
           "build_time": 28800,
           "required_townhall": 10,
           "hitpoints": 1080,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 14,
@@ -1461,8 +1381,7 @@
           "build_time": 36000,
           "required_townhall": 11,
           "hitpoints": 1180,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 15,
@@ -1470,8 +1389,7 @@
           "build_time": 64800,
           "required_townhall": 12,
           "hitpoints": 1280,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 16,
@@ -1479,8 +1397,7 @@
           "build_time": 172800,
           "required_townhall": 14,
           "hitpoints": 1350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 17,
@@ -1489,7 +1406,6 @@
           "required_townhall": 16,
           "hitpoints": 1400,
           "dps": 0,
-          "strength_weight": 0,
           "supercharge": {
             "upgrade_resource": "Elixir",
             "levels": [
@@ -1539,8 +1455,7 @@
           "build_time": 10,
           "required_townhall": 1,
           "hitpoints": 150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -1548,8 +1463,7 @@
           "build_time": 120,
           "required_townhall": 2,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -1557,8 +1471,7 @@
           "build_time": 300,
           "required_townhall": 2,
           "hitpoints": 450,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -1566,8 +1479,7 @@
           "build_time": 900,
           "required_townhall": 3,
           "hitpoints": 600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -1575,8 +1487,7 @@
           "build_time": 1800,
           "required_townhall": 3,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -1584,8 +1495,7 @@
           "build_time": 3600,
           "required_townhall": 3,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -1593,8 +1503,7 @@
           "build_time": 7200,
           "required_townhall": 4,
           "hitpoints": 1250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -1602,8 +1511,7 @@
           "build_time": 10800,
           "required_townhall": 4,
           "hitpoints": 1500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -1611,8 +1519,7 @@
           "build_time": 14400,
           "required_townhall": 5,
           "hitpoints": 1700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -1620,8 +1527,7 @@
           "build_time": 18000,
           "required_townhall": 6,
           "hitpoints": 1900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -1629,8 +1535,7 @@
           "build_time": 21600,
           "required_townhall": 7,
           "hitpoints": 2100,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -1638,8 +1543,7 @@
           "build_time": 43200,
           "required_townhall": 11,
           "hitpoints": 2500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 13,
@@ -1647,8 +1551,7 @@
           "build_time": 86400,
           "required_townhall": 12,
           "hitpoints": 2900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 14,
@@ -1656,8 +1559,7 @@
           "build_time": 172800,
           "required_townhall": 13,
           "hitpoints": 3300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 15,
@@ -1665,8 +1567,7 @@
           "build_time": 259200,
           "required_townhall": 14,
           "hitpoints": 3700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 16,
@@ -1674,8 +1575,7 @@
           "build_time": 345600,
           "required_townhall": 15,
           "hitpoints": 3900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 17,
@@ -1683,8 +1583,7 @@
           "build_time": 432000,
           "required_townhall": 16,
           "hitpoints": 4050,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 18,
@@ -1692,8 +1591,7 @@
           "build_time": 604800,
           "required_townhall": 17,
           "hitpoints": 4200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 19,
@@ -1701,8 +1599,7 @@
           "build_time": 1080000,
           "required_townhall": 18,
           "hitpoints": 4300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -1726,8 +1623,7 @@
           "build_time": 10,
           "required_townhall": 1,
           "hitpoints": 100,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -1735,8 +1631,7 @@
           "build_time": 15,
           "required_townhall": 2,
           "hitpoints": 200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -1744,8 +1639,7 @@
           "build_time": 120,
           "required_townhall": 2,
           "hitpoints": 250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -1753,8 +1647,7 @@
           "build_time": 1800,
           "required_townhall": 2,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -1762,8 +1655,7 @@
           "build_time": 7200,
           "required_townhall": 3,
           "hitpoints": 360,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -1771,8 +1663,7 @@
           "build_time": 14400,
           "required_townhall": 4,
           "hitpoints": 420,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -1780,8 +1671,7 @@
           "build_time": 21600,
           "required_townhall": 5,
           "hitpoints": 500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -1789,8 +1679,7 @@
           "build_time": 43200,
           "required_townhall": 6,
           "hitpoints": 575,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -1798,8 +1687,7 @@
           "build_time": 86400,
           "required_townhall": 7,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -1807,8 +1695,7 @@
           "build_time": 129600,
           "required_townhall": 8,
           "hitpoints": 730,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -1816,8 +1703,7 @@
           "build_time": 172800,
           "required_townhall": 9,
           "hitpoints": 810,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -1825,8 +1711,7 @@
           "build_time": 345600,
           "required_townhall": 10,
           "hitpoints": 900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 13,
@@ -1834,8 +1719,7 @@
           "build_time": 432000,
           "required_townhall": 11,
           "hitpoints": 980,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 14,
@@ -1843,8 +1727,7 @@
           "build_time": 518400,
           "required_townhall": 12,
           "hitpoints": 1050,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 15,
@@ -1852,8 +1735,7 @@
           "build_time": 604800,
           "required_townhall": 13,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 16,
@@ -1861,8 +1743,7 @@
           "build_time": 648000,
           "required_townhall": 14,
           "hitpoints": 1250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 17,
@@ -1870,8 +1751,7 @@
           "build_time": 691200,
           "required_townhall": 15,
           "hitpoints": 1350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 18,
@@ -1879,8 +1759,7 @@
           "build_time": 777600,
           "required_townhall": 16,
           "hitpoints": 1450,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 19,
@@ -1888,8 +1767,7 @@
           "build_time": 1209600,
           "required_townhall": 17,
           "hitpoints": 1520,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -1913,8 +1791,7 @@
           "build_time": 60,
           "required_townhall": 3,
           "hitpoints": 500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -1922,8 +1799,7 @@
           "build_time": 1800,
           "required_townhall": 4,
           "hitpoints": 550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -1931,8 +1807,7 @@
           "build_time": 7200,
           "required_townhall": 5,
           "hitpoints": 600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -1940,8 +1815,7 @@
           "build_time": 14400,
           "required_townhall": 6,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -1949,8 +1823,7 @@
           "build_time": 28800,
           "required_townhall": 7,
           "hitpoints": 700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -1958,8 +1831,7 @@
           "build_time": 57600,
           "required_townhall": 8,
           "hitpoints": 750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -1967,8 +1839,7 @@
           "build_time": 86400,
           "required_townhall": 9,
           "hitpoints": 830,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -1976,8 +1847,7 @@
           "build_time": 151200,
           "required_townhall": 10,
           "hitpoints": 950,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -1985,8 +1855,7 @@
           "build_time": 237600,
           "required_townhall": 11,
           "hitpoints": 1070,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -1994,8 +1863,7 @@
           "build_time": 345600,
           "required_townhall": 12,
           "hitpoints": 1140,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -2003,8 +1871,7 @@
           "build_time": 518400,
           "required_townhall": 13,
           "hitpoints": 1210,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -2012,8 +1879,7 @@
           "build_time": 604800,
           "required_townhall": 14,
           "hitpoints": 1280,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 13,
@@ -2021,8 +1887,7 @@
           "build_time": 691200,
           "required_townhall": 15,
           "hitpoints": 1350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 14,
@@ -2030,8 +1895,7 @@
           "build_time": 777600,
           "required_townhall": 16,
           "hitpoints": 1400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 15,
@@ -2039,8 +1903,7 @@
           "build_time": 864000,
           "required_townhall": 17,
           "hitpoints": 1450,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 16,
@@ -2048,8 +1911,7 @@
           "build_time": 1382400,
           "required_townhall": 18,
           "hitpoints": 1500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -3674,8 +3536,7 @@
           "build_time": 21600,
           "required_townhall": 5,
           "hitpoints": 425,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -3683,8 +3544,7 @@
           "build_time": 43200,
           "required_townhall": 6,
           "hitpoints": 470,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -3692,8 +3552,7 @@
           "build_time": 86400,
           "required_townhall": 7,
           "hitpoints": 520,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -3701,8 +3560,7 @@
           "build_time": 172800,
           "required_townhall": 9,
           "hitpoints": 600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -3710,8 +3568,7 @@
           "build_time": 259200,
           "required_townhall": 10,
           "hitpoints": 720,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -3719,8 +3576,7 @@
           "build_time": 432000,
           "required_townhall": 11,
           "hitpoints": 840,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -3728,8 +3584,7 @@
           "build_time": 604800,
           "required_townhall": 13,
           "hitpoints": 960,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -3737,8 +3592,7 @@
           "build_time": 691200,
           "required_townhall": 15,
           "hitpoints": 1080,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -3746,8 +3600,7 @@
           "build_time": 1123200,
           "required_townhall": 16,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -3914,8 +3767,7 @@
           "build_time": 14400,
           "required_townhall": 7,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -3923,8 +3775,7 @@
           "build_time": 21600,
           "required_townhall": 7,
           "hitpoints": 860,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -3932,8 +3783,7 @@
           "build_time": 43200,
           "required_townhall": 7,
           "hitpoints": 920,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -3941,8 +3791,7 @@
           "build_time": 64800,
           "required_townhall": 9,
           "hitpoints": 980,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -3950,8 +3799,7 @@
           "build_time": 86400,
           "required_townhall": 9,
           "hitpoints": 1060,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -3959,8 +3807,7 @@
           "build_time": 129600,
           "required_townhall": 9,
           "hitpoints": 1160,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -3968,8 +3815,7 @@
           "build_time": 151200,
           "required_townhall": 10,
           "hitpoints": 1280,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -3977,8 +3823,7 @@
           "build_time": 172800,
           "required_townhall": 11,
           "hitpoints": 1380,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -3986,8 +3831,7 @@
           "build_time": 216000,
           "required_townhall": 12,
           "hitpoints": 1480,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -3995,8 +3839,7 @@
           "build_time": 259200,
           "required_townhall": 14,
           "hitpoints": 1550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -4005,7 +3848,6 @@
           "required_townhall": 16,
           "hitpoints": 1600,
           "dps": 0,
-          "strength_weight": 0,
           "supercharge": {
             "upgrade_resource": "Elixir",
             "levels": [
@@ -4055,8 +3897,7 @@
           "build_time": 28800,
           "required_townhall": 7,
           "hitpoints": 2000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -4064,8 +3905,7 @@
           "build_time": 57600,
           "required_townhall": 7,
           "hitpoints": 2200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -4073,8 +3913,7 @@
           "build_time": 86400,
           "required_townhall": 8,
           "hitpoints": 2400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -4082,8 +3921,7 @@
           "build_time": 129600,
           "required_townhall": 8,
           "hitpoints": 2600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -4091,8 +3929,7 @@
           "build_time": 144000,
           "required_townhall": 9,
           "hitpoints": 2900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -4100,8 +3937,7 @@
           "build_time": 172800,
           "required_townhall": 9,
           "hitpoints": 3200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -4109,8 +3945,7 @@
           "build_time": 259200,
           "required_townhall": 12,
           "hitpoints": 3500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -4118,8 +3953,7 @@
           "build_time": 302400,
           "required_townhall": 13,
           "hitpoints": 3800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -4127,8 +3961,7 @@
           "build_time": 345600,
           "required_townhall": 14,
           "hitpoints": 4100,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -4136,8 +3969,7 @@
           "build_time": 388800,
           "required_townhall": 15,
           "hitpoints": 4300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -4145,8 +3977,7 @@
           "build_time": 432000,
           "required_townhall": 16,
           "hitpoints": 4500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -4154,8 +3985,7 @@
           "build_time": 777600,
           "required_townhall": 17,
           "hitpoints": 4700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 13,
@@ -4163,8 +3993,7 @@
           "build_time": 1123200,
           "required_townhall": 18,
           "hitpoints": 4800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -4188,8 +4017,7 @@
           "build_time": 28800,
           "required_townhall": 7,
           "hitpoints": 500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -4197,8 +4025,7 @@
           "build_time": 86400,
           "required_townhall": 7,
           "hitpoints": 550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -4206,8 +4033,7 @@
           "build_time": 129600,
           "required_townhall": 8,
           "hitpoints": 600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -4215,8 +4041,7 @@
           "build_time": 172800,
           "required_townhall": 8,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -4224,8 +4049,7 @@
           "build_time": 216000,
           "required_townhall": 9,
           "hitpoints": 700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -4233,8 +4057,7 @@
           "build_time": 259200,
           "required_townhall": 9,
           "hitpoints": 750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -4242,8 +4065,7 @@
           "build_time": 432000,
           "required_townhall": 10,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -4251,8 +4073,7 @@
           "build_time": 518400,
           "required_townhall": 11,
           "hitpoints": 850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -4260,8 +4081,7 @@
           "build_time": 604800,
           "required_townhall": 12,
           "hitpoints": 900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -4269,8 +4089,7 @@
           "build_time": 648000,
           "required_townhall": 13,
           "hitpoints": 950,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -4278,8 +4097,7 @@
           "build_time": 691200,
           "required_townhall": 14,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -4287,8 +4105,7 @@
           "build_time": 1036800,
           "required_townhall": 15,
           "hitpoints": 1050,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -4525,8 +4342,7 @@
           "build_time": 21600,
           "required_townhall": 8,
           "hitpoints": 600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -4534,8 +4350,7 @@
           "build_time": 43200,
           "required_townhall": 8,
           "hitpoints": 660,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -4543,8 +4358,7 @@
           "build_time": 172800,
           "required_townhall": 9,
           "hitpoints": 720,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -4552,8 +4366,7 @@
           "build_time": 259200,
           "required_townhall": 9,
           "hitpoints": 780,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -4561,8 +4374,7 @@
           "build_time": 432000,
           "required_townhall": 10,
           "hitpoints": 840,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -4570,8 +4382,7 @@
           "build_time": 518400,
           "required_townhall": 12,
           "hitpoints": 950,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -4579,8 +4390,7 @@
           "build_time": 604800,
           "required_townhall": 14,
           "hitpoints": 1010,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -4946,7 +4756,6 @@
           "required_townhall": null,
           "hitpoints": 650,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -4992,7 +4801,6 @@
           "required_townhall": null,
           "hitpoints": 800,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -5023,7 +4831,6 @@
           "required_townhall": null,
           "hitpoints": 975,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Storage",
@@ -5079,7 +4886,6 @@
           "required_townhall": null,
           "hitpoints": 1150,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -5120,7 +4926,6 @@
           "required_townhall": null,
           "hitpoints": 1350,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -5156,7 +4961,6 @@
           "required_townhall": null,
           "hitpoints": 1600,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -5227,7 +5031,6 @@
           "required_townhall": null,
           "hitpoints": 1850,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -5268,7 +5071,6 @@
           "required_townhall": null,
           "hitpoints": 2150,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -5314,7 +5116,6 @@
           "required_townhall": null,
           "hitpoints": 2450,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -5350,7 +5151,6 @@
           "required_townhall": null,
           "hitpoints": 2750,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "X-Bow",
@@ -5381,8 +5181,7 @@
           "build_time": 600,
           "required_townhall": 1,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -5390,8 +5189,7 @@
           "build_time": 1200,
           "required_townhall": 3,
           "hitpoints": 350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -5399,8 +5197,7 @@
           "build_time": 2400,
           "required_townhall": 3,
           "hitpoints": 400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -5408,8 +5205,7 @@
           "build_time": 7200,
           "required_townhall": 4,
           "hitpoints": 460,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -5417,8 +5213,7 @@
           "build_time": 21600,
           "required_townhall": 5,
           "hitpoints": 550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -5426,8 +5221,7 @@
           "build_time": 86400,
           "required_townhall": 6,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -5435,8 +5229,7 @@
           "build_time": 129600,
           "required_townhall": 7,
           "hitpoints": 750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -5444,8 +5237,7 @@
           "build_time": 172800,
           "required_townhall": 8,
           "hitpoints": 850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -5453,8 +5245,7 @@
           "build_time": 216000,
           "required_townhall": 9,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -5462,8 +5253,7 @@
           "build_time": 259200,
           "required_townhall": 10,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -5487,8 +5277,7 @@
           "build_time": 1800,
           "required_townhall": 3,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -5496,8 +5285,7 @@
           "build_time": 3600,
           "required_townhall": 3,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -5505,8 +5293,7 @@
           "build_time": 10800,
           "required_townhall": 3,
           "hitpoints": 975,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -5514,8 +5301,7 @@
           "build_time": 21600,
           "required_townhall": 4,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -5523,8 +5309,7 @@
           "build_time": 43200,
           "required_townhall": 5,
           "hitpoints": 1350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -5532,8 +5317,7 @@
           "build_time": 86400,
           "required_townhall": 6,
           "hitpoints": 1600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -5541,8 +5325,7 @@
           "build_time": 172800,
           "required_townhall": 7,
           "hitpoints": 1850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -5550,8 +5333,7 @@
           "build_time": 259200,
           "required_townhall": 8,
           "hitpoints": 2150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -5559,8 +5341,7 @@
           "build_time": 345600,
           "required_townhall": 9,
           "hitpoints": 2450,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -5568,8 +5349,7 @@
           "build_time": 432000,
           "required_townhall": 10,
           "hitpoints": 2750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -5593,8 +5373,7 @@
           "build_time": 600,
           "required_townhall": 1,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -5602,8 +5381,7 @@
           "build_time": 1200,
           "required_townhall": 3,
           "hitpoints": 350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -5611,8 +5389,7 @@
           "build_time": 2400,
           "required_townhall": 3,
           "hitpoints": 400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -5620,8 +5397,7 @@
           "build_time": 7200,
           "required_townhall": 4,
           "hitpoints": 460,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -5629,8 +5405,7 @@
           "build_time": 21600,
           "required_townhall": 5,
           "hitpoints": 550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -5638,8 +5413,7 @@
           "build_time": 86400,
           "required_townhall": 6,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -5647,8 +5421,7 @@
           "build_time": 129600,
           "required_townhall": 7,
           "hitpoints": 750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -5656,8 +5429,7 @@
           "build_time": 172800,
           "required_townhall": 8,
           "hitpoints": 850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -5665,8 +5437,7 @@
           "build_time": 216000,
           "required_townhall": 9,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -5674,8 +5445,7 @@
           "build_time": 259200,
           "required_townhall": 10,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -5699,8 +5469,7 @@
           "build_time": 1800,
           "required_townhall": 3,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -5708,8 +5477,7 @@
           "build_time": 3600,
           "required_townhall": 3,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -5717,8 +5485,7 @@
           "build_time": 10800,
           "required_townhall": 3,
           "hitpoints": 975,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -5726,8 +5493,7 @@
           "build_time": 21600,
           "required_townhall": 4,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -5735,8 +5501,7 @@
           "build_time": 43200,
           "required_townhall": 5,
           "hitpoints": 1350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -5744,8 +5509,7 @@
           "build_time": 86400,
           "required_townhall": 6,
           "hitpoints": 1600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -5753,8 +5517,7 @@
           "build_time": 172800,
           "required_townhall": 7,
           "hitpoints": 1850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -5762,8 +5525,7 @@
           "build_time": 259200,
           "required_townhall": 8,
           "hitpoints": 2150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -5771,8 +5533,7 @@
           "build_time": 345600,
           "required_townhall": 9,
           "hitpoints": 2450,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -5780,8 +5541,7 @@
           "build_time": 432000,
           "required_townhall": 10,
           "hitpoints": 2750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -5805,8 +5565,7 @@
           "build_time": 7200,
           "required_townhall": 4,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -5814,8 +5573,7 @@
           "build_time": 10800,
           "required_townhall": 4,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -5823,8 +5581,7 @@
           "build_time": 14400,
           "required_townhall": 4,
           "hitpoints": 975,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -5832,8 +5589,7 @@
           "build_time": 21600,
           "required_townhall": 4,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -5841,8 +5597,7 @@
           "build_time": 43200,
           "required_townhall": 5,
           "hitpoints": 1350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -5850,8 +5605,7 @@
           "build_time": 86400,
           "required_townhall": 6,
           "hitpoints": 1600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -5859,8 +5613,7 @@
           "build_time": 172800,
           "required_townhall": 7,
           "hitpoints": 1850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -5868,8 +5621,7 @@
           "build_time": 259200,
           "required_townhall": 8,
           "hitpoints": 2150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -5877,8 +5629,7 @@
           "build_time": 345600,
           "required_townhall": 9,
           "hitpoints": 2450,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -5886,8 +5637,7 @@
           "build_time": 432000,
           "required_townhall": 10,
           "hitpoints": 2750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -5911,8 +5661,7 @@
           "build_time": 0,
           "required_townhall": 1,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -5920,8 +5669,7 @@
           "build_time": 60,
           "required_townhall": 2,
           "hitpoints": 350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -5929,8 +5677,7 @@
           "build_time": 600,
           "required_townhall": 3,
           "hitpoints": 400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -5938,8 +5685,7 @@
           "build_time": 1800,
           "required_townhall": 3,
           "hitpoints": 460,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -5947,8 +5693,7 @@
           "build_time": 10800,
           "required_townhall": 4,
           "hitpoints": 550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -5956,8 +5701,7 @@
           "build_time": 21600,
           "required_townhall": 4,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -5965,8 +5709,7 @@
           "build_time": 32400,
           "required_townhall": 5,
           "hitpoints": 750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -5974,8 +5717,7 @@
           "build_time": 86400,
           "required_townhall": 6,
           "hitpoints": 850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -5983,8 +5725,7 @@
           "build_time": 172800,
           "required_townhall": 7,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -5992,8 +5733,7 @@
           "build_time": 259200,
           "required_townhall": 8,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -6001,8 +5741,7 @@
           "build_time": 345600,
           "required_townhall": 9,
           "hitpoints": 1300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -6010,8 +5749,7 @@
           "build_time": 432000,
           "required_townhall": 10,
           "hitpoints": 1450,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -6474,8 +6212,7 @@
           "build_time": 0,
           "required_townhall": 1,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -6483,8 +6220,7 @@
           "build_time": 600,
           "required_townhall": 2,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -6492,8 +6228,7 @@
           "build_time": 1800,
           "required_townhall": 3,
           "hitpoints": 975,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -6501,8 +6236,7 @@
           "build_time": 28800,
           "required_townhall": 4,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -6510,8 +6244,7 @@
           "build_time": 43200,
           "required_townhall": 5,
           "hitpoints": 1350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -6519,8 +6252,7 @@
           "build_time": 172800,
           "required_townhall": 6,
           "hitpoints": 1600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -6528,8 +6260,7 @@
           "build_time": 345600,
           "required_townhall": 7,
           "hitpoints": 1850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -6537,8 +6268,7 @@
           "build_time": 518400,
           "required_townhall": 8,
           "hitpoints": 2150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -6546,8 +6276,7 @@
           "build_time": 691200,
           "required_townhall": 9,
           "hitpoints": 2450,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -6555,8 +6284,7 @@
           "build_time": 864000,
           "required_townhall": 10,
           "hitpoints": 2750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -7473,8 +7201,7 @@
           "build_time": 3600,
           "required_townhall": 3,
           "hitpoints": 300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -7482,8 +7209,7 @@
           "build_time": 7200,
           "required_townhall": 3,
           "hitpoints": 350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -7491,8 +7217,7 @@
           "build_time": 21600,
           "required_townhall": 3,
           "hitpoints": 400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -7500,8 +7225,7 @@
           "build_time": 28800,
           "required_townhall": 4,
           "hitpoints": 460,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -7509,8 +7233,7 @@
           "build_time": 43200,
           "required_townhall": 5,
           "hitpoints": 550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -7518,8 +7241,7 @@
           "build_time": 86400,
           "required_townhall": 6,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -7527,8 +7249,7 @@
           "build_time": 172800,
           "required_townhall": 7,
           "hitpoints": 750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -7536,8 +7257,7 @@
           "build_time": 345600,
           "required_townhall": 8,
           "hitpoints": 850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -7545,8 +7265,7 @@
           "build_time": 518400,
           "required_townhall": 9,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -7554,8 +7273,7 @@
           "build_time": 691200,
           "required_townhall": 10,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -7579,8 +7297,7 @@
           "build_time": 172800,
           "required_townhall": 12,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -7588,8 +7305,7 @@
           "build_time": 259200,
           "required_townhall": 12,
           "hitpoints": 1100,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -7597,8 +7313,7 @@
           "build_time": 302400,
           "required_townhall": 12,
           "hitpoints": 1200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -7606,8 +7321,7 @@
           "build_time": 345600,
           "required_townhall": 13,
           "hitpoints": 1300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -7615,8 +7329,7 @@
           "build_time": 432000,
           "required_townhall": 13,
           "hitpoints": 1400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -7624,8 +7337,7 @@
           "build_time": 475200,
           "required_townhall": 14,
           "hitpoints": 1500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -7633,8 +7345,7 @@
           "build_time": 518400,
           "required_townhall": 15,
           "hitpoints": 1600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -7642,8 +7353,7 @@
           "build_time": 604800,
           "required_townhall": 16,
           "hitpoints": 1700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -7788,8 +7498,7 @@
           "build_time": 0,
           "required_townhall": null,
           "hitpoints": 250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -7797,8 +7506,7 @@
           "build_time": 0,
           "required_townhall": null,
           "hitpoints": 250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -7806,8 +7514,7 @@
           "build_time": 0,
           "required_townhall": null,
           "hitpoints": 250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -7815,8 +7522,7 @@
           "build_time": 0,
           "required_townhall": null,
           "hitpoints": 250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -7824,8 +7530,7 @@
           "build_time": 0,
           "required_townhall": null,
           "hitpoints": 250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -7938,8 +7643,7 @@
           "build_time": 86400,
           "required_townhall": 14,
           "hitpoints": 700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -7947,8 +7651,7 @@
           "build_time": 172800,
           "required_townhall": 14,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -7956,8 +7659,7 @@
           "build_time": 259200,
           "required_townhall": 14,
           "hitpoints": 900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -7965,8 +7667,7 @@
           "build_time": 302400,
           "required_townhall": 14,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -7974,8 +7675,7 @@
           "build_time": 345600,
           "required_townhall": 15,
           "hitpoints": 1050,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -7983,8 +7683,7 @@
           "build_time": 388800,
           "required_townhall": 15,
           "hitpoints": 1100,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -7992,8 +7691,7 @@
           "build_time": 432000,
           "required_townhall": 15,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -8001,8 +7699,7 @@
           "build_time": 475200,
           "required_townhall": 15,
           "hitpoints": 1200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -8010,8 +7707,7 @@
           "build_time": 518400,
           "required_townhall": 16,
           "hitpoints": 1250,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -8019,8 +7715,7 @@
           "build_time": 604800,
           "required_townhall": 16,
           "hitpoints": 1300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -8028,8 +7723,7 @@
           "build_time": 777600,
           "required_townhall": 17,
           "hitpoints": 1350,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -8053,8 +7747,7 @@
           "build_time": 43200,
           "required_townhall": 8,
           "hitpoints": 700,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -8062,8 +7755,7 @@
           "build_time": 86400,
           "required_townhall": 9,
           "hitpoints": 800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -8071,8 +7763,7 @@
           "build_time": 172800,
           "required_townhall": 10,
           "hitpoints": 900,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -8080,8 +7771,7 @@
           "build_time": 259200,
           "required_townhall": 11,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -8089,8 +7779,7 @@
           "build_time": 345600,
           "required_townhall": 12,
           "hitpoints": 1100,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -8098,8 +7787,7 @@
           "build_time": 388800,
           "required_townhall": 13,
           "hitpoints": 1200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -8107,8 +7795,7 @@
           "build_time": 432000,
           "required_townhall": 14,
           "hitpoints": 1300,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -8116,8 +7803,7 @@
           "build_time": 518400,
           "required_townhall": 15,
           "hitpoints": 1400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -8125,8 +7811,7 @@
           "build_time": 604800,
           "required_townhall": 16,
           "hitpoints": 1500,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -8150,8 +7835,7 @@
           "build_time": 86400,
           "required_townhall": 7,
           "hitpoints": 2000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -8159,8 +7843,7 @@
           "build_time": 172800,
           "required_townhall": 8,
           "hitpoints": 2400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -8168,8 +7851,7 @@
           "build_time": 259200,
           "required_townhall": 9,
           "hitpoints": 2800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -8177,8 +7859,7 @@
           "build_time": 345600,
           "required_townhall": 10,
           "hitpoints": 3200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -8186,8 +7867,7 @@
           "build_time": 388800,
           "required_townhall": 11,
           "hitpoints": 3600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -8195,8 +7875,7 @@
           "build_time": 432000,
           "required_townhall": 12,
           "hitpoints": 3800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 7,
@@ -8204,8 +7883,7 @@
           "build_time": 518400,
           "required_townhall": 13,
           "hitpoints": 4200,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 8,
@@ -8213,8 +7891,7 @@
           "build_time": 561600,
           "required_townhall": 14,
           "hitpoints": 4600,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 9,
@@ -8222,8 +7899,7 @@
           "build_time": 604800,
           "required_townhall": 15,
           "hitpoints": 5000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 10,
@@ -8231,8 +7907,7 @@
           "build_time": 691200,
           "required_townhall": 16,
           "hitpoints": 5400,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 11,
@@ -8240,8 +7915,7 @@
           "build_time": 820800,
           "required_townhall": 17,
           "hitpoints": 5800,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 12,
@@ -8249,8 +7923,7 @@
           "build_time": 1166400,
           "required_townhall": 18,
           "hitpoints": 6000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },
@@ -8389,7 +8062,6 @@
           "required_townhall": 6,
           "hitpoints": 650,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -8435,7 +8107,6 @@
           "required_townhall": 6,
           "hitpoints": 800,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -8466,7 +8137,6 @@
           "required_townhall": 6,
           "hitpoints": 975,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Storage",
@@ -8522,7 +8192,6 @@
           "required_townhall": 6,
           "hitpoints": 1150,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -8563,7 +8232,6 @@
           "required_townhall": 6,
           "hitpoints": 1350,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -8599,7 +8267,6 @@
           "required_townhall": 6,
           "hitpoints": 1600,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -8670,7 +8337,6 @@
           "required_townhall": 7,
           "hitpoints": 1850,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -8711,7 +8377,6 @@
           "required_townhall": 8,
           "hitpoints": 2150,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Elixir Collector",
@@ -8757,7 +8422,6 @@
           "required_townhall": 9,
           "hitpoints": 2450,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "Wall",
@@ -8793,7 +8457,6 @@
           "required_townhall": 10,
           "hitpoints": 2750,
           "dps": 0,
-          "strength_weight": 0,
           "unlocks": [
             {
               "name": "X-Bow",
@@ -8976,8 +8639,7 @@
           "build_time": 108000,
           "required_townhall": 6,
           "hitpoints": 550,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 2,
@@ -8985,8 +8647,7 @@
           "build_time": 172800,
           "required_townhall": 6,
           "hitpoints": 650,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 3,
@@ -8994,8 +8655,7 @@
           "build_time": 259200,
           "required_townhall": 7,
           "hitpoints": 750,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 4,
@@ -9003,8 +8663,7 @@
           "build_time": 345600,
           "required_townhall": 8,
           "hitpoints": 850,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 5,
@@ -9012,8 +8671,7 @@
           "build_time": 432000,
           "required_townhall": 9,
           "hitpoints": 1000,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         },
         {
           "level": 6,
@@ -9021,8 +8679,7 @@
           "build_time": 518400,
           "required_townhall": 10,
           "hitpoints": 1150,
-          "dps": 0,
-          "strength_weight": 0
+          "dps": 0
         }
       ]
     },

@@ -432,8 +432,10 @@ class StaticUpdater:
                     "required_townhall": level_data.get("TownHallLevel"),
                     "hitpoints": level_data.get("Hitpoints", 0),
                     "dps": level_data.get("DPS", 0) or level_data.get("Damage", 0),
-                    "strength_weight": level_data.get("StrengthWeight", 0)
                 }
+
+                if "StrengthWeight" in level_data:
+                    hold_level_data["strength_weight"] = level_data["StrengthWeight"]
 
                 if "AltBuildResource" in level_data:
                     # a wall specific thing since they can use gold + elixir at certain levels

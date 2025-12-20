@@ -431,7 +431,7 @@ class Building(LeveledUnit):
         self.build_cost: int = level_data["build_cost"]
         self.build_time = TimeDelta(seconds=level_data["build_time"])
         self.required_townhall: int = level_data["required_townhall"]
-        self.strength_weight: int = level_data["strength_weight"]
+        self.strength_weight: int = level_data.get("strength_weight", 0)
         self.hitpoints: int = level_data["hitpoints"]
         self.dps: int = level_data["dps"]
 
