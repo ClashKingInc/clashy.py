@@ -69,6 +69,8 @@ class Troop(LeveledUnit):
         The laboratory level required to upgrade to the next level.
     required_townhall: :class:`int`
         The townhall level required to upgrade to the next level.
+    strength_weight: :class:`int`
+        The matchmaking strength weight of a troop
     """
 
     __slots__ = (
@@ -102,6 +104,7 @@ class Troop(LeveledUnit):
         "upgrade_cost",
         "required_lab_level",
         "required_townhall",
+        "strength_weight",
         "_raw_data",
         "__data"
     )
@@ -171,6 +174,7 @@ class Troop(LeveledUnit):
         self.dps: int = level_data["dps"]
         self.upgrade_time = TimeDelta(seconds=level_data["upgrade_time"])
         self.upgrade_cost: int = level_data["upgrade_cost"]
+        self.strength_weight: int = level_data["strength_weight"]
 
         #is None for seasonal troops
         self.required_lab_level: int | None = level_data["required_lab_level"]

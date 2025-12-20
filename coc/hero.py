@@ -55,6 +55,8 @@ class Hero(LeveledUnit):
         The hero tavern level required to upgrade to the next level.
     required_townhall: :class:`int`
         The townhall level required to upgrade to the next level.
+    strength_weight: :class:`int`
+        The matchmaking strength weight of a hero
     """
 
     __slots__ = (
@@ -82,6 +84,7 @@ class Hero(LeveledUnit):
         "upgrade_cost",
         "required_hero_tavern_level",
         "required_townhall",
+        "strength_weight",
         "_raw_data"
     )
 
@@ -139,6 +142,8 @@ class Hero(LeveledUnit):
         self.upgrade_cost: int = level_data["upgrade_cost"]
         self.required_hero_tavern_level: int | None = level_data["required_hero_tavern_level"]
         self.required_townhall: int = level_data["required_townhall"]
+        self.strength_weight: int = level_data["strength_weight"]
+
 
 
 class Pet(LeveledUnit):
@@ -188,6 +193,8 @@ class Pet(LeveledUnit):
         The pet house level required to upgrade to the next level.
     required_townhall: :class:`int`
         The townhall level required to upgrade to the next level.
+    strength_weight: :class:`int`
+        The matchmaking strength weight of a pet
     """
 
     __slots__ = (
@@ -212,6 +219,7 @@ class Pet(LeveledUnit):
         "upgrade_cost",
         "required_pet_house_level",
         "required_townhall",
+        "strength_weight",
         "_raw_data"
     )
 
@@ -262,6 +270,8 @@ class Pet(LeveledUnit):
         self.upgrade_cost: int = level_data["upgrade_cost"]
         self.required_pet_house_level: int | None = level_data["required_pet_house_level"]
         self.required_townhall: int = level_data["required_townhall"]
+        self.strength_weight: int = level_data["strength_weight"]
+
 
 
 class Equipment(LeveledUnit):
@@ -299,6 +309,8 @@ class Equipment(LeveledUnit):
         The blacksmith level required to upgrade to the next level.
     required_townhall: :class:`int`
         The townhall level required to upgrade to the next level.
+    strength_weight: :class:`int`
+        The matchmaking strength weight of an equipment
     shiny_ore: :class:`int`
         The amount of shiny ore required to upgrade to the next level.
     glowy_ore: :class:`int`
@@ -325,6 +337,7 @@ class Equipment(LeveledUnit):
         "heal_on_activation",
         "required_blacksmith_level",
         "required_townhall",
+        "strength_weight",
         "shiny_ore",
         "glowy_ore",
         "starry_ore",
@@ -373,6 +386,7 @@ class Equipment(LeveledUnit):
         self.heal_on_activation: int = level_data["heal_on_activation"]
         self.required_blacksmith_level: int = level_data["required_blacksmith_level"]
         self.required_townhall: int = level_data["required_townhall"]
+        self.strength_weight: int = level_data["strength_weight"]
 
         self.shiny_ore: int = level_data["upgrade_cost"]["shiny_ore"]
         self.glowy_ore: int = level_data["upgrade_cost"]["glowy_ore"]

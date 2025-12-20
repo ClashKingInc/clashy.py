@@ -7,6 +7,15 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
+v25.12.5
+--------
+
+Changes:
+~~~~~~~~
+- Add strength_weight to static data & classes
+- Added `is_home_base` and `is_builder_base` to :class:`coc.Building` & :class:`coc.Trap`
+
+
 v25.12.3
 --------
 

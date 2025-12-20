@@ -44,6 +44,8 @@ class Spell(LeveledUnit):
         The laboratory level required to upgrade to the next level.
     required_townhall: :class:`int`
         The townhall level required to upgrade to the next level.
+    strength_weight: :class:`int`
+        The matchmaking strength weight of a spell
     """
 
     __slots__ = (
@@ -65,6 +67,7 @@ class Spell(LeveledUnit):
         "upgrade_cost",
         "required_lab_level",
         "required_townhall",
+        "strength_weight",
         "_raw_data"
     )
 
@@ -113,3 +116,4 @@ class Spell(LeveledUnit):
         self.upgrade_cost: int = level_data["upgrade_cost"]
         self.required_lab_level: int = level_data["required_lab_level"]
         self.required_townhall: int = level_data["required_townhall"]
+        self.strength_weight: int = level_data["strength_weight"]

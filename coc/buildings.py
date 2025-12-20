@@ -194,6 +194,8 @@ class TownhallWeapon(LeveledUnit):
         The cost to build/upgrade to this level.
     build_time: :class:`TimeDelta`
         The time required to build/upgrade to this level.
+    strength_weight: :class:`int`
+        The matchmaking strength weight of a th weapon
     dps: :class:`int`
         The weapon's damage per second.
     
@@ -209,6 +211,7 @@ class TownhallWeapon(LeveledUnit):
         "upgrade_resource",
         "build_cost",
         "build_time",
+        "strength_weight",
         "dps",
     )
 
@@ -233,6 +236,7 @@ class TownhallWeapon(LeveledUnit):
         self.build_cost: int = level_data["build_cost"]
         self.build_time = TimeDelta(seconds=level_data["build_time"])
         self.dps: int = level_data["dps"]
+        self.strength_weight: int = level_data["strength_weight"]
 
 class Supercharge(LevelManager):
     """Represents a Supercharge for a building.
@@ -304,6 +308,10 @@ class Building(LeveledUnit):
         The village type where this building belongs.
     width: :class:`int`
         The width of the building.
+    is_home_base: :class:`bool`
+        Whether this building belongs to the home village.
+    is_builder_base: :class:`bool`
+        Whether this building belongs to the builder base.
     is_superchargeable: :class:`bool`
         Whether this building can be supercharged.
     gear_up: Optional[:class:`GearUp`]
@@ -318,6 +326,8 @@ class Building(LeveledUnit):
         The time required to build/upgrade to this level.
     required_townhall: :class:`int`
         The townhall level required to build/upgrade to this level.
+    strength_weight: :class:`int`
+        The matchmaking strength weight of a building
     hitpoints: :class:`int`
         The building's hitpoints.
     dps: :class:`int`
@@ -345,6 +355,8 @@ class Building(LeveledUnit):
         "upgrade_resource",
         "village",
         "width",
+        "is_home_base",
+        "is_builder_base",
         "is_superchargeable",
         "gear_up",
         "seasonal_defenses",
@@ -352,6 +364,7 @@ class Building(LeveledUnit):
         "build_cost",
         "build_time",
         "required_townhall",
+        "strength_weight",
         "hitpoints",
         "dps",
         "supercharge",
@@ -378,9 +391,15 @@ class Building(LeveledUnit):
         self.type = BuildingType(value=data["type"])
         self.upgrade_resource: Resource = Resource(value=data["upgrade_resource"])
         self.village = VillageType(value=data["village"])
+
+        self.is_home_base: bool = self.village == VillageType.home
+        self.is_builder_base: bool = self.village == VillageType.builder_base
+
         self.width: int = data["width"]
         self.is_superchargeable: bool = data["superchargeable"]
 
+        # for buildings with only one level
+        self.strength_weight: int = 0
         # only some buildings
         self.gear_up = None
         if "gear_up" in data:
@@ -412,6 +431,7 @@ class Building(LeveledUnit):
         self.build_cost: int = level_data["build_cost"]
         self.build_time = TimeDelta(seconds=level_data["build_time"])
         self.required_townhall: int = level_data["required_townhall"]
+        self.strength_weight: int = level_data["strength_weight"]
         self.hitpoints: int = level_data["hitpoints"]
         self.dps: int = level_data["dps"]
 
@@ -439,6 +459,10 @@ class Trap(LeveledUnit):
         The resource type required to upgrade this trap.
     village: :class:`VillageType`
         The village type where this trap belongs.
+    is_home_base: :class:`bool`
+        Whether this trap belongs to the home village.
+    is_builder_base: :class:`bool`
+        Whether this trap belongs to the builder base.
     width: :class:`int`
         The width of the trap.
     is_air_triggerable: :class:`bool`
@@ -455,6 +479,8 @@ class Trap(LeveledUnit):
         The time required to build/upgrade to this level.
     required_townhall: :class:`int`
         The townhall level required to build/upgrade to this level.
+    strength_weight: :class:`int`
+        The matchmaking strength weight of a trap
     damage: :class:`int`
         The damage dealt by the trap.
     
@@ -470,6 +496,8 @@ class Trap(LeveledUnit):
         "upgrade_resource",
         "village",
         "width",
+        "is_home_base",
+        "is_builder_base",
         "is_air_triggerable",
         "is_ground_triggerable",
         "damage_radius",
@@ -477,6 +505,7 @@ class Trap(LeveledUnit):
         "build_cost",
         "build_time",
         "required_townhall",
+        "strength_weight",
         "damage",
     )
 
@@ -491,6 +520,9 @@ class Trap(LeveledUnit):
 
         self.upgrade_resource: Resource = Resource(value=data["upgrade_resource"])
         self.village = VillageType(value=data["village"])
+        self.is_home_base: bool = self.village == VillageType.home
+        self.is_builder_base: bool = self.village == VillageType.builder_base
+
         self.width: int = data["width"]
         self.is_air_triggerable: bool = data["air_trigger"]
         self.is_ground_triggerable: bool = data["ground_trigger"]
@@ -507,4 +539,5 @@ class Trap(LeveledUnit):
         self.build_cost: int = level_data["build_cost"]
         self.build_time = TimeDelta(seconds=level_data["build_time"])
         self.required_townhall: int = level_data["required_townhall"]
+        self.strength_weight: int = level_data["strength_weight"]
         self.damage: int = level_data["damage"]
