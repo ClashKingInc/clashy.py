@@ -168,7 +168,10 @@ class Troop(LeveledUnit):
         if self.__data and self._level == 1 and self.is_builder_base:
             self._level = self._static_data["levels"][0]["level"] + self._level - 1
 
-        level_data = self._static_data["levels"][self._level - start_level]
+        try:
+            level_data = self._static_data["levels"][self._level - start_level]
+        except IndexError:
+            return
 
         self.hitpoints: int = level_data["hitpoints"]
         self.dps: int = level_data["dps"]

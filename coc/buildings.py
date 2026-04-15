@@ -58,7 +58,10 @@ class SeasonalDefenseModule(LeveledUnit):
         if not self._static_data:
             return
 
-        level_data = self._static_data["levels"][self._level - 1]
+        try:
+            level_data = self._static_data["levels"][self._level - 1]
+        except IndexError:
+            return
 
         self.build_cost: int = level_data.get("build_cost")
         self.build_time: TimeDelta = TimeDelta(seconds=level_data.get("build_time"))
@@ -231,7 +234,10 @@ class TownhallWeapon(LeveledUnit):
         if not self._static_data:
             return
 
-        level_data = self._static_data["levels"][self._level - 1]
+        try:
+            level_data = self._static_data["levels"][self._level]
+        except IndexError:
+            return
 
         self.build_cost: int = level_data["build_cost"]
         self.build_time = TimeDelta(seconds=level_data["build_time"])
@@ -280,7 +286,10 @@ class Supercharge(LevelManager):
         if not self._static_data:
             return
 
-        level_data = self._static_data["levels"][self._level - 1]
+        try:
+            level_data = self._static_data["levels"][self._level - 1]
+        except IndexError:
+            return
 
         self.build_cost: int = level_data["build_cost"]
         self.build_time = TimeDelta(seconds=level_data["build_time"])
@@ -422,7 +431,10 @@ class Building(LeveledUnit):
         if not self._static_data or not self._static_data["levels"]:
             return
 
-        level_data = self._static_data["levels"][self._level - 1]
+        try:
+            level_data = self._static_data["levels"][self._level - 1]
+        except IndexError:
+            return
 
         self.weapon: TownhallWeapon | None = None
         if "weapon" in level_data:
@@ -534,7 +546,10 @@ class Trap(LeveledUnit):
         if not self._static_data or not self._static_data["levels"]:
             return
 
-        level_data = self._static_data["levels"][self._level - 1]
+        try:
+            level_data = self._static_data["levels"][self._level - 1]
+        except IndexError:
+            return
 
         self.build_cost: int = level_data["build_cost"]
         self.build_time = TimeDelta(seconds=level_data["build_time"])

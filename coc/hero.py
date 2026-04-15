@@ -134,7 +134,10 @@ class Hero(LeveledUnit):
             return
 
         start_level = self._static_data["levels"][0]["level"]
-        level_data = self._static_data["levels"][self._level - start_level]
+        try:
+            level_data = self._static_data["levels"][self._level - start_level]
+        except IndexError:
+            return
 
         self.hitpoints: int = level_data["hitpoints"]
         self.dps: int = level_data["dps"]

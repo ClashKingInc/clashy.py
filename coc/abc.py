@@ -170,6 +170,8 @@ class LevelManager:
 
     def __init__(self, initial_level: int, static_data: dict | None):
 
+        self.max_level: int = len(static_data["levels"]) if static_data else 0
+
         #if the level is set to 0, initalize it as the lowest available level
         if initial_level == 0 and static_data:
             min_level = 1
@@ -180,7 +182,6 @@ class LevelManager:
         self._level: int = initial_level
         self._static_data = static_data
 
-        self.max_level: int = len(static_data["levels"]) if static_data else 0
 
     @property
     def level(self) -> int:

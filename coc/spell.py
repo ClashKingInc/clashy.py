@@ -107,7 +107,10 @@ class Spell(LeveledUnit):
         if not self._static_data:
             return
 
-        level_data = self._static_data["levels"][self._level - 1]
+        try:
+            level_data = self._static_data["levels"][self._level]
+        except IndexError:
+            return
 
         self.duration = TimeDelta(seconds=level_data["duration"])
         self.damage: int = level_data["damage"]

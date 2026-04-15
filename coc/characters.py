@@ -84,7 +84,10 @@ class Guardian(LeveledUnit):
         if not self._static_data:
             return
 
-        level_data = self._static_data["levels"][self._level - 1]
+        try:
+            level_data = self._static_data["levels"][self._level - 1]
+        except IndexError:
+            return
 
         self.hitpoints: int = level_data["hitpoints"]
         self.dps: int = level_data["dps"]
@@ -138,7 +141,10 @@ class Helper(LeveledUnit):
         if not self._static_data:
             return
 
-        level_data = self._static_data["levels"][self._level - 1]
+        try:
+            level_data = self._static_data["levels"][self._level - 1]
+        except IndexError:
+            return
 
         self.upgrade_cost: int = level_data["upgrade_cost"]
         self.required_townhall: int = level_data["required_townhall"]
