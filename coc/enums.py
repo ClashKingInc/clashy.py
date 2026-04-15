@@ -160,7 +160,7 @@ class BuildingType(ExtendedEnum):
     army = "Army"
     town_hall = "Town Hall"
     town_hall_weapon = "Town Hall Weapon"
-    builder_hall = "Town Hall2"
+    builder_hall = "BB Builder Hall"
     resource = "Resource"
     wall = "Wall"
     defense = "Defense"
