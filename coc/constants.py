@@ -155,6 +155,7 @@ HOME_BASE_HERO_ORDER = [
     'Minion Prince',
     'Grand Warden',
     'Royal Champion',
+    'Dragon Duke',
 ]
 
 BUILDER_BASE_HERO_ORDER = [
@@ -176,6 +177,7 @@ PETS_ORDER = [
     'Spirit Fox',
     'Angry Jelly',
     'Sneezy',
+    'Greedy Raven',
 ]
 
 EQUIPMENT = [
@@ -214,6 +216,10 @@ EQUIPMENT = [
     'Meteor Staff',
     'Frost Flake',
     'Stick Horse',
+    'Fire Heart',
+    'Rocket Backpack',
+    'Stun Blaster',
+    'Flame Blower',
 ]
 
 HV_BUILDINGS = [
