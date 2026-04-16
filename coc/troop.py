@@ -1,8 +1,10 @@
 
 from .abc import LeveledUnit
 from .enums import Resource, VillageType, ProductionBuildingType
+from .constants import SUPER_TROOP_ORDER
 from .miscmodels import TimeDelta, TID
 
+SUPER_TROOP_ORDER = set(SUPER_TROOP_ORDER)
 
 class Troop(LeveledUnit):
     """Represents a Troop object as returned by the API, optionally filled with game data.
@@ -124,6 +126,7 @@ class Troop(LeveledUnit):
             self.village = VillageType(value=data["village"])
             self.max_level: int = data["maxLevel"]
             self.is_active: bool = data.get("superTroopIsActive", False)
+            self.is_super_troop: bool = self.name in SUPER_TROOP_ORDER
 
         if static_data:
             self.id: int = static_data["_id"]
@@ -146,10 +149,11 @@ class Troop(LeveledUnit):
 
             self.village = VillageType(value=static_data["village"])
 
-            self.is_super_troop: bool = "super_troop" in static_data
             self.is_seasonal: bool = static_data.get("is_seasonal", False)
             self.is_siege_machine: bool = self.production_building == ProductionBuildingType.workshop
 
+            # over-ride if static data is available
+            self.is_super_troop: bool = "super_troop" in static_data
             if self.is_super_troop:
                 self.base_troop_id: int = static_data["super_troop"]["original_id"]
                 self.base_troop_minimum_level: int = static_data["super_troop"]["original_min_level"]

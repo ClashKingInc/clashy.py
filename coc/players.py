@@ -346,8 +346,6 @@ class Player(ClanMember):
         label_cls = self.label_cls
         achievement_cls = self.achievement_cls
 
-        pet_lookup = PETS_ORDER
-
         self._iter_labels = (label_cls(data=ldata, client=self._client) for ldata in data_get("labels", []))
         self._iter_achievements = (achievement_cls(data=adata) for adata in data_get("achievements", []))
 
@@ -361,7 +359,7 @@ class Player(ClanMember):
                     section="troops",
                     bypass=not self._load_game_data
                 ) if self._client else None
-            ) for tdata in data_get("troops", []) if tdata["name"] not in pet_lookup
+            ) for tdata in data_get("troops", []) if tdata["name"] not in PETS_ORDER
         )
 
         self._iter_heroes = (
@@ -398,7 +396,7 @@ class Player(ClanMember):
                     section="pets",
                     bypass=not self._load_game_data
                 ) if self._client else None
-            ) for tdata in data_get("troops", []) if tdata["name"] in pet_lookup
+            ) for tdata in data_get("troops", []) if tdata["name"] in PETS_ORDER
         )
 
         self._iter_equipment = (
@@ -486,7 +484,9 @@ class Player(ClanMember):
         troops = []
 
         for troop in self._iter_troops:
-            if (self._load_game_data and troop.is_super_troop) or troop.name in SUPER_TROOP_ORDER:
+            if self._load_game_data and troop.is_super_troop:
+                continue
+            if troop.is_super_troop:
                 self._super_troops.append(troop)
                 if troop.is_active:
                     self._home_troops[troop.name] = troop
