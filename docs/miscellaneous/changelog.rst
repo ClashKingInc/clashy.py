@@ -7,6 +7,21 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
+v26.4.1
+-------
+
+Changes:
+~~~~~~~~
+- Updated static data and translations, including Greedy Raven, Dragon Duke equipment, new troop levels, and new seasonal defenses
+- Refreshed generated constants to include the latest hero, pet, and equipment ordering data
+
+Bugs Fixed:
+~~~~~~~~~~~
+- Gracefully handle cases where the API returns levels newer than the bundled static data
+- Fixed the Builder Hall building type enum value to match the current game data
+- Fixed super troop handling when parsing player troop data without static metadata attached
+- Fixed account data parsing for missing seasonal defense entries and modules
+
 v25.12.5
 --------
 
