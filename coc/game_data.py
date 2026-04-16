@@ -412,14 +412,14 @@ class AccountData:
                             seasonal_def_data = next((
                                 item for item in item_data["seasonal_defenses"]
                                 if item["_id"] == seasonal_defense["data"]
-                            ))
+                            ), None)
                             if seasonal_def_data is None:
                                 continue
                             modules = []
                             for module in seasonal_defense["modules"]:
                                 module_data = next((
                                     item for item in seasonal_def_data["modules"] if item["_id"] == module["data"]
-                                ))
+                                ), None)
                                 if module_data is None:
                                     continue
                                 modules.append(SeasonalDefenseModule(level=module["lvl"], data=module_data))
