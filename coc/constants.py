@@ -48,6 +48,7 @@ SIEGE_MACHINE_ORDER = [
     'Flame Flinger',
     'Battle Drill',
     'Troop Launcher',
+    'Sky Wagon',
 ]
 
 SUPER_TROOP_ORDER = [
@@ -220,6 +221,7 @@ EQUIPMENT = [
     'Rocket Backpack',
     'Stun Blaster',
     'Flame Blower',
+    'Electro Fangs',
 ]
 
 HV_BUILDINGS = [
