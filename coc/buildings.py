@@ -227,6 +227,7 @@ class TownhallWeapon(LeveledUnit):
         self.info: str = data["info"]
         self.TID: TID = TID(data=data["TID"])
         self.upgrade_resource: Resource = Resource(value=data["upgrade_resource"])
+        self.strength_weight: int = data.get("strength_weight", 0)
 
         self._load_level_data()
 
@@ -242,7 +243,7 @@ class TownhallWeapon(LeveledUnit):
         self.build_cost: int = level_data["build_cost"]
         self.build_time = TimeDelta(seconds=level_data["build_time"])
         self.dps: int = level_data["dps"]
-        self.strength_weight: int = level_data["strength_weight"]
+        self.strength_weight: int = level_data.get("strength_weight", self.strength_weight)
 
 class Supercharge(LevelManager):
     """Represents a Supercharge for a building.
@@ -341,6 +342,12 @@ class Building(LeveledUnit):
         The building's hitpoints.
     dps: :class:`int`
         The building's damage per second.
+    damage: :class:`int`
+        The building's per-attack damage, when provided by static data.
+    attack_range: Optional[:class:`int`]
+        The building's attack range, when provided by static data.
+    min_range: Optional[:class:`int`]
+        The building's minimum attack range, when provided by static data.
     supercharge: Optional[:class:`Supercharge`]
         The supercharge for this building.
     merge_requirement: List[:class:`MergeRequirement`]
@@ -376,6 +383,9 @@ class Building(LeveledUnit):
         "strength_weight",
         "hitpoints",
         "dps",
+        "damage",
+        "attack_range",
+        "min_range",
         "supercharge",
         "merge_requirement",
         "unlocks",
@@ -445,7 +455,10 @@ class Building(LeveledUnit):
         self.required_townhall: int = level_data["required_townhall"]
         self.strength_weight: int = level_data.get("strength_weight", 0)
         self.hitpoints: int = level_data["hitpoints"]
-        self.dps: int = level_data["dps"]
+        self.dps: int = level_data.get("dps", 0)
+        self.damage: int = level_data.get("damage", 0)
+        self.attack_range: int | None = level_data.get("attack_range")
+        self.min_range: int | None = level_data.get("min_range")
 
         self.supercharge: Supercharge | None = None
         if "supercharge" in level_data:
