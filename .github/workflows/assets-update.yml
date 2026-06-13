@@ -1,0 +1,76 @@
+name: Assets Update
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-assets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: Generate static data and constants
+        run: python coc/static/generate_constants.py
+
+      - name: Check for generated asset changes
+        id: changes
+        run: |
+          if git diff --quiet -- coc/static/static_data.json coc/static/translations.json coc/constants.py; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Bump patch version
+        if: steps.changes.outputs.changed == 'true'
+        id: version
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import os
+          import re
+
+          path = Path("coc/_version.py")
+          text = path.read_text()
+          match = re.search(r'__version__ = "(\d+)\.(\d+)\.(\d+)"', text)
+          if not match:
+              raise SystemExit("Could not find __version__ in coc/_version.py")
+
+          major, minor, patch = map(int, match.groups())
+          new_version = f"{major}.{minor}.{patch + 1}"
+          path.write_text(re.sub(r'__version__ = "\d+\.\d+\.\d+"', f'__version__ = "{new_version}"', text))
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"version={new_version}\n")
+          PY
+
+      - name: Commit assets update
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add coc/static/static_data.json coc/static/translations.json coc/constants.py coc/_version.py
+          git commit -m "chore: assets update"
+          git tag "v${{ steps.version.outputs.version }}"
+          git push
+          git push origin "v${{ steps.version.outputs.version }}"
+
+      - name: Create GitHub release
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v${{ steps.version.outputs.version }}" \
+            --title "v${{ steps.version.outputs.version }}" \
+            --notes "Automated static assets update."

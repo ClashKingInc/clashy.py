@@ -1,115 +1,85 @@
 import unittest
-from pathlib import Path
-
-import orjson
 
 from coc.clans import Clan
 from coc.miscmodels import Location, Label, BaseLeague, ChatLanguage, CapitalDistrict
 from coc.players import ClanMember
+from tests.mock_api import load_mock_api
 
 import tracemalloc
 
 tracemalloc.start()
 
-with open(Path(__file__).parent.joinpath(Path("mockdata/clans/clans/CLAN.json")), 'rb') as fp:
-	MOCK_CLAN = orjson.loads(fp.read())
-
-with open(Path(__file__).parent.joinpath(Path("mockdata/clans/search/CLANS_FOUND.json")), 'rb') as fp:
-	MOCK_SEARCH_CLAN = orjson.loads(fp.read())
+MOCK_CLAN = load_mock_api("/clans/%232PP")
+MOCK_SEARCH_CLAN = load_mock_api("/clans?name=test")
 
 
 class TestClans(unittest.TestCase):
 	def test_points(self):
-		test_datas = [{"clanPoints": 1234, "clanVersusPoints": 234567},
-			{"clanPoints": 555667, "clanVersusPoints": 1468}, {"clanPoints": 345678, "clanVersusPoints": 229988}, ]
-		for data in test_datas:
-			clan = Clan(data=data, client=None)
-			self.assertEqual(clan.points, data["clanPoints"])
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.points, MOCK_CLAN["clanPoints"])
 
 	def test_member_count(self):
-		clan = Clan(data=MOCK_CLAN["body"], client=None)
-		self.assertEqual(clan.member_count, MOCK_CLAN["body"]["members"])
-		self.assertEqual(len(clan.members), len(MOCK_CLAN["body"]["memberList"]))
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.member_count, MOCK_CLAN["members"])
+		self.assertEqual(len(clan.members), len(MOCK_CLAN["memberList"]))
 
 	def test_location(self):
-		location = Location(data=MOCK_CLAN["body"]["location"])
-		clan = Clan(data=MOCK_CLAN["body"], client=None)
+		location = Location(data=MOCK_CLAN["location"])
+		clan = Clan(data=MOCK_CLAN, client=None)
 		self.assertEqual(clan.location, location)
 		self.assertEqual(clan.location.id, location.id)
 
 	def test_type(self):
-		data = [{"type": "inviteOnly"}, {"type": "closed"}, {}]
-		for case in data:
-			clan = Clan(data=case, client=None)
-			self.assertEqual(clan.type, case.get("type", None))
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.type, MOCK_CLAN["type"])
 
 	def test_required_trophies(self):
-		data = [{"requiredTrophies": 5000}, {"requiredTrophies": 0}, {}]
-		for case in data:
-			clan = Clan(data=case, client=None)
-			self.assertEqual(clan.required_trophies, case.get("requiredTrophies", None))
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.required_trophies, MOCK_CLAN["requiredTrophies"])
 
 	def test_war_frequency(self):
-		data = [{"warFrequency": "always"}, {"warFrequency": "sometimes"}, {}]
-		for case in data:
-			clan = Clan(data=case, client=None)
-			self.assertEqual(clan.war_frequency, case.get("warFrequency", None))
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.war_frequency, MOCK_CLAN["warFrequency"])
 
 	def test_war_win_streak(self):
-		data = [{"warWinStreak": 65}, {"warWinStreak": 0}, {}]
-		for case in data:
-			clan = Clan(data=case, client=None)
-			self.assertEqual(clan.war_win_streak, case.get("warWinStreak"))
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.war_win_streak, MOCK_CLAN["warWinStreak"])
 
 	def test_war_wins(self):
-		data = [{"warWins": 52}, {"warWins": 968}, {"warWins": 0}, {}]
-		for case in data:
-			clan = Clan(data=case, client=None)
-			self.assertEqual(clan.war_wins, case.get("warWins"))
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.war_wins, MOCK_CLAN["warWins"])
 
 	def test_war_ties(self):
-		data = [{"warTies": 6}, {"warTies": 42}, {"warTies": 0}, {}]
-		for case in data:
-			clan = Clan(data=case, client=None)
-			self.assertEqual(clan.war_ties, case.get("warTies", -1))
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.war_ties, MOCK_CLAN.get("warTies", -1))
 
 	def test_war_losses(self):
-		data = [{"warLosses": 5009}, {"warLosses": 100}, {"warLosses": 0}, {}]
-		for case in data:
-			clan = Clan(data=case, client=None)
-			self.assertEqual(clan.war_losses, case.get("warLosses", -1))
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.war_losses, MOCK_CLAN.get("warLosses", -1))
 
 	def test_public_war_log(self):
-		data = [{"isWarLogPublic": True}, {"isWarLogPublic": False}, {}]
-		for case in data:
-			clan = Clan(data=case, client=None)
-			self.assertEqual(clan.public_war_log, case.get("isWarLogPublic"))
-			if clan.public_war_log is not None:
-				self.assertIsInstance(clan.public_war_log, bool)
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.public_war_log, MOCK_CLAN["isWarLogPublic"])
+		self.assertIsInstance(clan.public_war_log, bool)
 
 	def test_description(self):
-		data = [{"description": "this is a very fancy description"}, {"description": "testing is so much fun!"},
-			{"description": ""}, {}, ]
-		for case in data:
-			clan = Clan(data=case, client=None)
-			self.assertEqual(clan.description, case.get("description"))
-			if clan.description is not None:
-				self.assertIsInstance(clan.description, str)
+		clan = Clan(data=MOCK_CLAN, client=None)
+		self.assertEqual(clan.description, MOCK_CLAN["description"])
+		self.assertIsInstance(clan.description, str)
 
 	def test_war_league(self):
-		clan = Clan(data=MOCK_CLAN["body"], client=None)
-		war_league = BaseLeague(data=MOCK_CLAN["body"]["warLeague"])
+		clan = Clan(data=MOCK_CLAN, client=None)
+		war_league = BaseLeague(data=MOCK_CLAN["warLeague"])
 		self.assertEqual(clan.war_league, war_league)
 		self.assertIsInstance(clan.war_league, BaseLeague)
 		self.assertIsInstance(clan.war_league.id, int)
 		self.assertIsInstance(clan.war_league.name, str)
 
 	def test_labels(self):
-		clan = Clan(data=MOCK_CLAN["body"], client=None)
+		clan = Clan(data=MOCK_CLAN, client=None)
 		self.assertIsInstance(clan.labels, list)
 
-		label_ids = [{"id": 56000000, "name": "Clan Wars"}, {"id": 56000001, "name": "Clan War League"},
-			{"id": 56000016, "name": "Clan Capital"}, ]
+		label_ids = MOCK_CLAN["labels"]
 		for index, label in enumerate(clan.labels):
 			mock_label = Label(data=label_ids[index], client=None)
 			self.assertEqual(label, mock_label)
@@ -118,7 +88,7 @@ class TestClans(unittest.TestCase):
 			self.assertIsInstance(str(label), str)
 
 	def test_members(self):
-		clan = Clan(data=MOCK_CLAN["body"], client=None)
+		clan = Clan(data=MOCK_CLAN, client=None)
 
 		self.assertEqual(clan.member_count, len(clan.members))
 		self.assertIsInstance(clan.members, list)
@@ -133,7 +103,7 @@ class TestClans(unittest.TestCase):
 			self.assertEqual(member, by_name)
 
 	def test_clans_all_attributes(self):
-		data = MOCK_CLAN["body"]
+		data = MOCK_CLAN
 		clan = Clan(data=data, client=None)
 		map_raw_to_cocpy = {"tag"  : "tag", "name": "name", "type": "type", "description": "description",
 			"isFamilyFriendly"     : "family_friendly", "clanLevel": "level", "clanPoints": "points",
@@ -210,7 +180,7 @@ class TestClans(unittest.TestCase):
 			self.assertIsInstance(str(clan.capital_districts[index]), str)
 
 	def test_search_all_attributes(self):
-		datas = MOCK_SEARCH_CLAN["body"]["items"]
+		datas = MOCK_SEARCH_CLAN["items"]
 		for data in datas:
 			clan = Clan(data=data, client=None)
 			map_raw_to_cocpy = {"tag"        : "tag", "name": "name", "type": "type", "description": "description",
@@ -276,9 +246,12 @@ class TestClans(unittest.TestCase):
 			self.assertIsInstance(clan.war_league.name, str)
 
 			# test location
-			location = Location(data=data["location"])
-			self.assertEqual(clan.location, location)
-			self.assertEqual(clan.location.id, location.id)
+			if data.get("location"):
+				location = Location(data=data["location"])
+				self.assertEqual(clan.location, location)
+				self.assertEqual(clan.location.id, location.id)
+			else:
+				self.assertIsNone(clan.location)
 
 			# test capital districts
 			district_data = data.get("clanCapital", {}).get("districts", [])

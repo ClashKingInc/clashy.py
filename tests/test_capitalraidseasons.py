@@ -1,24 +1,20 @@
-import json
 import unittest
-from pathlib import Path
-
-import orjson
 
 from coc import RaidLogEntry, RaidClan, RaidAttack, RaidMember
 from coc.entry_logs import RaidLog
+from tests.mock_api import load_mock_api
 
 import tracemalloc
 
 tracemalloc.start()
 
-with open(Path(__file__).parent.joinpath(Path("mockdata/clans/capitalraidseasons/CAPITALRAIDSEASON.json")),'rb') as fp:
-	MOCK_CAPITALRAIDSEASON = orjson.loads(fp.read())
+MOCK_CAPITALRAIDSEASON = load_mock_api("/clans/%232PP/capitalraidseasons")
 
 
 class TestRaids(unittest.TestCase):
 	def test_raid_log(self):
-		data = MOCK_CAPITALRAIDSEASON["body"]
-		clan_tag = MOCK_CAPITALRAIDSEASON["clantag"]
+		data = MOCK_CAPITALRAIDSEASON
+		clan_tag = "#2PP"
 		raidlog = RaidLog(client=None, clan_tag=clan_tag, limit=2,
 						  page=False, json_resp=data, model=RaidLogEntry,
                           lookup_cache=False, update_cache=False, ignore_cached_errors=[])

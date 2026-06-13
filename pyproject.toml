@@ -26,7 +26,11 @@ classifiers = [
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = ["aiohttp", "orjson"]
+dependencies = [
+    "aiohttp",
+    "orjson",
+    "pendulum",
+]
 [project.urls]
 documentation = "https://clashy.clashk.ing/en/latest/"
 repository = "https://github.com/ClashKingInc/clashy.py"

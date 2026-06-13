@@ -451,7 +451,7 @@ class HTTPClient:
 
     # leagues
 
-    def search_leagues(self, **kwargs):
+    def search_league_tiers(self, **kwargs):
         return self.request(Route("GET", self.base_url, "/leaguetiers", **kwargs), **kwargs)
 
     def search_capital_leagues(self, **kwargs):
@@ -463,7 +463,7 @@ class HTTPClient:
     def search_builder_base_leagues(self, **kwargs):
         return self.request(Route("GET", self.base_url, "/builderbaseleagues", **kwargs), **kwargs)
 
-    def get_league(self, league_id, **kwargs):
+    def get_league_tier(self, league_id, **kwargs):
         return self.request(Route("GET", self.base_url, "/leaguetiers/{}".format(league_id)), **kwargs)
 
     def get_capital_league(self, league_id, **kwargs):
@@ -486,6 +486,16 @@ class HTTPClient:
 
     def get_player(self, player_tag, **kwargs):
         return self.request(Route("GET", self.base_url, "/players/{}".format(player_tag)), **kwargs)
+
+    def get_player_battlelog(self, player_tag, **kwargs):
+        return self.request(Route("GET", self.base_url, "/players/{}/battlelog".format(player_tag)), **kwargs)
+
+    def get_player_league_history(self, player_tag, **kwargs):
+        return self.request(Route("GET", self.base_url, "/players/{}/leaguehistory".format(player_tag)), **kwargs)
+
+    def get_player_league_group(self, player_tag, league_group_tag, league_season_id, **kwargs):
+        return self.request(Route("GET", self.base_url, "/leaguegroup/{}/{}".format(league_group_tag, league_season_id),
+                                  playerTag=player_tag, **kwargs), **kwargs)
 
     def verify_player_token(self, player_tag, token, **kwargs):
         return self.request(Route("POST", self.base_url, "/players/{}/verifytoken".format(player_tag)),

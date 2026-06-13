@@ -1,11 +1,13 @@
 
-from datetime import datetime
+from dataclasses import dataclass
 from typing import Any, Optional, Type, TypeVar
 
+import pendulum
+
 from .enums import ExtendedEnum, PlayerHouseElementType, VillageType
-from .utils import from_timestamp
 
 T = TypeVar("T")
+TIMESTAMP_FORMAT = "YYYYMMDD[T]HHmmss.SSS[Z]"
 
 
 def try_enum(_class: Type[T], data: Any, **kwargs) -> Optional[T]:
@@ -533,20 +535,28 @@ class Timestamp:
         self.raw_time = data
 
     @property
-    def time(self) -> datetime:
-        """:class:`datetime`: Returns the timestamp as a UTC datetime object."""
-        return from_timestamp(self.raw_time)
+    def time(self) -> pendulum.DateTime:
+        """:class:`pendulum.DateTime`: Returns the timestamp as a UTC datetime object."""
+        return pendulum.from_format(self.raw_time, TIMESTAMP_FORMAT, tz="UTC")
 
     @property
-    def now(self) -> datetime:
-        """:class:`datetime`: Returns the time of the timestamp as a datetime object in UTC."""
-        return datetime.utcnow()
+    def now(self) -> pendulum.DateTime:
+        """:class:`pendulum.DateTime`: Returns the current time in UTC."""
+        return pendulum.now("UTC")
 
     @property
     def seconds_until(self) -> int:
         """:class:`int`: Returns the number of seconds until the timestamp. This may be negative."""
-        delta = self.time - self.now
-        return int(delta.total_seconds())
+        return self.time.int_timestamp - self.now.int_timestamp
+
+
+@dataclass(frozen=True)
+class SeasonWindow:
+    """A Clash of Clans league season window."""
+
+    id: str
+    start_time: pendulum.DateTime
+    end_time: pendulum.DateTime
 
 
 class Label:
@@ -842,5 +852,3 @@ class Translation:
             getattr(self, attr) == getattr(other, attr)
             for attr in self.__slots__
         )
-
-

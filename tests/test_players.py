@@ -4,7 +4,7 @@ import coc
 from coc.players import Player, ClanMember
 from coc.clans import Clan
 from coc.player_clan import PlayerClan
-from coc.enums import (
+from coc.constants import (
     HOME_TROOP_ORDER,
     BUILDER_TROOPS_ORDER,
     SPELL_ORDER,
@@ -14,13 +14,19 @@ from coc.enums import (
 )
 from coc.miscmodels import League, LegendStatistics, Season, Label
 from coc.enums import Role
-from tests.mockdata.mock_players import MOCK_SEARCH_PLAYER, MOCK_CLAN_MEMBER
+from tests.mock_api import load_mock_api
+
+
+MOCK_SEARCH_PLAYER = load_mock_api("/players/%232PP")
+MOCK_CLAN = load_mock_api("/clans/%232PP")
+MOCK_CLAN_MEMBER = MOCK_CLAN["memberList"][0]
 
 
 class TestClanMember(unittest.TestCase):
 
     def setUp(self) -> None:
         self.client = coc.Client()
+        self.client._load_static()
 
     def test_exp_level(self):
         data = {"expLevel": 241}
@@ -101,6 +107,7 @@ class TestPlayers(unittest.TestCase):
 
     def setUp(self) -> None:
         self.client = coc.Client()
+        self.client._load_static()
 
     def test_best_trophies(self):
         data = [{"bestTrophies": 5600}, {"bestTrophies": 0}, {}]
@@ -151,13 +158,8 @@ class TestPlayers(unittest.TestCase):
         self.assertNotEqual(player.legend_statistics.current_season, player.legend_statistics.previous_season)
 
     def test_labels(self):
-        data = [
-            {"id": 57000000, "name": "Clan Wars"},
-            {"id": 57000001, "name": "Clan War League"},
-            {"id": 57000015, "name": "Veteran"},
-        ]
         player = Player(data=MOCK_SEARCH_PLAYER, client=self.client)
-        for index, case in enumerate(data):
+        for index, case in enumerate(MOCK_SEARCH_PLAYER["labels"]):
             label = Label(data=case, client=self.client)
             self.assertEqual(player.labels[index], label)
             self.assertIsInstance(player.labels[index], Label)
@@ -184,7 +186,7 @@ class TestPlayers(unittest.TestCase):
         self.assertIsInstance(player.troops, list)
 
         for troop in player.troops:
-            self.assertIsInstance(troop, (player.troop_cls, coc.abc.DataContainer))
+            self.assertIsInstance(troop, (player.troop_cls, coc.abc.LeveledUnit))
 
         # we can't use the full HOME_TROOP_ORDER in case the player hasn't unlocked a specific troop
         troop_names = set(t.name for t in player.troops)
@@ -195,19 +197,19 @@ class TestPlayers(unittest.TestCase):
         for index, troop in enumerate(player.home_troops):
             self.assertIn(troop, player.troops)
             self.assertTrue(troop.is_home_base)
-            self.assertIsInstance(troop, (player.troop_cls, coc.abc.DataContainer))
+            self.assertIsInstance(troop, (player.troop_cls, coc.abc.LeveledUnit))
             self.assertEqual(troop.name, valid_home_troop_order[index])
 
         for index, troop in enumerate(player.builder_troops):
             self.assertIn(troop, player.troops)
             self.assertTrue(troop.is_builder_base)
-            self.assertIsInstance(troop, (player.troop_cls, coc.abc.DataContainer))
+            self.assertIsInstance(troop, (player.troop_cls, coc.abc.LeveledUnit))
             self.assertEqual(troop.name, valid_builder_troop_order[index])
 
         for index, troop in enumerate(player.siege_machines):
             self.assertIn(troop, player.troops)
             self.assertTrue(troop.is_home_base)
-            self.assertIsInstance(troop, (player.troop_cls, coc.abc.DataContainer))
+            self.assertIsInstance(troop, (player.troop_cls, coc.abc.LeveledUnit))
             self.assertEqual(troop.name, valid_siege_machine_order[index])
 
     def test_heroes(self):
@@ -230,9 +232,12 @@ class TestPlayers(unittest.TestCase):
         player = Player(data=MOCK_SEARCH_PLAYER, client=self.client)
         self.assertIsInstance(player.spells, list)
 
+        spell_names = set(s.name for s in player.spells)
+        valid_spell_order = [name for name in SPELL_ORDER if name in spell_names]
+
         for index, spell in enumerate(player.spells):
             self.assertIsInstance(spell, (player.spell_cls, coc.abc.LeveledUnit))
-            self.assertEqual(spell.name, SPELL_ORDER[index])
+            self.assertEqual(spell.name, valid_spell_order[index])
 
 
 if __name__ == '__main__':
