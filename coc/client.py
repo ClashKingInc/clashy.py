@@ -10,6 +10,7 @@ from typing import AsyncIterator, Iterable, List, Optional, Type, Union, TYPE_CH
 import orjson
 
 from .game_data import AccountData, ArmyRecipe, StaticData
+from .battlelogs import BattleLogEntry, LeagueHistoryEntry, LeagueTierGroup
 from .clans import Clan, RankedClan
 from .errors import Forbidden, GatewayError, NotFound, PrivateWarLog
 from .enums import WarRound
@@ -247,7 +248,8 @@ class Client:
                             "ClanMember": ClanMember, "ClanWarLogEntry": ClanWarLogEntry, "RaidLogEntry": RaidLogEntry,
                             "ClanWarLeagueGroup": ClanWarLeagueGroup, "Location": Location,
                             "League": League, "BaseLeague": BaseLeague, "GoldPassSeason": GoldPassSeason,
-                            "Label": Label}
+                            "Label": Label, "BattleLogEntry": BattleLogEntry,
+                            "LeagueHistoryEntry": LeagueHistoryEntry, "LeagueTierGroup": LeagueTierGroup}
 
         # cache
         self._players = {}
@@ -307,7 +309,8 @@ class Client:
                        "ClanMember": ClanMember, "ClanWarLogEntry": ClanWarLogEntry, "RaidLogEntry": RaidLogEntry,
                        "ClanWarLeagueGroup": ClanWarLeagueGroup, "Location": Location,
                        "League": League, "BaseLeague": BaseLeague, "GoldPassSeason": GoldPassSeason,
-                       "Label": Label}
+                       "Label": Label, "BattleLogEntry": BattleLogEntry,
+                       "LeagueHistoryEntry": LeagueHistoryEntry, "LeagueTierGroup": LeagueTierGroup}
         if name not in default_cls:
             raise ValueError(f"Setting a cls with the name {name} is not supported.")
         if not issubclass(cls, default_cls[name]):
@@ -1688,10 +1691,10 @@ class Client:
                                                                  **{**self._defaults, **kwargs})
         return [cls(data=n, client=self) for n in data["items"]]
 
-    # leagues
-    async def search_leagues(self, *, limit: int = None, before: str = None, after: str = None, cls: Type[League] = None,
-                             **kwargs) -> List[League]:
-        """Get list of leagues.
+    # league tiers
+    async def search_league_tiers(self, *, limit: int = None, before: str = None, after: str = None,
+                                  cls: Type[League] = None, **kwargs) -> List[League]:
+        """Get list of league tiers.
 
         Parameters
         -----------
@@ -1715,23 +1718,24 @@ class Client:
         Returns
         --------
         List[:class:`League`]
-            The requested leagues.
+            The requested league tiers.
         """
         if cls is None:
             cls = self.objects_cls['League']
         if not issubclass(cls, League):
             raise TypeError("cls must be a subclass of League.")
-        data = await self.http.search_leagues(limit=limit, before=before, after=after, **{**self._defaults, **kwargs})
+        data = await self.http.search_league_tiers(limit=limit, before=before, after=after,
+                                                   **{**self._defaults, **kwargs})
         return [cls(data=n, client=self) for n in data["items"]]
 
-    async def get_league(self, league_id: int, cls: Type[League] = None, **kwargs) -> League:
+    async def get_league_tier(self, league_id: int, cls: Type[League] = None, **kwargs) -> League:
         """
-        Get league information
+        Get league tier information
 
         Parameters
         -----------
         league_id : str
-            The League ID to search for.
+            The league tier ID to search for.
 
         Raises
         ------
@@ -1742,30 +1746,31 @@ class Client:
             The API hit an unexpected gateway exception.
 
         NotFound
-            No league was found with the supplied league ID.
+            No league tier was found with the supplied league tier ID.
 
 
         Returns
         --------
         :class:`League`
-            The league with the requested ID
+            The league tier with the requested ID.
         """
         if cls is None:
             cls = self.objects_cls['League']
         if not issubclass(cls, League):
             raise TypeError("cls must be a subclass of League.")
-        data = await self.http.get_league(league_id, **{**self._defaults, **kwargs})
+        data = await self.http.get_league_tier(league_id, **{**self._defaults, **kwargs})
         return cls(data=data, client=self)
 
-    async def get_league_named(self, league_name: str, cls: Type[League] = None, **kwargs) -> Optional[League]:
-        """Get a league by name.
+    async def get_league_tier_named(self, league_name: str, cls: Type[League] = None,
+                                    **kwargs) -> Optional[League]:
+        """Get a league tier by name.
 
         This is somewhat equivalent to
 
         .. code-block:: python3
 
-            leagues = await client.search_leagues(limit=None)
-            return utils.get(leagues, name=league_name)
+            league_tiers = await client.search_league_tiers(limit=None)
+            return utils.get(league_tiers, name=league_name)
 
 
         Parameters
@@ -1786,13 +1791,13 @@ class Client:
         Returns
         --------
         :class:`League`
-            The first league matching the league name. Could be ``None`` if not found.
+            The first league tier matching the name. Could be ``None`` if not found.
         """
         if cls is None:
             cls = self.objects_cls['League']
         if not issubclass(cls, League):
             raise TypeError("cls must be a subclass of League.")
-        return get(await self.search_leagues(cls=cls, **{**self._defaults, **kwargs}), name=league_name)
+        return get(await self.search_league_tiers(cls=cls, **{**self._defaults, **kwargs}), name=league_name)
 
     async def search_builder_base_leagues(self, *, limit: int = None, before: str = None, after: str = None,
                                           cls: Type[BaseLeague] = None, **kwargs)-> List[BaseLeague]:
@@ -2354,6 +2359,50 @@ class Client:
             raise TypeError("load_game_data must be either True or False.")
 
         return PlayerIterator(self, player_tags, cls=cls, load_game_data=load_game_data, **{**self._defaults, **kwargs} )
+
+    async def get_player_battlelog(self, player_tag: str, cls: Type[BattleLogEntry] = None,
+                                   **kwargs) -> List[BattleLogEntry]:
+        """Get a player's battle log."""
+        if cls is None:
+            cls = self.objects_cls['BattleLogEntry']
+        if not issubclass(cls, BattleLogEntry):
+            raise TypeError("cls must be a subclass of BattleLogEntry.")
+
+        if self.correct_tags:
+            player_tag = correct_tag(player_tag)
+
+        data = await self.http.get_player_battlelog(player_tag, **{**self._defaults, **kwargs})
+        return [cls(data=n, client=self, **kwargs) for n in data.get("items", [])]
+
+    async def get_player_league_history(self, player_tag: str, cls: Type[LeagueHistoryEntry] = None,
+                                        **kwargs) -> List[LeagueHistoryEntry]:
+        """Get a player's league history."""
+        if cls is None:
+            cls = self.objects_cls['LeagueHistoryEntry']
+        if not issubclass(cls, LeagueHistoryEntry):
+            raise TypeError("cls must be a subclass of LeagueHistoryEntry.")
+
+        if self.correct_tags:
+            player_tag = correct_tag(player_tag)
+
+        data = await self.http.get_player_league_history(player_tag, **{**self._defaults, **kwargs})
+        return [cls(data=n, client=self, **kwargs) for n in data.get("items", [])]
+
+    async def get_player_league_group(self, player_tag: str, league_group_tag: str, league_season_id: int,
+                                      cls: Type[LeagueTierGroup] = None, **kwargs) -> LeagueTierGroup:
+        """Get the league tier group for a player and season."""
+        if cls is None:
+            cls = self.objects_cls['LeagueTierGroup']
+        if not issubclass(cls, LeagueTierGroup):
+            raise TypeError("cls must be a subclass of LeagueTierGroup.")
+
+        if self.correct_tags:
+            player_tag = correct_tag(player_tag)
+            league_group_tag = correct_tag(league_group_tag)
+
+        data = await self.http.get_player_league_group(player_tag, league_group_tag, league_season_id,
+                                                       **{**self._defaults, **kwargs})
+        return cls(data=data, client=self, **kwargs)
 
     async def verify_player_token(self, player_tag: str, token: str, **kwargs) -> bool:
         """Verify player API token that can be found from the game settings.

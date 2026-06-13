@@ -2,6 +2,14 @@
 from ._version import __version__
 
 from .abc import BasePlayer, BaseClan
+from .battlelogs import (
+    BattleLogEntry,
+    BattleLogResource,
+    LeagueHistoryEntry,
+    LeagueTierGroup,
+    LeagueTierGroupBattleLogEntry,
+    LeagueTierGroupMember,
+)
 from .buildings import (
     Building,
     GearUp,
@@ -71,6 +79,7 @@ from .miscmodels import (
     Location,
     PlayerHouseElement,
     Season,
+    SeasonWindow,
     Timestamp,
     TimeDelta,
     TID,

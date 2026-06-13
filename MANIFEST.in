@@ -1,5 +1,4 @@
 include README.rst
 include LICENSE
-include requirements.txt
 include coc/static/*
 recursive-include coc *.pyi

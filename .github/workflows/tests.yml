@@ -2,9 +2,9 @@ name: clashy.py Workflows
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -24,13 +24,13 @@ jobs:
       uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Set up uv
+      uses: astral-sh/setup-uv@v6
+    - name: Install dependencies
+      run: uv sync
     # You can test your matrix by printing the current Python version
     - name: Display Python version
-      run: python -c "import sys; print(sys.version)"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      run: uv run python -c "import sys; print(sys.version)"
     - name: Running examples as tests
       env:
         DEV_SITE_EMAIL: ${{ secrets.DEV_SITE_EMAIL }}
@@ -38,7 +38,7 @@ jobs:
         DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         RUNNING_TESTS: true
       run: |
-        python -m examples.war_logs
+        uv run python -m examples.war_logs
     - name: Run unit tests
       run: |
-        python -m unittest
+        uv run python -m unittest

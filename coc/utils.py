@@ -1,16 +1,21 @@
 
 import inspect
-import calendar
 import re
 
 from collections import deque, UserDict
-from datetime import datetime, timedelta, timezone
 from functools import wraps
 from operator import attrgetter
 from typing import Any, Callable, Generic, Iterable, List, Optional, Type, TypeVar, Union
 
+import pendulum
+
+from .miscmodels import SeasonWindow
 
 TAG_VALIDATOR = re.compile(r"^#?[PYLQGRJCUV0289]+$")
+SEASON_CUTOFF_START = pendulum.datetime(2025, 8, 25, 5, 0, 0, tz="UTC")
+SEASON_CUTOFF_END = pendulum.datetime(2025, 10, 6, 5, 0, 0, tz="UTC")
+SEASON_DURATION_DAYS = 28
+SEASON_DURATION_SECONDS = SEASON_DURATION_DAYS * 24 * 60 * 60
 
 T = TypeVar('T')
 T_co = TypeVar('T_co', covariant=True)
@@ -78,11 +83,6 @@ def get(iterable: Iterable[T], **attrs: Any) -> Optional[T]:
         if all(pred(elem) == value for pred, value in converted):
             return elem
     return None
-
-
-def from_timestamp(timestamp: str) -> datetime:
-    """Parses the raw timestamp given by the API into a :class:`datetime.datetime` object."""
-    return datetime.strptime(timestamp, "%Y%m%dT%H%M%S.000Z")
 
 
 def is_valid_tag(tag: str) -> bool:
@@ -213,118 +213,99 @@ async def maybe_coroutine(function_, *args, **kwargs):
     return value
 
 
-def get_season_start(month: Optional[int] = None, year: Optional[int] = None, legacy: bool = False) -> datetime:
-    """Get the datetime that the season started.
-
-    This goes by the assumption that SC resets the season on the last monday of every month at 5am UTC.
-
-    .. note::
-
-        If you want the start of the current season, do not pass any parameters in,
-        as doing so won't check to ensure the season start is in the past.
-
-    Parameters
-    ----------
-    month: Optional[int]
-        The month to get the season start for. Defaults to the current month/season.
-    year: Optional[int]
-        The year to get the season start for. Defaults to the current year/season.
-    legacy: bool
-        Whether to use the old season start method. Defaults to ``False``.
-
-    Returns
-    -------
-    season_start: :class:`datetime.datetime`
-        The start of the season.
-    """
-
-    # Start date is the last Monday of the month. That's when SC resets the season values
-    def get_old_start_for_month_year(m, y):
-        (weekday_of_first_day, days_in_month) = calendar.monthrange(y, m)
-        season_start_day = days_in_month - datetime(year=y, month=m, day=days_in_month).weekday()
-        return datetime(year=y, month=m, day=season_start_day, hour=5, minute=0, second=0, microsecond=0, tzinfo=timezone.utc)
-
-
-    # Start date is the first Monday of the month. That's when SC resets the season values
-    def get_start_for_month_year(m, y):
-        (weekday_of_first_day, days_in_month) = calendar.monthrange(y, m)
-        # weekday_of_first_day: 0=Monday, 1=Tuesday, ..., 6=Sunday
-        # Calculate days to add to get to the first Monday
-        days_until_monday = (7 - weekday_of_first_day) % 7
-        season_start_day = 1 + days_until_monday
-        return datetime(year=y, month=m, day=season_start_day, hour=5, minute=0, second=0, microsecond=0, tzinfo=timezone.utc)
-
-    start_method = get_start_for_month_year if not legacy else get_old_start_for_month_year
-
-    if month and year:
-        # they want a specific month/year combo
-        return start_method(month, year)
-
-    now = datetime.now(tz=timezone.utc)
-    start = start_method(now.month, now.year)
-    if now > start:
-        # we got the right one, season started this month
-        return start
-
-    # season started last month, so let's try it again.
-    if now.month == 1:
-        month = 12
-        year = now.year - 1
+def _last_monday_at_five_utc(year: int, month: int) -> pendulum.DateTime:
+    if month == 12:
+        next_month = pendulum.datetime(year + 1, 1, 1, 5, 0, 0, tz="UTC")
     else:
-        month = now.month - 1
-        year = now.year
-    return start_method(month, year)
+        next_month = pendulum.datetime(year, month + 1, 1, 5, 0, 0, tz="UTC")
+    last_day = next_month.subtract(days=1)
+    return last_day.subtract(days=last_day.day_of_week)
 
 
-def get_season_end(month: Optional[int] = None, year: Optional[int] = None, legacy: bool = False) -> datetime:
-    """Get the datetime that the season ends.
+def _old_season_end(timestamp: pendulum.DateTime) -> pendulum.DateTime:
+    end_time = _last_monday_at_five_utc(timestamp.year, timestamp.month)
+    if timestamp >= end_time:
+        if timestamp.month == 12:
+            return _last_monday_at_five_utc(timestamp.year + 1, 1)
+        return _last_monday_at_five_utc(timestamp.year, timestamp.month + 1)
+    return end_time
 
-    This goes by the assumption that SC resets the season on the last monday of every month at 5am UTC.
 
-    .. note::
+def _old_season_start_from_end(end_time: pendulum.DateTime) -> pendulum.DateTime:
+    if end_time.month == 1:
+        return _last_monday_at_five_utc(end_time.year - 1, 12)
+    return _last_monday_at_five_utc(end_time.year, end_time.month - 1)
 
-        If you want the end of the current season, do not pass any parameters in,
-        as doing so won't check to ensure the season end is in the future.
 
-    Parameters
-    ----------
-    month: Optional[int]
-        The month to get the season end for. Defaults to the current month/season.
-    year: Optional[int]
-        The year to get the season end for. Defaults to the current year/season.
-    legacy: bool
-        Whether to use the old season end method. Defaults to ``False``.
+def _parse_season_id(season_id: str) -> tuple[int, int]:
+    try:
+        year_text, month_text = season_id.split("-", maxsplit=1)
+        year, month = int(year_text), int(month_text)
+    except ValueError as exception:
+        raise ValueError(f"invalid season id {season_id!r}") from exception
+    if not 1 <= month <= 12:
+        raise ValueError(f"invalid season id {season_id!r}")
+    return year, month
 
-    Returns
-    -------
-    season_end: :class:`datetime.datetime`
-        The end of the season.
-    """
+
+def _season_window_for_timestamp(timestamp=None):
+    target = pendulum.now("UTC") if timestamp is None else pendulum.instance(timestamp, tz="UTC")
+
+    if target < SEASON_CUTOFF_START:
+        end_time = _old_season_end(target)
+        return SeasonWindow(
+            id=end_time.strftime("%Y-%m"),
+            start_time=_old_season_start_from_end(end_time),
+            end_time=end_time,
+        )
+
+    if target < SEASON_CUTOFF_END:
+        return SeasonWindow(id="2025-09", start_time=SEASON_CUTOFF_START, end_time=SEASON_CUTOFF_END)
+
+    seasons_passed = int((target.int_timestamp - SEASON_CUTOFF_END.int_timestamp) // SEASON_DURATION_SECONDS)
+    start_time = SEASON_CUTOFF_END.add(days=seasons_passed * SEASON_DURATION_DAYS)
+    end_time = start_time.add(days=SEASON_DURATION_DAYS)
+
+    total_months = SEASON_CUTOFF_END.year * 12 + (SEASON_CUTOFF_END.month - 1) + seasons_passed
+    year = total_months // 12
+    month = total_months - year * 12 + 1
+
+    return SeasonWindow(id=f"{year:04d}-{month:02d}", start_time=start_time, end_time=end_time)
+
+
+def get_season_by_id(season_id: str):
+    """Get the Clash of Clans league season window for a ``YYYY-MM`` season ID."""
+    if season_id == "2025-09":
+        return SeasonWindow(id=season_id, start_time=SEASON_CUTOFF_START, end_time=SEASON_CUTOFF_END)
+
+    year, month = _parse_season_id(season_id)
+    ref_total_months = SEASON_CUTOFF_END.year * 12 + (SEASON_CUTOFF_END.month - 1)
+    target_total_months = year * 12 + (month - 1)
+    seasons_passed = target_total_months - ref_total_months
+
+    if seasons_passed < 0:
+        end_time = _last_monday_at_five_utc(year, month)
+        return SeasonWindow(id=season_id, start_time=_old_season_start_from_end(end_time), end_time=end_time)
+
+    start_time = SEASON_CUTOFF_END.add(days=seasons_passed * SEASON_DURATION_DAYS)
+    return SeasonWindow(id=season_id, start_time=start_time, end_time=start_time.add(days=SEASON_DURATION_DAYS))
+
+
+def get_season_start(month: Optional[int] = None, year: Optional[int] = None) -> pendulum.DateTime:
+    """Get the datetime that the requested season started."""
     if month and year:
-        if month == 12:
-            next_month = 1
-            next_year = year + 1
-        else:
-            next_month = month + 1
-            next_year = year
-        return get_season_start(next_month, next_year, legacy)
-
-    now = datetime.now(tz=timezone.utc)
-    end = get_season_start(now.month, now.year, legacy)
-    if end > now:
-        return end
-
-    # season ends next month, let's try again
-    if now.month == 12:
-        month = 1
-        year = now.year + 1
-    else:
-        month = now.month + 1
-        year = now.year
-    return get_season_start(month, year, legacy)
+        return get_season_by_id(f"{year:04d}-{month:02d}").start_time
+    return _season_window_for_timestamp().start_time
 
 
-def get_clan_games_start(time: Optional[datetime] = None) -> datetime:
+def get_season_end(month: Optional[int] = None, year: Optional[int] = None) -> pendulum.DateTime:
+    """Get the datetime that the requested season ends."""
+    if month and year:
+        return get_season_by_id(f"{year:04d}-{month:02d}").end_time
+    return _season_window_for_timestamp().end_time
+
+
+def get_clan_games_start(time: Optional[pendulum.DateTime] = None) -> pendulum.DateTime:
     """Get the datetime that the next clan games will start.
 
     This goes by the assumption that clan games start at 8am UTC at the 22nd of each month.
@@ -332,32 +313,31 @@ def get_clan_games_start(time: Optional[datetime] = None) -> datetime:
     .. note::
 
         If you want the start of the next or running clan games, do not pass any parameters in,
-        for any other pass a datetime in the month before.
+        for any other pass a pendulum DateTime in the month before.
 
     Parameters
     ----------
-    time: Optional[datetime]
+    time: Optional[pendulum.DateTime]
         Some time in the month before the clan games you want the start of.
 
     Returns
     -------
-    clan_games_start: :class:`datetime.datetime`
+    clan_games_start: :class:`pendulum.DateTime`
         The start of the next or running clan games.
     """
-    if time is None:
-        time = datetime.now(tz=timezone.utc).replace(tzinfo=None)
+    time = time or pendulum.now("UTC")
     month = time.month
     year = time.year
-    this_months_cg_end = datetime(year=time.year, month=time.month, day=28, hour=8, minute=0, second=0)
+    this_months_cg_end = pendulum.datetime(time.year, time.month, 28, 8, 0, 0, tz="UTC")
     if time > this_months_cg_end and month < 12:
         month += 1
     elif time > this_months_cg_end:  # we're at the end of December
         month = 1
         year += 1
-    return datetime(year=year, month=month, day=22, hour=8, minute=0, second=0)
+    return pendulum.datetime(year, month, 22, 8, 0, 0, tz="UTC")
 
 
-def get_clan_games_end(time: Optional[datetime] = None) -> datetime:
+def get_clan_games_end(time: Optional[pendulum.DateTime] = None) -> pendulum.DateTime:
     """Get the datetime that the next clan games will end.
 
     This goes by the assumption that clan games end at 8am UTC at the 28th of each month.
@@ -365,32 +345,31 @@ def get_clan_games_end(time: Optional[datetime] = None) -> datetime:
     .. note::
 
         If you want the end of the next or running clan games, do not pass any parameters in,
-        for any other pass a datetime in the month before.
+        for any other pass a pendulum DateTime in the month before.
 
     Parameters
     ----------
-    time: Optional[datetime]
+    time: Optional[pendulum.DateTime]
         Some time in the month before the clan games you want the end of.
 
     Returns
     -------
-    clan_games_end: :class:`datetime.datetime`
+    clan_games_end: :class:`pendulum.DateTime`
         The end of the next or running clan games.
     """
-    if time is None:
-        time = datetime.now(tz=timezone.utc).replace(tzinfo=None)
+    time = time or pendulum.now("UTC")
     month = time.month
     year = time.year
-    this_months_cg_end = datetime(year=time.year, month=time.month, day=28, hour=8, minute=0, second=0)
+    this_months_cg_end = pendulum.datetime(time.year, time.month, 28, 8, 0, 0, tz="UTC")
     if time > this_months_cg_end and month < 12:
         month += 1
     elif time > this_months_cg_end:  # we're in December
         month = 1
         year += 1
-    return datetime(year=year, month=month, day=28, hour=8, minute=0, second=0)
+    return pendulum.datetime(year, month, 28, 8, 0, 0, tz="UTC")
 
 
-def get_raid_weekend_start(time: Optional[datetime] = None) -> datetime:
+def get_raid_weekend_start(time: Optional[pendulum.DateTime] = None) -> pendulum.DateTime:
     """Get the datetime that the raid weekend will start.
 
     This goes by the assumption that raid weekends start at friday 7am UTC.
@@ -398,26 +377,24 @@ def get_raid_weekend_start(time: Optional[datetime] = None) -> datetime:
     .. note::
 
         If you want the start of the next or running raid weekend, do not pass any parameters in,
-        for any other pass a datetime in the week before.
+        for any other pass a pendulum DateTime in the week before.
 
     Parameters
     ----------
-    time: Optional[datetime]
+    time: Optional[pendulum.DateTime]
         Some time in the week before the raid weekend you want the start of.
 
     Returns
     -------
-    raid_weekend_start: :class:`datetime.datetime`
+    raid_weekend_start: :class:`pendulum.DateTime`
         The start of the raid weekend.
     """
-    if time is None:
-        time = datetime.now(tz=timezone.utc).replace(tzinfo=None)
+    time = time or pendulum.now("UTC")
     time = get_raid_weekend_end(time)
-    time = time - timedelta(days=3)
-    return time
+    return time.subtract(days=3)
 
 
-def get_raid_weekend_end(time: Optional[datetime] = None) -> datetime:
+def get_raid_weekend_end(time: Optional[pendulum.DateTime] = None) -> pendulum.DateTime:
     """Get the datetime that the raid weekend will end.
 
     This goes by the assumption that raid weekends end at monday 7am UTC.
@@ -425,25 +402,22 @@ def get_raid_weekend_end(time: Optional[datetime] = None) -> datetime:
     .. note::
 
         If you want the end of the next or running raid weekend, do not pass any parameters in,
-        for any other pass a datetime in the week before.
+        for any other pass a pendulum DateTime in the week before.
 
     Parameters
     ----------
-    time: Optional[datetime]
+    time: Optional[pendulum.DateTime]
         Some time in the week before the raid weekend you want the end of.
 
     Returns
     -------
-    raid_weekend_end: :class:`datetime.datetime`
+    raid_weekend_end: :class:`pendulum.DateTime`
         The end of the raid weekend.
     """
     # Shift the time so that we can pretend the raid ends just after midnight
-    if time is None:
-        time = datetime.now(tz=timezone.utc).replace(tzinfo=None)
-    time = time - timedelta(hours=7, microseconds=1)
-    time = time + timedelta(weeks=1, days=-time.weekday())  # Go to the next monday
-    time = time.replace(hour=7, minute=0, second=0, microsecond=0)
-    return time
+    time = time or pendulum.now("UTC")
+    shifted = time.subtract(hours=7, microseconds=1)
+    return shifted.add(days=7 - shifted.day_of_week).set(hour=7, minute=0, second=0, microsecond=0)
 
 
 class _CachedProperty(Generic[T, T_co]):

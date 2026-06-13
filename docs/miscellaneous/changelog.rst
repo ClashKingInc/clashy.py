@@ -7,6 +7,27 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
+v26.6.0
+-------
+
+Additions:
+~~~~~~~~~~
+- Added :meth:`coc.Client.get_player_battlelog` for player battle log entries
+- Added :meth:`coc.Client.get_player_league_history` and :meth:`coc.Client.get_player_league_group`
+- Added league tier methods :meth:`coc.Client.search_league_tiers`, :meth:`coc.Client.get_league_tier`, and
+  :meth:`coc.Client.get_league_tier_named`; the old generic league method names are deprecated
+- Added :class:`coc.BattleLogEntry`, :class:`coc.LeagueHistoryEntry`, :class:`coc.LeagueTierGroup`, and
+  :class:`coc.SeasonWindow`
+
+Changes:
+~~~~~~~~
+- Updated static data and translations from ``assets.clashk.ing`` and refreshed generated constants
+- Updated ``coc.static.generate_constants`` to download and validate static data and translations from
+  ``assets.clashk.ing`` before regenerating constants
+- Updated season helpers to use the current Clash of Clans season calendar, including the 2025-09 transition season
+  and post-transition 28-day seasons
+- Switched timestamp and season helper internals to ``pendulum``
+
 v26.4.1
 -------
 

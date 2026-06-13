@@ -198,6 +198,7 @@ EQUIPMENT = [
     'Rocket Spear',
     'Spiky Ball',
     'Frozen Arrow',
+    'Monolith Arrow',
     'Giant Arrow',
     'Heroic Torch',
     'Healer Puppet',
