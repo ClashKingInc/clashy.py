@@ -343,11 +343,11 @@ class Building(LeveledUnit):
     dps: :class:`int`
         The building's damage per second.
     damage: :class:`int`
-        The building's per-attack damage, when provided by static data.
+        The building's per-attack damage
     attack_range: Optional[:class:`int`]
-        The building's attack range, when provided by static data.
+        The building's attack range
     min_range: Optional[:class:`int`]
-        The building's minimum attack range, when provided by static data.
+        The building's minimum attack range
     supercharge: Optional[:class:`Supercharge`]
         The supercharge for this building.
     merge_requirement: List[:class:`MergeRequirement`]
