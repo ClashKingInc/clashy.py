@@ -189,6 +189,7 @@ class Client:
         "_translations",
         "_name_to_id_mapping",
         "static_data",
+        "_owns_loop",
     )
 
     def __init__(
@@ -215,7 +216,15 @@ class Client:
         **kwargs,
     ):
 
-        self.loop = loop or asyncio.get_event_loop()
+        self._owns_loop = False
+        if loop is None:
+            try:
+                loop = asyncio.get_running_loop()
+            except RuntimeError:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                self._owns_loop = True
+        self.loop = loop
 
         self.correct_key_count = max(min(KEY_MAXIMUM, key_count), KEY_MINIMUM)
 
@@ -443,6 +452,18 @@ class Client:
         """Closes the HTTP connection from within a loop function such as
         async def main()"""
         await self.http.close()
+        self._close_owned_loop()
+
+    def _close_owned_loop(self) -> None:
+        if self._owns_loop and not self.loop.is_running() and not self.loop.is_closed():
+            self.loop.close()
+            self._owns_loop = False
+
+    def __del__(self):
+        try:
+            self._close_owned_loop()
+        except Exception:
+            pass
 
     def dispatch(self, event_name: str, *args, **kwargs) -> None:
         """Dispatches an event listener matching the `event_name` parameter."""

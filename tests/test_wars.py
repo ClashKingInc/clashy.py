@@ -3,8 +3,6 @@ import unittest
 from coc.wars import ClanWar
 from coc.miscmodels import Timestamp
 
-from tests.mockdata.mock_current_war import MOCK_CURRENT_WAR_IN_WAR
-
 
 class TestWars(unittest.TestCase):
     def test_state(self):
