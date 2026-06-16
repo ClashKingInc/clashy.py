@@ -33,6 +33,7 @@ DARK_ELIXIR_TROOP_ORDER = [
     'Ice Golem',
     'Headhunter',
     'Apprentice Warden',
+    'Ruin Witch',
     'Druid',
     'Furnace',
 ]
@@ -141,6 +142,7 @@ DARK_ELIXIR_SPELL_ORDER = [
     'Bat Spell',
     'Overgrowth Spell',
     'Ice Block Spell',
+    'Angry Spell',
 ]
 
 SEASONAL_SPELL_ORDER = [
