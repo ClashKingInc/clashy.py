@@ -4,8 +4,8 @@ import logging
 import traceback
 
 from collections.abc import Iterable
-from datetime import datetime, timedelta, timezone
 
+import pendulum
 import coc.raid
 from .client import Client
 from .clans import Clan
@@ -879,7 +879,7 @@ class EventsClient(Client):
         try:
             while self.loop.is_running():
                 end_of_season = get_season_end()
-                now = datetime.now(tz=timezone.utc).replace(tzinfo=None)
+                now = pendulum.now("UTC")
                 await asyncio.sleep((end_of_season - now).total_seconds())
                 self.dispatch("new_season_start")
         except asyncio.CancelledError:
@@ -893,7 +893,7 @@ class EventsClient(Client):
             while self.loop.is_running():
                 clan_games_start = get_clan_games_start()
                 clan_games_end = get_clan_games_end()
-                now = datetime.now(tz=timezone.utc).replace(tzinfo=None)
+                now = pendulum.now("UTC")
                 if now < clan_games_start:
                     event = "clan_games_start"
                     mute_time = clan_games_start - now
@@ -919,7 +919,7 @@ class EventsClient(Client):
                 except Maintenance:
                     if maintenance_start is None:
                         self._in_maintenance_event.clear()
-                        maintenance_start = datetime.now(tz=timezone.utc).replace(tzinfo=None)
+                        maintenance_start = pendulum.now("UTC")
                         self.dispatch("maintenance_start")
 
                     await asyncio.sleep(15)
