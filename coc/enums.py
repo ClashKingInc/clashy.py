@@ -77,6 +77,28 @@ class WarRound(ExtendedEnum):
         return lookup[self.value]
 
 
+class BattleType(ExtendedEnum):
+    """Enum to map player battle log battle types.
+
+    Attributes
+    ----------
+    home_village:
+        A home village battle.
+    ranked:
+        A ranked battle.
+    legend:
+        A Legend League battle.
+    """
+    home_village = "HOME_VILLAGE"
+    ranked = "RANKED"
+    legend = "LEGEND"
+
+    @property
+    def in_game_name(self) -> str:
+        lookup = {"HOME_VILLAGE": "Home Village", "RANKED": "Ranked", "LEGEND": "Legend"}
+        return lookup[self.value]
+
+
 class BattleModifier(ExtendedEnum):
     """Enum to map the type of battle modifiers."""
     none = "none"
@@ -189,6 +211,4 @@ class SkinTier(ExtendedEnum):
     standard = "Basic"
     gold = "Gold"
     legendary = "Legendary"
-
-
 

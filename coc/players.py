@@ -179,14 +179,17 @@ class RankedPlayer(ClanMember):
         The member's rank before the last clan leaderboard change
         (ie if Bob overtakes Jim in trophies, and they switch ranks on the leaderboard,
         and you want to find out their previous rankings, this will help.).
+    league_tier: :class:`League`
+        The player's current ranked battle league tier.
     """
 
-    __slots__ = ("attack_wins", "defense_wins", "builder_base_trophies", "rank", "previous_rank")
+    __slots__ = ("attack_wins", "defense_wins", "builder_base_trophies", "rank", "previous_rank", "league_tier")
 
     def _from_data(self, data: dict) -> None:
         super()._from_data(data)
 
         data_get = data.get
+        self.league_tier = try_enum(self.league_cls, data=data_get("leagueTier"), client=self._client)
         self.attack_wins: int = data_get("attackWins")
         self.defense_wins: int = data_get("defenseWins")
         self.builder_base_trophies: int = data_get("builderBaseTrophies")

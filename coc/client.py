@@ -2409,7 +2409,7 @@ class Client:
         data = await self.http.get_player_league_history(player_tag, **{**self._defaults, **kwargs})
         return [cls(data=n, client=self, **kwargs) for n in data.get("items", [])]
 
-    async def get_player_league_group(self, player_tag: str, league_group_tag: str, league_season_id: int,
+    async def get_player_league_group(self, player_tag: str, league_group_tag: str, league_season_id: str,
                                       cls: Type[LeagueTierGroup] = None, **kwargs) -> LeagueTierGroup:
         """Get the league tier group for a player and season."""
         if cls is None:

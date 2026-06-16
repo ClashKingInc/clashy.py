@@ -1,7 +1,7 @@
 import unittest
 
 import coc
-from coc.players import Player, ClanMember
+from coc.players import Player, ClanMember, RankedPlayer
 from coc.clans import Clan
 from coc.player_clan import PlayerClan
 from coc.constants import (
@@ -90,6 +90,17 @@ class TestClanMember(unittest.TestCase):
         league = League(data=data["leagueTier"], client=self.client)
         self.assertEqual(member.league, league)
         self.assertIsInstance(member.league, League)
+
+    def test_ranked_player_league_tier(self):
+        data = {
+            "league": {"id": 29000022, "name": "Legend League", "iconUrls": {}},
+            "leagueTier": {"id": 105000033, "name": "Legend I", "iconUrls": {}},
+        }
+
+        player = RankedPlayer(data=data, client=self.client)
+
+        self.assertEqual(player.league_tier.name, "Legend I")
+        self.assertIsInstance(player.league_tier, League)
 
     def test_role(self):
         data = [{"role": "member"}, {"role": "admin"}, {"role": "coLeader"}, {"role": "leader"}]

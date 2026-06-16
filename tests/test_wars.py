@@ -1,7 +1,12 @@
 import unittest
 
 from coc.wars import ClanWar
+from coc.war_attack import WarAttack
 from coc.miscmodels import Timestamp
+
+
+class DummyClient:
+    raw_attribute = False
 
 
 class TestWars(unittest.TestCase):
@@ -57,6 +62,22 @@ class TestWars(unittest.TestCase):
             self.assertIsInstance(war.end_time, Timestamp)
 
             self.assertEqual(war.type, "random")
+
+    def test_war_attack_duration(self):
+        attack = WarAttack(
+            data={
+                "stars": 3,
+                "destructionPercentage": 100,
+                "order": 1,
+                "attackerTag": "#AAA",
+                "defenderTag": "#BBB",
+                "duration": 145,
+            },
+            client=DummyClient(),
+            war=object(),
+        )
+
+        self.assertEqual(attack.duration, 145)
 
 
 class TestWarClan(unittest.TestCase):

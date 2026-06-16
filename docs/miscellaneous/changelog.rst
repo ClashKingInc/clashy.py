@@ -18,9 +18,15 @@ Additions:
   :meth:`coc.Client.get_league_tier_named`; the old generic league method names are deprecated
 - Added :class:`coc.BattleLogEntry`, :class:`coc.LeagueHistoryEntry`, :class:`coc.LeagueTierGroup`, and
   :class:`coc.SeasonWindow`
+- Added :class:`coc.BattleType` and exposed new battle log fields for battle timestamp, duration, opponent name,
+  and opponent Town Hall level
 
 Changes:
 ~~~~~~~~
+- Battle log entries now parse ``battleType`` as :class:`coc.BattleType`, including ``BattleType.legend`` for
+  Legend League battles
+- Ranked players now expose the ranking ``leagueTier`` field as ``league_tier``
+- League season identifiers are treated as strings so full-date IDs such as ``2026-06-02`` pass through unchanged
 - Updated static data and translations from ``assets.clashk.ing`` and refreshed generated constants
 - Updated ``coc.static.generate_constants`` to download and validate static data and translations from
   ``assets.clashk.ing`` before regenerating constants

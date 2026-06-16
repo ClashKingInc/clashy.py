@@ -7,6 +7,7 @@ from unittest.mock import patch
 import pendulum
 
 from coc.battlelogs import BattleLogEntry, LeagueHistoryEntry, LeagueTierGroup
+from coc.enums import BattleType
 from coc.miscmodels import SeasonWindow
 from coc.static import generate_constants
 from coc.utils import get_season_by_id, get_season_end, get_season_start
@@ -16,11 +17,14 @@ class TestBattlelogModels(unittest.TestCase):
 
     def test_battlelog_entry(self):
         data = {
-            "battleType": "legendLeague",
+            "battleType": "LEGEND",
             "attack": True,
-            "timestamp": "20260501T010203.000Z",
+            "battleTimestamp": "20260501T010203.000Z",
+            "battleTime": 138,
             "armyShareCode": "u1x1",
             "opponentPlayerTag": "#2PP",
+            "opponentName": "Opponent",
+            "opponentTownHallLevel": 17,
             "stars": 3,
             "destructionPercentage": 100,
             "lootedResources": [{"name": "Gold", "amount": 5000}],
@@ -30,15 +34,19 @@ class TestBattlelogModels(unittest.TestCase):
 
         entry = BattleLogEntry(data=data)
 
-        self.assertEqual(entry.battle_type, "legendLeague")
-        self.assertEqual(entry.timestamp, pendulum.datetime(2026, 5, 1, 1, 2, 3, tz="UTC"))
+        self.assertEqual(entry.battle_type, BattleType.legend)
+        self.assertEqual(entry.battle_type, "LEGEND")
+        self.assertEqual(entry.battle_timestamp, pendulum.datetime(2026, 5, 1, 1, 2, 3, tz="UTC"))
+        self.assertEqual(entry.duration, 138)
+        self.assertEqual(entry.opponent_name, "Opponent")
+        self.assertEqual(entry.opponent_town_hall_level, 17)
         self.assertEqual(entry.looted_resources[0].name, "Gold")
         self.assertEqual(entry.extra_looted_resources[0].amount, 10)
         self.assertEqual(entry.available_loot[0].name, "Elixir")
 
     def test_league_history_entry(self):
         data = {
-            "leagueSeasonId": 202605,
+            "leagueSeasonId": "2026-06-02",
             "leagueTrophies": 5500,
             "leagueTierId": 105000033,
             "placement": 12,
@@ -53,7 +61,7 @@ class TestBattlelogModels(unittest.TestCase):
 
         entry = LeagueHistoryEntry(data=data)
 
-        self.assertEqual(entry.league_season_id, 202605)
+        self.assertEqual(entry.league_season_id, "2026-06-02")
         self.assertEqual(entry.league_tier_id, 105000033)
         self.assertEqual(entry.attack_stars, 14)
         self.assertEqual(entry.max_battles, 8)

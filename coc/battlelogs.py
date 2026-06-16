@@ -4,6 +4,7 @@ from typing import Optional
 
 import pendulum
 
+from .enums import BattleType
 from .miscmodels import TIMESTAMP_FORMAT
 
 
@@ -17,7 +18,15 @@ def _parse_datetime(value: str | None) -> Optional[pendulum.DateTime]:
 
 
 class BattleLogResource:
-    """Represents a resource amount in a player battle log entry."""
+    """Represents a resource amount in a player battle log entry.
+
+    Attributes
+    ----------
+    name:
+        :class:`str`: The resource name.
+    amount:
+        :class:`int`: The amount of the resource.
+    """
 
     __slots__ = ("name", "amount")
 
@@ -33,14 +42,47 @@ class BattleLogResource:
 
 
 class BattleLogEntry:
-    """Represents a single player battle log entry."""
+    """Represents a single player battle log entry.
+
+    Attributes
+    ----------
+    battle_type:
+        Optional[:class:`BattleType`]: The type of battle, such as ranked or legend.
+    attack:
+        :class:`bool`: Whether this entry was an attack by the requested player.
+    battle_timestamp:
+        Optional[:class:`pendulum.DateTime`]: The time the battle happened.
+    duration:
+        :class:`int`: The length of the battle, in seconds.
+    army_share_code:
+        :class:`str`: The army share code returned for the battle.
+    opponent_player_tag:
+        :class:`str`: The opponent player's tag.
+    opponent_name:
+        :class:`str`: The opponent player's name.
+    opponent_town_hall_level:
+        :class:`int`: The opponent player's Town Hall level.
+    stars:
+        :class:`int`: The stars earned in the battle.
+    destruction_percentage:
+        :class:`int`: The destruction percentage earned in the battle.
+    looted_resources:
+        List[:class:`BattleLogResource`]: The resources looted in the battle.
+    extra_looted_resources:
+        List[:class:`BattleLogResource`]: Extra resources looted in the battle.
+    available_loot:
+        List[:class:`BattleLogResource`]: The loot that was available in the battle.
+    """
 
     __slots__ = (
         "battle_type",
         "attack",
-        "timestamp",
+        "battle_timestamp",
+        "duration",
         "army_share_code",
         "opponent_player_tag",
+        "opponent_name",
+        "opponent_town_hall_level",
         "stars",
         "destruction_percentage",
         "looted_resources",
@@ -61,11 +103,15 @@ class BattleLogEntry:
         data_get = data.get
         resource_cls = BattleLogResource
 
-        self.battle_type: str = data_get("battleType")
+        raw_battle_type = data_get("battleType")
+        self.battle_type: Optional[BattleType] = raw_battle_type and BattleType(raw_battle_type)
         self.attack: bool = data_get("attack")
-        self.timestamp = _parse_datetime(data_get("timestamp"))
+        self.battle_timestamp = _parse_datetime(data_get("battleTimestamp"))
+        self.duration: int = data_get("battleTime")
         self.army_share_code: str = data_get("armyShareCode")
         self.opponent_player_tag: str = data_get("opponentPlayerTag")
+        self.opponent_name: str = data_get("opponentName")
+        self.opponent_town_hall_level: int = data_get("opponentTownHallLevel")
         self.stars: int = data_get("stars")
         self.destruction_percentage: int = data_get("destructionPercentage")
         self.looted_resources = [resource_cls(data=item) for item in data_get("lootedResources", [])]
@@ -82,7 +128,33 @@ class BattleLogEntry:
 
 
 class LeagueHistoryEntry:
-    """Represents a player league season history entry."""
+    """Represents a player league season history entry.
+
+    Attributes
+    ----------
+    league_season_id:
+        :class:`str`: The league season ID. Newer API responses can use full-date IDs such as ``2026-06-02``.
+    league_trophies:
+        :class:`int`: The player's league trophies for the season.
+    league_tier_id:
+        :class:`int`: The player's league tier ID for the season.
+    placement:
+        :class:`int`: The player's placement for the season.
+    attack_wins:
+        :class:`int`: The player's attack wins for the season.
+    attack_losses:
+        :class:`int`: The player's attack losses for the season.
+    attack_stars:
+        :class:`int`: The player's attack stars for the season.
+    defense_wins:
+        :class:`int`: The player's defense wins for the season.
+    defense_losses:
+        :class:`int`: The player's defense losses for the season.
+    defense_stars:
+        :class:`int`: The player's defense stars for the season.
+    max_battles:
+        :class:`int`: The maximum number of battles available in the season.
+    """
 
     __slots__ = (
         "league_season_id",
@@ -110,7 +182,7 @@ class LeagueHistoryEntry:
     def _from_data(self, data):
         data_get = data.get
 
-        self.league_season_id: int = data_get("leagueSeasonId")
+        self.league_season_id: str = data_get("leagueSeasonId")
         self.league_trophies: int = data_get("leagueTrophies")
         self.league_tier_id: int = data_get("leagueTierId")
         self.placement: int = data_get("placement")
@@ -132,7 +204,23 @@ class LeagueHistoryEntry:
 
 
 class LeagueTierGroupBattleLogEntry:
-    """Represents an attack or defense log entry inside a league tier group."""
+    """Represents an attack or defense log entry inside a league tier group.
+
+    Attributes
+    ----------
+    opponent_player_tag:
+        :class:`str`: The opponent player's tag.
+    opponent_name:
+        :class:`str`: The opponent player's name.
+    stars:
+        :class:`int`: The stars earned in the battle.
+    destruction_percentage:
+        :class:`int`: The destruction percentage earned in the battle.
+    trophies:
+        :class:`int`: The trophies gained or lost for the battle.
+    creation_time:
+        Optional[:class:`pendulum.DateTime`]: The time this battle log entry was created.
+    """
 
     __slots__ = (
         "opponent_player_tag",
@@ -155,7 +243,29 @@ class LeagueTierGroupBattleLogEntry:
 
 
 class LeagueTierGroupMember:
-    """Represents a member inside a league tier group."""
+    """Represents a member inside a league tier group.
+
+    Attributes
+    ----------
+    player_tag:
+        :class:`str`: The player's tag.
+    player_name:
+        :class:`str`: The player's name.
+    clan_tag:
+        :class:`str`: The player's clan tag.
+    clan_name:
+        :class:`str`: The player's clan name.
+    league_trophies:
+        :class:`int`: The player's league trophies in this group.
+    attack_win_count:
+        :class:`int`: The player's attack win count in this group.
+    attack_lose_count:
+        :class:`int`: The player's attack loss count in this group.
+    defense_win_count:
+        :class:`int`: The player's defense win count in this group.
+    defense_lose_count:
+        :class:`int`: The player's defense loss count in this group.
+    """
 
     __slots__ = (
         "player_tag",
@@ -184,7 +294,17 @@ class LeagueTierGroupMember:
 
 
 class LeagueTierGroup:
-    """Represents a league tier group for one player and league season."""
+    """Represents a league tier group for one player and league season.
+
+    Attributes
+    ----------
+    members:
+        List[:class:`LeagueTierGroupMember`]: The members in this league tier group.
+    attack_logs:
+        List[:class:`LeagueTierGroupBattleLogEntry`]: The requested player's attack logs.
+    defense_logs:
+        List[:class:`LeagueTierGroupBattleLogEntry`]: The requested player's defense logs.
+    """
 
     __slots__ = (
         "members",
