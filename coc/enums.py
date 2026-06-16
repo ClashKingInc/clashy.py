@@ -115,21 +115,21 @@ class BattleModifier(ExtendedEnum):
     minus_three:
         The Legend III battle modifier.
     """
-    none = "NONE"
-    hard_mode = "HARD_MODE"
-    minus_one = "MINUS_ONE"
-    minus_two = "MINUS_TWO"
-    minus_three = "MINUS_THREE"
+    none = "none"
+    hard_mode = "hardMode"
+    minus_one = "minusOne"
+    minus_two = "minusTwo"
+    minus_three = "minusThree"
 
     @property
     def in_game_name(self) -> str:
         """Get a neat client-facing string value for the battle modifier."""
         lookup = {
-            "NONE": "None",
-            "HARD_MODE": "Hard Mode",
-            "MINUS_ONE": "Minus One",
-            "MINUS_TWO": "Minus Two",
-            "MINUS_THREE": "Minus Three",
+            "none": "None",
+            "hardMode": "Hard Mode",
+            "minusOne": "Minus One",
+            "minusTwo": "Minus Two",
+            "minusThree": "Minus Three",
         }
         return lookup[self.value]
 

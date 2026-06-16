@@ -83,17 +83,17 @@ class TestWars(unittest.TestCase):
 
     def test_battle_modifier(self):
         cases = {
-            "NONE": BattleModifier.none,
-            "HARD_MODE": BattleModifier.hard_mode,
-            "MINUS_ONE": BattleModifier.minus_one,
-            "MINUS_TWO": BattleModifier.minus_two,
-            "MINUS_THREE": BattleModifier.minus_three,
+            "none": BattleModifier.none,
+            "hardMode": BattleModifier.hard_mode,
+            "minusOne": BattleModifier.minus_one,
+            "minusTwo": BattleModifier.minus_two,
+            "minusThree": BattleModifier.minus_three,
         }
 
         for value, expected in cases.items():
             war = ClanWar(data={"battleModifier": value}, clan_tag="", client=None)
             self.assertEqual(war.battle_modifier, expected)
-            self.assertEqual(war.battle_modifier, value)
+            self.assertEqual(war.battle_modifier.value, value)
 
     def test_battle_modifier_defaults_to_none(self):
         war = ClanWar(data={}, clan_tag="", client=None)
@@ -101,7 +101,7 @@ class TestWars(unittest.TestCase):
         self.assertEqual(war.battle_modifier, BattleModifier.none)
 
     def test_war_log_entry_battle_modifier(self):
-        entry = ClanWarLogEntry(data={"battleModifier": "MINUS_THREE"}, client=None)
+        entry = ClanWarLogEntry(data={"battleModifier": "minusThree"}, client=None)
 
         self.assertEqual(entry.battle_modifier, BattleModifier.minus_three)
 
