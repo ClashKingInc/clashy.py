@@ -19,6 +19,8 @@ Changes:
 ~~~~~~~~
 - Battle log entries now parse ``battleType`` as :class:`coc.BattleType`, including ``BattleType.legend`` for
   Legend League battles
+- Current war and war log entries now parse the current ``battleModifier`` API values, including hard mode and
+  Legend I, II, and III modifiers
 - Ranked players now expose the ranking ``leagueTier`` field as ``league_tier``
 - League season identifiers are treated as strings so full-date IDs such as ``2026-06-02`` pass through unchanged
 

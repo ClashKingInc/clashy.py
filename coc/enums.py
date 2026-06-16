@@ -100,14 +100,37 @@ class BattleType(ExtendedEnum):
 
 
 class BattleModifier(ExtendedEnum):
-    """Enum to map the type of battle modifiers."""
-    none = "none"
-    hard_mode = "hardMode"
+    """Enum to map the type of battle modifiers.
+
+    Attributes
+    ----------
+    none:
+        A war with no battle modifier.
+    hard_mode:
+        The esports hard mode modifier.
+    minus_one:
+        The Legend I battle modifier.
+    minus_two:
+        The Legend II battle modifier.
+    minus_three:
+        The Legend III battle modifier.
+    """
+    none = "NONE"
+    hard_mode = "HARD_MODE"
+    minus_one = "MINUS_ONE"
+    minus_two = "MINUS_TWO"
+    minus_three = "MINUS_THREE"
 
     @property
     def in_game_name(self) -> str:
         """Get a neat client-facing string value for the battle modifier."""
-        lookup = {"none": "None", "hardMode": "Hard Mode"}
+        lookup = {
+            "NONE": "None",
+            "HARD_MODE": "Hard Mode",
+            "MINUS_ONE": "Minus One",
+            "MINUS_TWO": "Minus Two",
+            "MINUS_THREE": "Minus Three",
+        }
         return lookup[self.value]
 
 
@@ -211,4 +234,3 @@ class SkinTier(ExtendedEnum):
     standard = "Basic"
     gold = "Gold"
     legendary = "Legendary"
-

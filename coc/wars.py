@@ -88,7 +88,7 @@ class ClanWar:
         self.start_time = try_enum(Timestamp, data=data_get("startTime"))
         self.end_time = try_enum(Timestamp, data=data_get("endTime"))
         self.war_tag: str = data_get("tag")
-        self.battle_modifier: BattleModifier = try_enum(BattleModifier, data=data_get('battleModifier', 'none'))
+        self.battle_modifier: BattleModifier = try_enum(BattleModifier, data=data_get('battleModifier', 'NONE'))
         if data_get("attacksPerMember") is None or self.is_cwl:
             self.attacks_per_member: int = 1
         else:
@@ -351,7 +351,7 @@ class ClanWarLogEntry:
 
         self.clan = self._fake_load_clan(data_get("clan"))
         self.opponent = self._fake_load_clan(data_get("opponent"))
-        self.battle_modifier: BattleModifier = try_enum(BattleModifier, data=data_get('battleModifier', 'none'))
+        self.battle_modifier: BattleModifier = try_enum(BattleModifier, data=data_get('battleModifier', 'NONE'))
 
         if data_get("attacksPerMember") is None and self.is_league_entry:
             self.attacks_per_member: int = 1

@@ -1,6 +1,8 @@
 import unittest
 
+from coc.enums import BattleModifier
 from coc.wars import ClanWar
+from coc.wars import ClanWarLogEntry
 from coc.war_attack import WarAttack
 from coc.miscmodels import Timestamp
 
@@ -78,6 +80,30 @@ class TestWars(unittest.TestCase):
         )
 
         self.assertEqual(attack.duration, 145)
+
+    def test_battle_modifier(self):
+        cases = {
+            "NONE": BattleModifier.none,
+            "HARD_MODE": BattleModifier.hard_mode,
+            "MINUS_ONE": BattleModifier.minus_one,
+            "MINUS_TWO": BattleModifier.minus_two,
+            "MINUS_THREE": BattleModifier.minus_three,
+        }
+
+        for value, expected in cases.items():
+            war = ClanWar(data={"battleModifier": value}, clan_tag="", client=None)
+            self.assertEqual(war.battle_modifier, expected)
+            self.assertEqual(war.battle_modifier, value)
+
+    def test_battle_modifier_defaults_to_none(self):
+        war = ClanWar(data={}, clan_tag="", client=None)
+
+        self.assertEqual(war.battle_modifier, BattleModifier.none)
+
+    def test_war_log_entry_battle_modifier(self):
+        entry = ClanWarLogEntry(data={"battleModifier": "MINUS_THREE"}, client=None)
+
+        self.assertEqual(entry.battle_modifier, BattleModifier.minus_three)
 
 
 class TestWarClan(unittest.TestCase):
