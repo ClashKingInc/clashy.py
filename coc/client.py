@@ -86,7 +86,7 @@ class Client:
 
     loop : :class:`asyncio.AbstractEventLoop`, optional
         The :class:`asyncio.AbstractEventLoop` to use for HTTP requests.
-        An :func:`asyncio.get_event_loop()` will be used if ``None`` is passed
+        If ``None`` is passed, the client binds to the running loop when it is logged in.
 
     correct_tags : :class:`bool`
         Whether the client should correct tags before requesting them from the API.
@@ -216,15 +216,8 @@ class Client:
         **kwargs,
     ):
 
-        self._owns_loop = False
-        if loop is None:
-            try:
-                loop = asyncio.get_running_loop()
-            except RuntimeError:
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                self._owns_loop = True
         self.loop = loop
+        self._owns_loop = False
 
         self.correct_key_count = max(min(KEY_MAXIMUM, key_count), KEY_MINIMUM)
 
@@ -346,6 +339,25 @@ class Client:
             ignore_cached_errors=self.ignore_cached_errors,
         )
 
+    def _bind_running_loop(self) -> asyncio.AbstractEventLoop:
+        loop = asyncio.get_running_loop()
+        if self.loop is not None and self.loop is not loop:
+            raise RuntimeError("Client is already bound to a different event loop.")
+        self.loop = loop
+        return loop
+
+    def _get_or_create_loop(self) -> asyncio.AbstractEventLoop:
+        if self.loop is not None:
+            return self.loop
+
+        try:
+            loop = asyncio.get_running_loop()
+        except RuntimeError:
+            loop = asyncio.get_event_loop_policy().get_event_loop()
+
+        self.loop = loop
+        return loop
+
     def _load_static(self):
         with open(TRANSLATION_PATH, 'rb') as fp:
             self._translations = orjson.loads(fp.read())
@@ -400,6 +412,7 @@ class Client:
             Your password login from https://developer.clashofclans.com
             This is used when updating keys automatically if your IP changes
         """
+        self._bind_running_loop()
         self.http = http = self._create_client(email, password)
         await http.create_session(self.connector, self.timeout)
         await http.initialise_keys()
@@ -422,6 +435,7 @@ class Client:
 
 
         """
+        self._get_or_create_loop()
         self.correct_key_count = len(keys)
         self.http = http = self._create_client(None, None)
         http._keys = keys
@@ -439,6 +453,7 @@ class Client:
         tokens: list[str]
             Tokens as found from https://developer.clashofclans.com under "My account" -> <your key> -> "token".
         """
+        self._bind_running_loop()
         self.correct_key_count = len(tokens)
         self.http = http = self._create_client(None, None)
         http._keys = tokens
@@ -451,10 +466,13 @@ class Client:
     async def close(self) -> None:
         """Closes the HTTP connection from within a loop function such as
         async def main()"""
-        await self.http.close()
+        if self.http is not None:
+            await self.http.close()
         self._close_owned_loop()
 
     def _close_owned_loop(self) -> None:
+        if self.loop is None:
+            return
         if self._owns_loop and not self.loop.is_running() and not self.loop.is_closed():
             self.loop.close()
             self._owns_loop = False
@@ -475,7 +493,7 @@ class Client:
             return
 
         if asyncio.iscoroutinefunction(fctn):
-            self.loop.create_task(fctn(*args, **kwargs))
+            self._get_or_create_loop().create_task(fctn(*args, **kwargs))
         else:
             fctn(*args, **kwargs)
 
