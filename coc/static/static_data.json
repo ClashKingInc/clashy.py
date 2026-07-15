@@ -814,6 +814,7 @@
           "required_townhall": 11,
           "hitpoints": 7500,
           "dps": 140,
+          "attack_speed": 500,
           "attack_range": 1000,
           "unlocks": [
             {
@@ -860,6 +861,7 @@
           "required_townhall": 12,
           "hitpoints": 8200,
           "dps": 220,
+          "attack_speed": 128,
           "attack_range": 1000,
           "unlocks": [
             {
@@ -891,6 +893,7 @@
           "required_townhall": 13,
           "hitpoints": 8900,
           "dps": 280,
+          "attack_speed": 128,
           "attack_range": 1000,
           "unlocks": [
             {
@@ -937,6 +940,7 @@
           "required_townhall": 14,
           "hitpoints": 9600,
           "dps": 300,
+          "attack_speed": 128,
           "attack_range": 1000,
           "unlocks": [
             {
@@ -958,6 +962,7 @@
           "required_townhall": 15,
           "hitpoints": 10000,
           "dps": 300,
+          "attack_speed": 128,
           "attack_range": 1000,
           "unlocks": [
             {
@@ -987,6 +992,7 @@
               "level": 7
             }
           ],
+          "attack_speed": 3500,
           "attack_range": 1200,
           "weapon": {
             "name": "Inferno Artillery",
@@ -2142,9 +2148,11 @@
           "required_townhall": 1,
           "hitpoints": 300,
           "dps": 7,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 14,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 195
@@ -2156,9 +2164,11 @@
           "required_townhall": 2,
           "hitpoints": 360,
           "dps": 10,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 20,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 225
@@ -2170,9 +2180,11 @@
           "required_townhall": 2,
           "hitpoints": 420,
           "dps": 13,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 26,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 274
@@ -2184,9 +2196,11 @@
           "required_townhall": 3,
           "hitpoints": 500,
           "dps": 17,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 34,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 323
@@ -2198,9 +2212,11 @@
           "required_townhall": 4,
           "hitpoints": 600,
           "dps": 23,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 46,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 389
@@ -2212,9 +2228,11 @@
           "required_townhall": 5,
           "hitpoints": 660,
           "dps": 30,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 60,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 454
@@ -2226,9 +2244,11 @@
           "required_townhall": 6,
           "hitpoints": 730,
           "dps": 40,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 80,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 548
@@ -2240,9 +2260,11 @@
           "required_townhall": 7,
           "hitpoints": 800,
           "dps": 48,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 96,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 632
@@ -2254,9 +2276,11 @@
           "required_townhall": 8,
           "hitpoints": 880,
           "dps": 56,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 112,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 710
@@ -2268,9 +2292,11 @@
           "required_townhall": 8,
           "hitpoints": 960,
           "dps": 64,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 128,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 783
@@ -2282,9 +2308,11 @@
           "required_townhall": 9,
           "hitpoints": 1060,
           "dps": 74,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 148,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 874
@@ -2296,9 +2324,11 @@
           "required_townhall": 10,
           "hitpoints": 1160,
           "dps": 85,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 170,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 969
@@ -2310,9 +2340,11 @@
           "required_townhall": 10,
           "hitpoints": 1260,
           "dps": 95,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 190,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 1050
@@ -2324,9 +2356,11 @@
           "required_townhall": 11,
           "hitpoints": 1380,
           "dps": 100,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 200,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 1130
@@ -2338,9 +2372,11 @@
           "required_townhall": 11,
           "hitpoints": 1500,
           "dps": 105,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 210,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 1205
@@ -2352,9 +2388,11 @@
           "required_townhall": 12,
           "hitpoints": 1620,
           "dps": 110,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 220,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 1236
@@ -2366,9 +2404,11 @@
           "required_townhall": 12,
           "hitpoints": 1740,
           "dps": 115,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 230,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 1297
@@ -2380,9 +2420,11 @@
           "required_townhall": 13,
           "hitpoints": 1870,
           "dps": 125,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 250,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 1361
@@ -2394,9 +2436,11 @@
           "required_townhall": 13,
           "hitpoints": 2000,
           "dps": 135,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 270,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 1463
@@ -2408,9 +2452,11 @@
           "required_townhall": 14,
           "hitpoints": 2150,
           "dps": 150,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 300,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 1569
@@ -2422,9 +2468,11 @@
           "required_townhall": 15,
           "hitpoints": 2250,
           "dps": 160,
+          "attack_speed": 800,
           "attack_range": 900,
           "alt": {
             "dps": 320,
+            "attack_speed": 1600,
             "attack_range": 700
           },
           "strength_weight": 1665
@@ -2464,9 +2512,11 @@
           "required_townhall": 2,
           "hitpoints": 380,
           "dps": 11,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 22,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 205
@@ -2478,9 +2528,11 @@
           "required_townhall": 2,
           "hitpoints": 420,
           "dps": 15,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 30,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 252
@@ -2492,9 +2544,11 @@
           "required_townhall": 3,
           "hitpoints": 460,
           "dps": 19,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 38,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 299
@@ -2506,9 +2560,11 @@
           "required_townhall": 4,
           "hitpoints": 500,
           "dps": 25,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 50,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 364
@@ -2520,9 +2576,11 @@
           "required_townhall": 5,
           "hitpoints": 540,
           "dps": 30,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 60,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 418
@@ -2534,9 +2592,11 @@
           "required_townhall": 5,
           "hitpoints": 580,
           "dps": 35,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 70,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 470
@@ -2548,9 +2608,11 @@
           "required_townhall": 6,
           "hitpoints": 630,
           "dps": 42,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 84,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 543
@@ -2562,9 +2624,11 @@
           "required_townhall": 7,
           "hitpoints": 690,
           "dps": 48,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 96,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 607
@@ -2576,9 +2640,11 @@
           "required_townhall": 8,
           "hitpoints": 750,
           "dps": 56,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 112,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 688
@@ -2590,9 +2656,11 @@
           "required_townhall": 8,
           "hitpoints": 810,
           "dps": 63,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 126,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 758
@@ -2604,9 +2672,11 @@
           "required_townhall": 9,
           "hitpoints": 890,
           "dps": 70,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 140,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 830
@@ -2618,9 +2688,11 @@
           "required_townhall": 10,
           "hitpoints": 970,
           "dps": 74,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 150,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 883
@@ -2632,9 +2704,11 @@
           "required_townhall": 10,
           "hitpoints": 1050,
           "dps": 78,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 160,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 935
@@ -2646,9 +2720,11 @@
           "required_townhall": 11,
           "hitpoints": 1130,
           "dps": 82,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 180,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 1029
@@ -2660,9 +2736,11 @@
           "required_townhall": 11,
           "hitpoints": 1230,
           "dps": 85,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 200,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 1111
@@ -2674,9 +2752,11 @@
           "required_townhall": 12,
           "hitpoints": 1310,
           "dps": 90,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 210,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 1147
@@ -2688,9 +2768,11 @@
           "required_townhall": 12,
           "hitpoints": 1390,
           "dps": 100,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 220,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 1206
@@ -2702,9 +2784,11 @@
           "required_townhall": 13,
           "hitpoints": 1510,
           "dps": 110,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 240,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 1309
@@ -2716,9 +2800,11 @@
           "required_townhall": 13,
           "hitpoints": 1600,
           "dps": 120,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 260,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 1411
@@ -2730,9 +2816,11 @@
           "required_townhall": 14,
           "hitpoints": 1700,
           "dps": 135,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 276,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 1498
@@ -2744,9 +2832,11 @@
           "required_townhall": 15,
           "hitpoints": 1800,
           "dps": 145,
+          "attack_speed": 500,
           "attack_range": 1000,
           "alt": {
             "dps": 290,
+            "attack_speed": 250,
             "attack_range": 800
           },
           "strength_weight": 1577
@@ -2983,6 +3073,7 @@
           "required_townhall": 5,
           "hitpoints": 620,
           "dps": 11,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 1193
         },
@@ -2993,6 +3084,7 @@
           "required_townhall": 5,
           "hitpoints": 650,
           "dps": 13,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 1229
         },
@@ -3003,6 +3095,7 @@
           "required_townhall": 6,
           "hitpoints": 680,
           "dps": 16,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 1287
         },
@@ -3013,6 +3106,7 @@
           "required_townhall": 7,
           "hitpoints": 730,
           "dps": 20,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 1377
         },
@@ -3023,6 +3117,7 @@
           "required_townhall": 8,
           "hitpoints": 840,
           "dps": 24,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 1485
         },
@@ -3033,6 +3128,7 @@
           "required_townhall": 8,
           "hitpoints": 960,
           "dps": 32,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 1680
         },
@@ -3043,6 +3139,7 @@
           "required_townhall": 9,
           "hitpoints": 1200,
           "dps": 40,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 1890
         },
@@ -3053,6 +3150,7 @@
           "required_townhall": 10,
           "hitpoints": 1440,
           "dps": 45,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 1944
         },
@@ -3063,6 +3161,7 @@
           "required_townhall": 10,
           "hitpoints": 1600,
           "dps": 50,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 2208
         },
@@ -3073,6 +3172,7 @@
           "required_townhall": 11,
           "hitpoints": 1900,
           "dps": 62,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 2688
         },
@@ -3083,6 +3183,7 @@
           "required_townhall": 12,
           "hitpoints": 2120,
           "dps": 70,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 3024
         },
@@ -3093,6 +3194,7 @@
           "required_townhall": 13,
           "hitpoints": 2240,
           "dps": 78,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 3360
         },
@@ -3103,6 +3205,7 @@
           "required_townhall": 13,
           "hitpoints": 2500,
           "dps": 84,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 3636
         },
@@ -3113,6 +3216,7 @@
           "required_townhall": 14,
           "hitpoints": 2800,
           "dps": 90,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 3900
         },
@@ -3123,6 +3227,7 @@
           "required_townhall": 15,
           "hitpoints": 3000,
           "dps": 95,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 4250
         },
@@ -3133,6 +3238,7 @@
           "required_townhall": 16,
           "hitpoints": 3150,
           "dps": 102,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 4519
         },
@@ -3143,6 +3249,7 @@
           "required_townhall": 17,
           "hitpoints": 3300,
           "dps": 110,
+          "attack_speed": 1300,
           "attack_range": 700,
           "strength_weight": 4800,
           "supercharge": {
@@ -3190,6 +3297,7 @@
           "required_townhall": 4,
           "hitpoints": 800,
           "dps": 80,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 500
         },
@@ -3200,6 +3308,7 @@
           "required_townhall": 4,
           "hitpoints": 850,
           "dps": 110,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 656
         },
@@ -3210,6 +3319,7 @@
           "required_townhall": 5,
           "hitpoints": 900,
           "dps": 140,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 813
         },
@@ -3220,6 +3330,7 @@
           "required_townhall": 6,
           "hitpoints": 950,
           "dps": 160,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 919
         },
@@ -3230,6 +3341,7 @@
           "required_townhall": 7,
           "hitpoints": 1000,
           "dps": 190,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 1075
         },
@@ -3240,6 +3352,7 @@
           "required_townhall": 8,
           "hitpoints": 1050,
           "dps": 230,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 1281
         },
@@ -3250,6 +3363,7 @@
           "required_townhall": 9,
           "hitpoints": 1100,
           "dps": 280,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 1538
         },
@@ -3260,6 +3374,7 @@
           "required_townhall": 10,
           "hitpoints": 1210,
           "dps": 320,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 1751
         },
@@ -3270,6 +3385,7 @@
           "required_townhall": 11,
           "hitpoints": 1300,
           "dps": 360,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 1963
         },
@@ -3280,6 +3396,7 @@
           "required_townhall": 12,
           "hitpoints": 1400,
           "dps": 400,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 2175
         },
@@ -3290,6 +3407,7 @@
           "required_townhall": 13,
           "hitpoints": 1500,
           "dps": 440,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 2388
         },
@@ -3300,6 +3418,7 @@
           "required_townhall": 14,
           "hitpoints": 1650,
           "dps": 500,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 2706
         },
@@ -3310,6 +3429,7 @@
           "required_townhall": 15,
           "hitpoints": 1750,
           "dps": 540,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 2919
         },
@@ -3320,6 +3440,7 @@
           "required_townhall": 16,
           "hitpoints": 1850,
           "dps": 600,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 3231
         },
@@ -3330,6 +3451,7 @@
           "required_townhall": 17,
           "hitpoints": 1950,
           "dps": 650,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 3550
         },
@@ -3340,6 +3462,7 @@
           "required_townhall": 18,
           "hitpoints": 2000,
           "dps": 700,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "strength_weight": 3900,
           "supercharge": {
@@ -3392,10 +3515,12 @@
           "required_townhall": 3,
           "hitpoints": 400,
           "dps": 4,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 5,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3408,10 +3533,12 @@
           "required_townhall": 4,
           "hitpoints": 450,
           "dps": 5,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 6,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3424,10 +3551,12 @@
           "required_townhall": 5,
           "hitpoints": 500,
           "dps": 6,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 7,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3440,10 +3569,12 @@
           "required_townhall": 6,
           "hitpoints": 550,
           "dps": 7,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 9,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3456,10 +3587,12 @@
           "required_townhall": 7,
           "hitpoints": 600,
           "dps": 9,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 11,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3472,10 +3605,12 @@
           "required_townhall": 8,
           "hitpoints": 650,
           "dps": 11,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 13,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3488,10 +3623,12 @@
           "required_townhall": 9,
           "hitpoints": 700,
           "dps": 15,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 18,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3504,10 +3641,12 @@
           "required_townhall": 10,
           "hitpoints": 800,
           "dps": 20,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 25,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3520,10 +3659,12 @@
           "required_townhall": 11,
           "hitpoints": 950,
           "dps": 25,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 31,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3536,10 +3677,12 @@
           "required_townhall": 11,
           "hitpoints": 1100,
           "dps": 30,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 38,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3552,10 +3695,12 @@
           "required_townhall": 12,
           "hitpoints": 1300,
           "dps": 35,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 43,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3568,10 +3713,12 @@
           "required_townhall": 12,
           "hitpoints": 1500,
           "dps": 38,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 47,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3584,10 +3731,12 @@
           "required_townhall": 13,
           "hitpoints": 1700,
           "dps": 42,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 52,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3600,10 +3749,12 @@
           "required_townhall": 14,
           "hitpoints": 1950,
           "dps": 48,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 59,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3616,10 +3767,12 @@
           "required_townhall": 15,
           "hitpoints": 2150,
           "dps": 54,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 66,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3632,10 +3785,12 @@
           "required_townhall": 16,
           "hitpoints": 2300,
           "dps": 60,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 74,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3648,10 +3803,12 @@
           "required_townhall": 17,
           "hitpoints": 2450,
           "dps": 66,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 81,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3664,10 +3821,12 @@
           "required_townhall": 18,
           "hitpoints": 2550,
           "dps": 72,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "alt": {
             "dps": 89,
+            "attack_speed": 3500,
             "attack_range": 1100,
             "min_range": 400
           },
@@ -3885,6 +4044,7 @@
           "required_townhall": 14,
           "hitpoints": 1000,
           "dps": 80,
+          "attack_speed": 400,
           "attack_range": 700,
           "strength_weight": 4600
         },
@@ -3895,6 +4055,7 @@
           "required_townhall": 14,
           "hitpoints": 1300,
           "dps": 100,
+          "attack_speed": 400,
           "attack_range": 700,
           "strength_weight": 5795
         },
@@ -3905,6 +4066,7 @@
           "required_townhall": 14,
           "hitpoints": 1600,
           "dps": 120,
+          "attack_speed": 400,
           "attack_range": 700,
           "strength_weight": 6840
         },
@@ -3915,6 +4077,7 @@
           "required_townhall": 15,
           "hitpoints": 1800,
           "dps": 135,
+          "attack_speed": 400,
           "attack_range": 700,
           "strength_weight": 7480
         },
@@ -3925,6 +4088,7 @@
           "required_townhall": 16,
           "hitpoints": 1900,
           "dps": 150,
+          "attack_speed": 400,
           "attack_range": 700,
           "strength_weight": 8000
         },
@@ -3935,6 +4099,7 @@
           "required_townhall": 17,
           "hitpoints": 2000,
           "dps": 165,
+          "attack_speed": 400,
           "attack_range": 700,
           "strength_weight": 8500
         },
@@ -3945,6 +4110,7 @@
           "required_townhall": 18,
           "hitpoints": 2100,
           "dps": 180,
+          "attack_speed": 400,
           "attack_range": 700,
           "strength_weight": 9000,
           "supercharge": {
@@ -3992,6 +4158,7 @@
           "required_townhall": 7,
           "hitpoints": 600,
           "dps": 34,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 490
         },
@@ -4002,6 +4169,7 @@
           "required_townhall": 7,
           "hitpoints": 630,
           "dps": 40,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 558
         },
@@ -4012,6 +4180,7 @@
           "required_townhall": 7,
           "hitpoints": 660,
           "dps": 48,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 645
         },
@@ -4022,6 +4191,7 @@
           "required_townhall": 8,
           "hitpoints": 690,
           "dps": 55,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 723
         },
@@ -4032,6 +4202,7 @@
           "required_townhall": 8,
           "hitpoints": 730,
           "dps": 64,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 823
         },
@@ -4042,6 +4213,7 @@
           "required_townhall": 8,
           "hitpoints": 770,
           "dps": 75,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 943
         },
@@ -4052,6 +4224,7 @@
           "required_townhall": 9,
           "hitpoints": 810,
           "dps": 87,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 1073
         },
@@ -4062,6 +4235,7 @@
           "required_townhall": 10,
           "hitpoints": 850,
           "dps": 99,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 1203
         },
@@ -4072,6 +4246,7 @@
           "required_townhall": 11,
           "hitpoints": 900,
           "dps": 110,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 1325
         },
@@ -4082,6 +4257,7 @@
           "required_townhall": 12,
           "hitpoints": 980,
           "dps": 120,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 1445
         },
@@ -4092,6 +4268,7 @@
           "required_townhall": 13,
           "hitpoints": 1100,
           "dps": 130,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 1575
         },
@@ -4102,6 +4279,7 @@
           "required_townhall": 13,
           "hitpoints": 1200,
           "dps": 140,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 1700
         },
@@ -4112,6 +4290,7 @@
           "required_townhall": 14,
           "hitpoints": 1350,
           "dps": 150,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 1838
         },
@@ -4122,6 +4301,7 @@
           "required_townhall": 15,
           "hitpoints": 1450,
           "dps": 160,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 1963
         },
@@ -4132,6 +4312,7 @@
           "required_townhall": 16,
           "hitpoints": 1550,
           "dps": 170,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 2088
         },
@@ -4142,6 +4323,7 @@
           "required_townhall": 17,
           "hitpoints": 1650,
           "dps": 180,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 2200
         },
@@ -4152,6 +4334,7 @@
           "required_townhall": 18,
           "hitpoints": 1750,
           "dps": 190,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 2300,
           "supercharge": {
@@ -4292,9 +4475,11 @@
           "required_townhall": 9,
           "hitpoints": 1500,
           "dps": 60,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 60,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 3413
@@ -4306,9 +4491,11 @@
           "required_townhall": 9,
           "hitpoints": 1900,
           "dps": 70,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 70,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 3819
@@ -4320,9 +4507,11 @@
           "required_townhall": 9,
           "hitpoints": 2300,
           "dps": 80,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 80,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 4125
@@ -4334,9 +4523,11 @@
           "required_townhall": 10,
           "hitpoints": 2700,
           "dps": 85,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 85,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 4725
@@ -4348,9 +4539,11 @@
           "required_townhall": 11,
           "hitpoints": 3100,
           "dps": 95,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 95,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 5625
@@ -4362,9 +4555,11 @@
           "required_townhall": 12,
           "hitpoints": 3400,
           "dps": 110,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 110,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 6450
@@ -4376,9 +4571,11 @@
           "required_townhall": 13,
           "hitpoints": 3700,
           "dps": 130,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 130,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 7275
@@ -4390,9 +4587,11 @@
           "required_townhall": 13,
           "hitpoints": 4000,
           "dps": 155,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 155,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 8100
@@ -4404,9 +4603,11 @@
           "required_townhall": 14,
           "hitpoints": 4200,
           "dps": 185,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 185,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 8850
@@ -4418,9 +4619,11 @@
           "required_townhall": 15,
           "hitpoints": 4400,
           "dps": 205,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 205,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 9450
@@ -4432,9 +4635,11 @@
           "required_townhall": 16,
           "hitpoints": 4600,
           "dps": 225,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 225,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 10200
@@ -4446,9 +4651,11 @@
           "required_townhall": 17,
           "hitpoints": 4800,
           "dps": 235,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 235,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 11000
@@ -4460,9 +4667,11 @@
           "required_townhall": 18,
           "hitpoints": 5000,
           "dps": 245,
+          "attack_speed": 128,
           "attack_range": 1400,
           "alt": {
             "dps": 245,
+            "attack_speed": 128,
             "attack_range": 1150
           },
           "strength_weight": 11800,
@@ -4886,9 +5095,11 @@
           "required_townhall": 10,
           "hitpoints": 1500,
           "dps": 30,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 30,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 18900
@@ -4900,9 +5111,11 @@
           "required_townhall": 10,
           "hitpoints": 1800,
           "dps": 35,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 35,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 20000
@@ -4914,9 +5127,11 @@
           "required_townhall": 10,
           "hitpoints": 2100,
           "dps": 40,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 40,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 20813
@@ -4928,9 +5143,11 @@
           "required_townhall": 11,
           "hitpoints": 2400,
           "dps": 45,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 45,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 23100
@@ -4942,9 +5159,11 @@
           "required_townhall": 11,
           "hitpoints": 2700,
           "dps": 50,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 50,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 25500
@@ -4956,9 +5175,11 @@
           "required_townhall": 12,
           "hitpoints": 3000,
           "dps": 55,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 55,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 27550
@@ -4970,9 +5191,11 @@
           "required_townhall": 13,
           "hitpoints": 3300,
           "dps": 65,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 65,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 30150
@@ -4984,9 +5207,11 @@
           "required_townhall": 14,
           "hitpoints": 3700,
           "dps": 80,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 80,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 32725
@@ -4998,9 +5223,11 @@
           "required_townhall": 15,
           "hitpoints": 4000,
           "dps": 100,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 100,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 34650
@@ -5012,9 +5239,11 @@
           "required_townhall": 16,
           "hitpoints": 4400,
           "dps": 120,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 120,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 37950
@@ -5026,9 +5255,11 @@
           "required_townhall": 17,
           "hitpoints": 4800,
           "dps": 140,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 140,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 39500
@@ -5040,9 +5271,11 @@
           "required_townhall": 18,
           "hitpoints": 5100,
           "dps": 155,
+          "attack_speed": 128,
           "attack_range": 900,
           "alt": {
             "dps": 155,
+            "attack_speed": 128,
             "attack_range": 1000
           },
           "strength_weight": 40500,
@@ -5092,6 +5325,7 @@
           "build_time": 14400,
           "required_townhall": 6,
           "hitpoints": 750,
+          "attack_speed": 5000,
           "attack_range": 1500,
           "min_range": 100,
           "strength_weight": 678
@@ -5102,6 +5336,7 @@
           "build_time": 21600,
           "required_townhall": 6,
           "hitpoints": 800,
+          "attack_speed": 5000,
           "attack_range": 1500,
           "min_range": 100,
           "strength_weight": 840
@@ -5112,6 +5347,7 @@
           "build_time": 28800,
           "required_townhall": 7,
           "hitpoints": 850,
+          "attack_speed": 5000,
           "attack_range": 1500,
           "min_range": 100,
           "strength_weight": 1003
@@ -5122,6 +5358,7 @@
           "build_time": 43200,
           "required_townhall": 8,
           "hitpoints": 900,
+          "attack_speed": 5000,
           "attack_range": 1500,
           "min_range": 100,
           "strength_weight": 1165
@@ -5132,6 +5369,7 @@
           "build_time": 86400,
           "required_townhall": 9,
           "hitpoints": 950,
+          "attack_speed": 5000,
           "attack_range": 1500,
           "min_range": 100,
           "strength_weight": 1328
@@ -5142,6 +5380,7 @@
           "build_time": 172800,
           "required_townhall": 10,
           "hitpoints": 1000,
+          "attack_speed": 5000,
           "attack_range": 1500,
           "min_range": 100,
           "strength_weight": 1490
@@ -5152,6 +5391,7 @@
           "build_time": 259200,
           "required_townhall": 11,
           "hitpoints": 1050,
+          "attack_speed": 5000,
           "attack_range": 1500,
           "min_range": 100,
           "strength_weight": 1653
@@ -5261,6 +5501,7 @@
           "required_townhall": 11,
           "hitpoints": 4000,
           "damage": 20,
+          "attack_speed": 10000,
           "attack_range": 5000,
           "min_range": 700,
           "strength_weight": 58800
@@ -5272,6 +5513,7 @@
           "required_townhall": 11,
           "hitpoints": 4400,
           "damage": 25,
+          "attack_speed": 10000,
           "attack_range": 5000,
           "min_range": 700,
           "strength_weight": 60075
@@ -5283,6 +5525,7 @@
           "required_townhall": 12,
           "hitpoints": 4800,
           "damage": 30,
+          "attack_speed": 10000,
           "attack_range": 5000,
           "min_range": 700,
           "strength_weight": 61500
@@ -5294,6 +5537,7 @@
           "required_townhall": 13,
           "hitpoints": 5200,
           "damage": 35,
+          "attack_speed": 10000,
           "attack_range": 5000,
           "min_range": 700,
           "strength_weight": 62700
@@ -5305,6 +5549,7 @@
           "required_townhall": 14,
           "hitpoints": 5600,
           "damage": 40,
+          "attack_speed": 10000,
           "attack_range": 5000,
           "min_range": 700,
           "strength_weight": 63900
@@ -5316,6 +5561,7 @@
           "required_townhall": 15,
           "hitpoints": 5900,
           "damage": 45,
+          "attack_speed": 10000,
           "attack_range": 5000,
           "min_range": 700,
           "strength_weight": 65450
@@ -5327,6 +5573,7 @@
           "required_townhall": 16,
           "hitpoints": 6200,
           "damage": 50,
+          "attack_speed": 10000,
           "attack_range": 5000,
           "min_range": 700,
           "strength_weight": 67000
@@ -5356,6 +5603,7 @@
           "required_townhall": 8,
           "hitpoints": 650,
           "dps": 24,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 1610
         },
@@ -5366,6 +5614,7 @@
           "required_townhall": 8,
           "hitpoints": 700,
           "dps": 28,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 1911
         },
@@ -5376,6 +5625,7 @@
           "required_townhall": 9,
           "hitpoints": 750,
           "dps": 32,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 2233
         },
@@ -5386,6 +5636,7 @@
           "required_townhall": 10,
           "hitpoints": 850,
           "dps": 40,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 2818
         },
@@ -5396,6 +5647,7 @@
           "required_townhall": 11,
           "hitpoints": 1050,
           "dps": 48,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 3416
         },
@@ -5406,6 +5658,7 @@
           "required_townhall": 11,
           "hitpoints": 1300,
           "dps": 56,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 4071
         },
@@ -5416,6 +5669,7 @@
           "required_townhall": 12,
           "hitpoints": 1600,
           "dps": 64,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 4784
         },
@@ -5426,6 +5680,7 @@
           "required_townhall": 13,
           "hitpoints": 1900,
           "dps": 72,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 5497
         },
@@ -5436,6 +5691,7 @@
           "required_townhall": 14,
           "hitpoints": 2300,
           "dps": 84,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 6509
         },
@@ -5446,6 +5702,7 @@
           "required_townhall": 15,
           "hitpoints": 2500,
           "dps": 94,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 7199
         },
@@ -5456,6 +5713,7 @@
           "required_townhall": 16,
           "hitpoints": 2700,
           "dps": 104,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 7889
         },
@@ -5466,6 +5724,7 @@
           "required_townhall": 17,
           "hitpoints": 2900,
           "dps": 114,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 8600
         },
@@ -5476,6 +5735,7 @@
           "required_townhall": 18,
           "hitpoints": 3050,
           "dps": 122,
+          "attack_speed": 1100,
           "attack_range": 600,
           "strength_weight": 9200,
           "supercharge": {
@@ -5703,7 +5963,7 @@
               "quantity": 1
             },
             {
-              "name": "B.O.T.O\u2019s Shack",
+              "name": "B.O.T.O’s Shack",
               "_id": 1000047,
               "quantity": 1
             }
@@ -6751,6 +7011,7 @@
           "required_townhall": 2,
           "hitpoints": 600,
           "damage": 50,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 3000
         },
@@ -6761,6 +7022,7 @@
           "required_townhall": 3,
           "hitpoints": 690,
           "damage": 55,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 3200
         },
@@ -6771,6 +7033,7 @@
           "required_townhall": 3,
           "hitpoints": 800,
           "damage": 61,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 3400
         },
@@ -6781,6 +7044,7 @@
           "required_townhall": 4,
           "hitpoints": 910,
           "damage": 67,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 3600
         },
@@ -6791,6 +7055,7 @@
           "required_townhall": 5,
           "hitpoints": 1050,
           "damage": 74,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 3800
         },
@@ -6801,6 +7066,7 @@
           "required_townhall": 6,
           "hitpoints": 1250,
           "damage": 81,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 4000
         },
@@ -6811,6 +7077,7 @@
           "required_townhall": 7,
           "hitpoints": 1450,
           "damage": 89,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 4200
         },
@@ -6821,6 +7088,7 @@
           "required_townhall": 8,
           "hitpoints": 1700,
           "damage": 98,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 4400
         },
@@ -6831,6 +7099,7 @@
           "required_townhall": 9,
           "hitpoints": 1950,
           "damage": 108,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 4600
         },
@@ -6841,6 +7110,7 @@
           "required_townhall": 10,
           "hitpoints": 2200,
           "damage": 120,
+          "attack_speed": 1600,
           "attack_range": 700,
           "strength_weight": 4800
         }
@@ -6884,6 +7154,7 @@
           "required_townhall": 3,
           "hitpoints": 300,
           "damage": 36,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 2800
         },
@@ -6894,6 +7165,7 @@
           "required_townhall": 3,
           "hitpoints": 350,
           "damage": 40,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 3000
         },
@@ -6904,6 +7176,7 @@
           "required_townhall": 3,
           "hitpoints": 400,
           "damage": 44,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 3200
         },
@@ -6914,6 +7187,7 @@
           "required_townhall": 4,
           "hitpoints": 460,
           "damage": 48,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 3400
         },
@@ -6924,6 +7198,7 @@
           "required_townhall": 5,
           "hitpoints": 550,
           "damage": 53,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 3600
         },
@@ -6934,6 +7209,7 @@
           "required_townhall": 6,
           "hitpoints": 650,
           "damage": 58,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 3800
         },
@@ -6944,6 +7220,7 @@
           "required_townhall": 7,
           "hitpoints": 750,
           "damage": 64,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 4000
         },
@@ -6954,6 +7231,7 @@
           "required_townhall": 8,
           "hitpoints": 850,
           "damage": 70,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 4200
         },
@@ -6964,6 +7242,7 @@
           "required_townhall": 9,
           "hitpoints": 1000,
           "damage": 77,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 4400
         },
@@ -6974,6 +7253,7 @@
           "required_townhall": 10,
           "hitpoints": 1150,
           "damage": 85,
+          "attack_speed": 600,
           "attack_range": 700,
           "strength_weight": 4600
         }
@@ -7002,6 +7282,7 @@
           "required_townhall": 1,
           "hitpoints": 500,
           "damage": 56,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 2000
         },
@@ -7012,6 +7293,7 @@
           "required_townhall": 3,
           "hitpoints": 575,
           "damage": 62,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 2200
         },
@@ -7022,6 +7304,7 @@
           "required_townhall": 3,
           "hitpoints": 660,
           "damage": 68,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 2400
         },
@@ -7032,6 +7315,7 @@
           "required_townhall": 4,
           "hitpoints": 760,
           "damage": 75,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 2600
         },
@@ -7042,6 +7326,7 @@
           "required_townhall": 5,
           "hitpoints": 875,
           "damage": 82,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 2800
         },
@@ -7052,6 +7337,7 @@
           "required_townhall": 6,
           "hitpoints": 1050,
           "damage": 90,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 3000
         },
@@ -7062,6 +7348,7 @@
           "required_townhall": 7,
           "hitpoints": 1250,
           "damage": 99,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 3200
         },
@@ -7072,6 +7359,7 @@
           "required_townhall": 8,
           "hitpoints": 1450,
           "damage": 109,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 3400
         },
@@ -7082,6 +7370,7 @@
           "required_townhall": 9,
           "hitpoints": 1650,
           "damage": 120,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 3600
         },
@@ -7092,6 +7381,7 @@
           "required_townhall": 10,
           "hitpoints": 1850,
           "damage": 132,
+          "attack_speed": 800,
           "attack_range": 850,
           "strength_weight": 3800
         }
@@ -7120,6 +7410,7 @@
           "required_townhall": 5,
           "hitpoints": 500,
           "damage": 45,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 3400
@@ -7131,6 +7422,7 @@
           "required_townhall": 5,
           "hitpoints": 575,
           "damage": 45,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 3600
@@ -7142,6 +7434,7 @@
           "required_townhall": 5,
           "hitpoints": 660,
           "damage": 50,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 3800
@@ -7153,6 +7446,7 @@
           "required_townhall": 5,
           "hitpoints": 760,
           "damage": 55,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 4000
@@ -7164,6 +7458,7 @@
           "required_townhall": 5,
           "hitpoints": 875,
           "damage": 60,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 4200
@@ -7175,6 +7470,7 @@
           "required_townhall": 6,
           "hitpoints": 1050,
           "damage": 66,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 4400
@@ -7186,6 +7482,7 @@
           "required_townhall": 7,
           "hitpoints": 1250,
           "damage": 73,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 4600
@@ -7197,6 +7494,7 @@
           "required_townhall": 8,
           "hitpoints": 1450,
           "damage": 80,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 4800
@@ -7208,6 +7506,7 @@
           "required_townhall": 9,
           "hitpoints": 1650,
           "damage": 88,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 5000
@@ -7219,6 +7518,7 @@
           "required_townhall": 10,
           "hitpoints": 1850,
           "damage": 88,
+          "attack_speed": 5000,
           "attack_range": 1100,
           "min_range": 400,
           "strength_weight": 5200
@@ -7323,7 +7623,7 @@
     },
     {
       "_id": 1000047,
-      "name": "B.O.T.O\u2019s Shack",
+      "name": "B.O.T.O’s Shack",
       "info": "Master Builder saved this little guy from the scrap heap. Despite a few loose screws, B.O.T.O is eager to help with tasks around Builder Base!",
       "TID": {
         "name": "TID_WORKER2_BUILDING",
@@ -7364,9 +7664,11 @@
           "required_townhall": 2,
           "hitpoints": 500,
           "dps": 40,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 89,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 2400
@@ -7378,9 +7680,11 @@
           "required_townhall": 3,
           "hitpoints": 575,
           "dps": 44,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 98,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 2600
@@ -7392,9 +7696,11 @@
           "required_townhall": 3,
           "hitpoints": 660,
           "dps": 48,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 107,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 2800
@@ -7406,9 +7712,11 @@
           "required_townhall": 4,
           "hitpoints": 760,
           "dps": 53,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 118,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 3000
@@ -7420,9 +7728,11 @@
           "required_townhall": 5,
           "hitpoints": 875,
           "dps": 59,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 131,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 3200
@@ -7434,9 +7744,11 @@
           "required_townhall": 6,
           "hitpoints": 1050,
           "dps": 64,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 142,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 3400
@@ -7448,9 +7760,11 @@
           "required_townhall": 7,
           "hitpoints": 1250,
           "dps": 71,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 158,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 3600
@@ -7462,9 +7776,11 @@
           "required_townhall": 8,
           "hitpoints": 1450,
           "dps": 78,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 173,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 3800
@@ -7476,9 +7792,11 @@
           "required_townhall": 9,
           "hitpoints": 1650,
           "dps": 86,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 191,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 4000
@@ -7490,9 +7808,11 @@
           "required_townhall": 10,
           "hitpoints": 1850,
           "dps": 94,
+          "attack_speed": 1000,
           "attack_range": 1000,
           "alt": {
             "dps": 209,
+            "attack_speed": 450,
             "attack_range": 700
           },
           "strength_weight": 4200
@@ -7537,6 +7857,7 @@
           "required_townhall": 3,
           "hitpoints": 400,
           "damage": 19,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 2000
         },
@@ -7547,6 +7868,7 @@
           "required_townhall": 3,
           "hitpoints": 460,
           "damage": 21,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 2200
         },
@@ -7557,6 +7879,7 @@
           "required_townhall": 3,
           "hitpoints": 530,
           "damage": 23,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 2400
         },
@@ -7567,6 +7890,7 @@
           "required_townhall": 4,
           "hitpoints": 610,
           "damage": 25,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 2600
         },
@@ -7577,6 +7901,7 @@
           "required_townhall": 5,
           "hitpoints": 700,
           "damage": 27,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 2800
         },
@@ -7587,6 +7912,7 @@
           "required_townhall": 6,
           "hitpoints": 850,
           "damage": 30,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 3000
         },
@@ -7597,6 +7923,7 @@
           "required_townhall": 7,
           "hitpoints": 1000,
           "damage": 33,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 3200
         },
@@ -7607,6 +7934,7 @@
           "required_townhall": 8,
           "hitpoints": 1150,
           "damage": 36,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 3400
         },
@@ -7617,6 +7945,7 @@
           "required_townhall": 9,
           "hitpoints": 1300,
           "damage": 40,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 3600
         },
@@ -7627,6 +7956,7 @@
           "required_townhall": 10,
           "hitpoints": 1500,
           "damage": 44,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 3800
         }
@@ -7761,6 +8091,7 @@
           "required_townhall": 8,
           "hitpoints": 700,
           "damage": 380,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 3600
         },
@@ -7771,6 +8102,7 @@
           "required_townhall": 8,
           "hitpoints": 800,
           "damage": 418,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 3800
         },
@@ -7781,6 +8113,7 @@
           "required_townhall": 8,
           "hitpoints": 950,
           "damage": 460,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 4000
         },
@@ -7791,6 +8124,7 @@
           "required_townhall": 8,
           "hitpoints": 1100,
           "damage": 506,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 4200
         },
@@ -7801,6 +8135,7 @@
           "required_townhall": 8,
           "hitpoints": 1300,
           "damage": 556,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 4400
         },
@@ -7811,6 +8146,7 @@
           "required_townhall": 8,
           "hitpoints": 1500,
           "damage": 612,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 4600
         },
@@ -7821,6 +8157,7 @@
           "required_townhall": 8,
           "hitpoints": 1700,
           "damage": 673,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 4800
         },
@@ -7831,6 +8168,7 @@
           "required_townhall": 8,
           "hitpoints": 1900,
           "damage": 741,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 5000
         },
@@ -7841,6 +8179,7 @@
           "required_townhall": 9,
           "hitpoints": 2150,
           "damage": 816,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 5200
         },
@@ -7851,6 +8190,7 @@
           "required_townhall": 10,
           "hitpoints": 2400,
           "damage": 896,
+          "attack_speed": 4000,
           "attack_range": 750,
           "strength_weight": 5400
         }
@@ -7894,6 +8234,7 @@
           "required_townhall": 4,
           "hitpoints": 1000,
           "damage": 270,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 3400
         },
@@ -7904,6 +8245,7 @@
           "required_townhall": 4,
           "hitpoints": 1100,
           "damage": 297,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 3600
         },
@@ -7914,6 +8256,7 @@
           "required_townhall": 4,
           "hitpoints": 1250,
           "damage": 327,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 3800
         },
@@ -7924,6 +8267,7 @@
           "required_townhall": 4,
           "hitpoints": 1400,
           "damage": 359,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 4000
         },
@@ -7934,6 +8278,7 @@
           "required_townhall": 5,
           "hitpoints": 1600,
           "damage": 395,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 4200
         },
@@ -7944,6 +8289,7 @@
           "required_townhall": 6,
           "hitpoints": 1850,
           "damage": 435,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 4400
         },
@@ -7954,6 +8300,7 @@
           "required_townhall": 7,
           "hitpoints": 2100,
           "damage": 478,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 4600
         },
@@ -7964,6 +8311,7 @@
           "required_townhall": 8,
           "hitpoints": 2350,
           "damage": 526,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 4800
         },
@@ -7974,6 +8322,7 @@
           "required_townhall": 9,
           "hitpoints": 2600,
           "damage": 579,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 5000
         },
@@ -7984,6 +8333,7 @@
           "required_townhall": 10,
           "hitpoints": 2900,
           "damage": 637,
+          "attack_speed": 3000,
           "attack_range": 750,
           "strength_weight": 5200
         }
@@ -8012,6 +8362,7 @@
           "required_townhall": 3,
           "hitpoints": 1000,
           "damage": 440,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 3200
         },
@@ -8022,6 +8373,7 @@
           "required_townhall": 3,
           "hitpoints": 1100,
           "damage": 484,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 3400
         },
@@ -8032,6 +8384,7 @@
           "required_townhall": 3,
           "hitpoints": 1250,
           "damage": 532,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 3600
         },
@@ -8042,6 +8395,7 @@
           "required_townhall": 4,
           "hitpoints": 1400,
           "damage": 586,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 3800
         },
@@ -8052,6 +8406,7 @@
           "required_townhall": 5,
           "hitpoints": 1600,
           "damage": 644,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 4000
         },
@@ -8062,6 +8417,7 @@
           "required_townhall": 6,
           "hitpoints": 1850,
           "damage": 709,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 4200
         },
@@ -8072,6 +8428,7 @@
           "required_townhall": 7,
           "hitpoints": 2100,
           "damage": 779,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 4400
         },
@@ -8082,6 +8439,7 @@
           "required_townhall": 8,
           "hitpoints": 2350,
           "damage": 857,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 4600
         },
@@ -8092,6 +8450,7 @@
           "required_townhall": 9,
           "hitpoints": 2600,
           "damage": 943,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 4800
         },
@@ -8102,6 +8461,7 @@
           "required_townhall": 10,
           "hitpoints": 2900,
           "damage": 1037,
+          "attack_speed": 3500,
           "attack_range": 230,
           "strength_weight": 5000
         }
@@ -8130,6 +8490,7 @@
           "required_townhall": 6,
           "hitpoints": 800,
           "damage": 15,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 3600
         },
@@ -8140,6 +8501,7 @@
           "required_townhall": 6,
           "hitpoints": 950,
           "damage": 17,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 3800
         },
@@ -8150,6 +8512,7 @@
           "required_townhall": 6,
           "hitpoints": 1100,
           "damage": 19,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 4000
         },
@@ -8160,6 +8523,7 @@
           "required_townhall": 6,
           "hitpoints": 1300,
           "damage": 21,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 4200
         },
@@ -8170,6 +8534,7 @@
           "required_townhall": 6,
           "hitpoints": 1500,
           "damage": 23,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 4400
         },
@@ -8180,6 +8545,7 @@
           "required_townhall": 6,
           "hitpoints": 1700,
           "damage": 25,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 4600
         },
@@ -8190,6 +8556,7 @@
           "required_townhall": 7,
           "hitpoints": 1900,
           "damage": 27,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 4800
         },
@@ -8200,6 +8567,7 @@
           "required_townhall": 8,
           "hitpoints": 2100,
           "damage": 30,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 5000
         },
@@ -8210,6 +8578,7 @@
           "required_townhall": 9,
           "hitpoints": 2350,
           "damage": 33,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 5200
         },
@@ -8220,6 +8589,7 @@
           "required_townhall": 10,
           "hitpoints": 2600,
           "damage": 36,
+          "attack_speed": 1800,
           "attack_range": 700,
           "strength_weight": 5400
         }
@@ -8248,6 +8618,7 @@
           "required_townhall": 7,
           "hitpoints": 700,
           "damage": 205,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 3600
         },
@@ -8258,6 +8629,7 @@
           "required_townhall": 7,
           "hitpoints": 800,
           "damage": 226,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 3800
         },
@@ -8268,6 +8640,7 @@
           "required_townhall": 7,
           "hitpoints": 950,
           "damage": 248,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 4000
         },
@@ -8278,6 +8651,7 @@
           "required_townhall": 7,
           "hitpoints": 1100,
           "damage": 273,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 4200
         },
@@ -8288,6 +8662,7 @@
           "required_townhall": 7,
           "hitpoints": 1300,
           "damage": 300,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 4400
         },
@@ -8298,6 +8673,7 @@
           "required_townhall": 7,
           "hitpoints": 1500,
           "damage": 330,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 4600
         },
@@ -8308,6 +8684,7 @@
           "required_townhall": 7,
           "hitpoints": 1700,
           "damage": 363,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 4800
         },
@@ -8318,6 +8695,7 @@
           "required_townhall": 8,
           "hitpoints": 1900,
           "damage": 399,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 5000
         },
@@ -8328,6 +8706,7 @@
           "required_townhall": 9,
           "hitpoints": 2150,
           "damage": 439,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 5200
         },
@@ -8338,6 +8717,7 @@
           "required_townhall": 10,
           "hitpoints": 2400,
           "damage": 483,
+          "attack_speed": 5000,
           "attack_range": 950,
           "strength_weight": 5400
         }
@@ -8550,6 +8930,7 @@
           "required_townhall": 9,
           "hitpoints": 500,
           "damage": 50,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 3600
@@ -8561,6 +8942,7 @@
           "required_townhall": 9,
           "hitpoints": 575,
           "damage": 55,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 3800
@@ -8572,6 +8954,7 @@
           "required_townhall": 9,
           "hitpoints": 660,
           "damage": 61,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 4000
@@ -8583,6 +8966,7 @@
           "required_townhall": 9,
           "hitpoints": 760,
           "damage": 67,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 4200
@@ -8594,6 +8978,7 @@
           "required_townhall": 9,
           "hitpoints": 875,
           "damage": 73,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 4400
@@ -8605,6 +8990,7 @@
           "required_townhall": 9,
           "hitpoints": 1050,
           "damage": 81,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 4600
@@ -8616,6 +9002,7 @@
           "required_townhall": 9,
           "hitpoints": 1250,
           "damage": 89,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 4800
@@ -8627,6 +9014,7 @@
           "required_townhall": 9,
           "hitpoints": 1450,
           "damage": 97,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 5000
@@ -8638,6 +9026,7 @@
           "required_townhall": 9,
           "hitpoints": 1650,
           "damage": 107,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 5200
@@ -8649,6 +9038,7 @@
           "required_townhall": 10,
           "hitpoints": 1850,
           "damage": 118,
+          "attack_speed": 7000,
           "attack_range": 1300,
           "min_range": 600,
           "strength_weight": 5400
@@ -8749,6 +9139,7 @@
           "required_townhall": 13,
           "hitpoints": 3600,
           "dps": 125,
+          "attack_speed": 3228,
           "attack_range": 1000,
           "min_range": 300,
           "strength_weight": 15050
@@ -8760,6 +9151,7 @@
           "required_townhall": 13,
           "hitpoints": 4200,
           "dps": 150,
+          "attack_speed": 3228,
           "attack_range": 1000,
           "min_range": 300,
           "strength_weight": 17850
@@ -8771,6 +9163,7 @@
           "required_townhall": 14,
           "hitpoints": 4800,
           "dps": 170,
+          "attack_speed": 3228,
           "attack_range": 1000,
           "min_range": 300,
           "strength_weight": 20650
@@ -8782,6 +9175,7 @@
           "required_townhall": 15,
           "hitpoints": 5100,
           "dps": 175,
+          "attack_speed": 3228,
           "attack_range": 1000,
           "min_range": 300,
           "strength_weight": 21875
@@ -8793,6 +9187,7 @@
           "required_townhall": 16,
           "hitpoints": 5410,
           "dps": 180,
+          "attack_speed": 3228,
           "attack_range": 1000,
           "min_range": 300,
           "strength_weight": 22575
@@ -8804,6 +9199,7 @@
           "required_townhall": 17,
           "hitpoints": 5600,
           "dps": 185,
+          "attack_speed": 3228,
           "attack_range": 1000,
           "min_range": 300,
           "strength_weight": 23200
@@ -8815,6 +9211,7 @@
           "required_townhall": 18,
           "hitpoints": 5800,
           "dps": 190,
+          "attack_speed": 3228,
           "attack_range": 1000,
           "min_range": 300,
           "strength_weight": 23850,
@@ -9184,6 +9581,7 @@
           "effect_range": 500,
           "is_air_targeting": true,
           "is_ground_targeting": true,
+          "attack_speed": 70000,
           "attack_range": 900,
           "strength_weight": 6250
         },
@@ -9197,6 +9595,7 @@
           "effect_range": 500,
           "is_air_targeting": true,
           "is_ground_targeting": true,
+          "attack_speed": 70000,
           "attack_range": 900,
           "strength_weight": 9800
         },
@@ -9210,6 +9609,7 @@
           "effect_range": 450,
           "is_air_targeting": true,
           "is_ground_targeting": true,
+          "attack_speed": 50000,
           "attack_range": 450,
           "strength_weight": 13950
         },
@@ -9223,6 +9623,7 @@
           "effect_range": 470,
           "is_air_targeting": false,
           "is_ground_targeting": true,
+          "attack_speed": 50000,
           "attack_range": 900,
           "strength_weight": 15000
         }
@@ -9251,6 +9652,7 @@
           "required_townhall": 15,
           "hitpoints": 4747,
           "dps": 150,
+          "attack_speed": 1500,
           "attack_range": 1100,
           "strength_weight": 37615
         },
@@ -9261,6 +9663,7 @@
           "required_townhall": 15,
           "hitpoints": 5050,
           "dps": 175,
+          "attack_speed": 1500,
           "attack_range": 1100,
           "strength_weight": 39163
         },
@@ -9271,6 +9674,7 @@
           "required_townhall": 16,
           "hitpoints": 5353,
           "dps": 193,
+          "attack_speed": 1500,
           "attack_range": 1100,
           "strength_weight": 40750
         },
@@ -9281,6 +9685,7 @@
           "required_townhall": 17,
           "hitpoints": 5656,
           "dps": 209,
+          "attack_speed": 1500,
           "attack_range": 1100,
           "strength_weight": 43000
         },
@@ -9291,6 +9696,7 @@
           "required_townhall": 18,
           "hitpoints": 5959,
           "dps": 225,
+          "attack_speed": 1500,
           "attack_range": 1100,
           "strength_weight": 45500,
           "supercharge": {
@@ -9318,7 +9724,7 @@
     {
       "_id": 1000078,
       "name": "O.T.T.O's Outpost",
-      "info": "O.T.T.O\u00b4s home and the main building of the second stage. May contain additional feisty robots.\\n\\nDestroying O.T.T.O\u00b4s Outpost awards an extra star in attacks.",
+      "info": "O.T.T.O´s home and the main building of the second stage. May contain additional feisty robots.\\n\\nDestroying O.T.T.O´s Outpost awards an extra star in attacks.",
       "TID": {
         "name": "TID_BUILDING_OTTOS_OUTPOST",
         "info": "TID_BUILDING_OTTOS_OUTPOST_INFO"
@@ -9439,9 +9845,11 @@
           "required_townhall": 17,
           "hitpoints": 4000,
           "dps": 350,
+          "attack_speed": 1000,
           "attack_range": 1200,
           "alt": {
             "dps": 650,
+            "attack_speed": 350,
             "attack_range": 800
           },
           "strength_weight": 15000,
@@ -9467,9 +9875,11 @@
           "required_townhall": 17,
           "hitpoints": 4200,
           "dps": 370,
+          "attack_speed": 1000,
           "attack_range": 1200,
           "alt": {
             "dps": 690,
+            "attack_speed": 350,
             "attack_range": 800
           },
           "strength_weight": 17000
@@ -9481,9 +9891,11 @@
           "required_townhall": 18,
           "hitpoints": 4350,
           "dps": 390,
+          "attack_speed": 1000,
           "attack_range": 1200,
           "alt": {
             "dps": 710,
+            "attack_speed": 350,
             "attack_range": 800
           },
           "strength_weight": 18000,
@@ -9552,9 +9964,11 @@
           "required_townhall": 10,
           "hitpoints": 1700,
           "dps": 80,
+          "attack_speed": 192,
           "attack_range": 1200,
           "alt": {
             "dps": 80,
+            "attack_speed": 192,
             "attack_range": 1200
           },
           "strength_weight": 4600
@@ -9566,9 +9980,11 @@
           "required_townhall": 10,
           "hitpoints": 1900,
           "dps": 89,
+          "attack_speed": 192,
           "attack_range": 1200,
           "alt": {
             "dps": 89,
+            "attack_speed": 192,
             "attack_range": 1200
           },
           "strength_weight": 4800
@@ -9580,9 +9996,11 @@
           "required_townhall": 10,
           "hitpoints": 2100,
           "dps": 97,
+          "attack_speed": 192,
           "attack_range": 1200,
           "alt": {
             "dps": 97,
+            "attack_speed": 192,
             "attack_range": 1200
           },
           "strength_weight": 5000
@@ -9594,9 +10012,11 @@
           "required_townhall": 10,
           "hitpoints": 2350,
           "dps": 107,
+          "attack_speed": 192,
           "attack_range": 1200,
           "alt": {
             "dps": 107,
+            "attack_speed": 192,
             "attack_range": 1200
           },
           "strength_weight": 5200
@@ -9608,9 +10028,11 @@
           "required_townhall": 10,
           "hitpoints": 2600,
           "dps": 117,
+          "attack_speed": 192,
           "attack_range": 1200,
           "alt": {
             "dps": 117,
+            "attack_speed": 192,
             "attack_range": 1200
           },
           "strength_weight": 5400
@@ -9725,6 +10147,7 @@
           "required_townhall": 16,
           "hitpoints": 5000,
           "damage": 60,
+          "attack_speed": 600,
           "attack_range": 1000,
           "strength_weight": 9400,
           "merge_requirement": [
@@ -9749,6 +10172,7 @@
           "required_townhall": 16,
           "hitpoints": 5200,
           "damage": 65,
+          "attack_speed": 600,
           "attack_range": 1000,
           "strength_weight": 11000
         },
@@ -9759,6 +10183,7 @@
           "required_townhall": 17,
           "hitpoints": 5400,
           "damage": 70,
+          "attack_speed": 600,
           "attack_range": 1000,
           "strength_weight": 13000
         },
@@ -9769,6 +10194,7 @@
           "required_townhall": 18,
           "hitpoints": 5500,
           "damage": 73,
+          "attack_speed": 600,
           "attack_range": 1000,
           "strength_weight": 14500,
           "supercharge": {
@@ -9816,6 +10242,7 @@
           "required_townhall": 16,
           "hitpoints": 5400,
           "dps": 360,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 9900,
           "merge_requirement": [
@@ -9840,6 +10267,7 @@
           "required_townhall": 16,
           "hitpoints": 5700,
           "dps": 390,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 11715
         },
@@ -9850,6 +10278,7 @@
           "required_townhall": 17,
           "hitpoints": 6000,
           "dps": 405,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 14000
         },
@@ -9860,6 +10289,7 @@
           "required_townhall": 18,
           "hitpoints": 6100,
           "dps": 412,
+          "attack_speed": 800,
           "attack_range": 900,
           "strength_weight": 15000,
           "supercharge": {
@@ -9907,6 +10337,7 @@
           "required_townhall": 18,
           "hitpoints": 5800,
           "damage": 50,
+          "attack_speed": 1200,
           "attack_range": 1100,
           "strength_weight": 50000
         },
@@ -9917,6 +10348,7 @@
           "required_townhall": 18,
           "hitpoints": 6200,
           "damage": 60,
+          "attack_speed": 1200,
           "attack_range": 1100,
           "strength_weight": 52500,
           "supercharge": {
@@ -9966,6 +10398,7 @@
           "required_townhall": 17,
           "hitpoints": 4500,
           "dps": 411,
+          "attack_speed": 1000,
           "attack_range": 1600,
           "strength_weight": 35000
         },
@@ -9976,6 +10409,7 @@
           "required_townhall": 17,
           "hitpoints": 5000,
           "dps": 438,
+          "attack_speed": 1000,
           "attack_range": 1600,
           "strength_weight": 38000
         },
@@ -9986,6 +10420,7 @@
           "required_townhall": 18,
           "hitpoints": 5300,
           "dps": 456,
+          "attack_speed": 1000,
           "attack_range": 1600,
           "strength_weight": 39500,
           "supercharge": {
@@ -10043,20 +10478,20 @@
       "levels": [],
       "seasonal_defenses": [
         {
-          "_id": 103000011,
-          "name": "Hot Candle",
-          "info": "The flickering flame of the Hot Candle flings fire spurts at multiple surrounding enemies! Better make your wish quick, as this defense\u2019s target capacity decreases as it melts.",
+          "_id": 103000008,
+          "name": "Roaster",
+          "info": "Boils up and blasts hot plasma on ground and air enemies. Give your skin a healthy glow by standing at a safe distance.",
           "TID": {
-            "name": "TID_BUILDING_INFERNO_CANDLE",
-            "info": "TID_BUILDING_INFERNO_CANDLE_INFO"
+            "name": "TID_BUILDING_ROASTER",
+            "info": "TID_BUILDING_ROASTER_INFO"
           },
           "required_townhall": 18,
           "modules": [
             {
-              "_id": 102000033,
-              "name": "Inferno Candle HP Module",
+              "_id": 102000024,
+              "name": "Slowdown Tower HP Module",
               "TID": {
-                "name": "TID_SEASONAL_DEFENSE_INFERNO_CANDLE_MODULE_HP"
+                "name": "TID_SEASONAL_DEFENSE_ROASTER_MODULE_HP"
               },
               "upgrade_resource": "Elixir",
               "levels": [
@@ -10065,7 +10500,7 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "HealthOverride": 1600
+                    "HealthOverride": 960
                   }
                 },
                 {
@@ -10073,7 +10508,7 @@
                   "build_cost": 3500000,
                   "build_time": 21600,
                   "ability_data": {
-                    "HealthOverride": 1800
+                    "HealthOverride": 1500
                   }
                 },
                 {
@@ -10081,7 +10516,7 @@
                   "build_cost": 4500000,
                   "build_time": 28800,
                   "ability_data": {
-                    "HealthOverride": 2150
+                    "HealthOverride": 2000
                   }
                 },
                 {
@@ -10097,29 +10532,29 @@
                   "build_cost": 6500000,
                   "build_time": 43200,
                   "ability_data": {
-                    "HealthOverride": 2700
+                    "HealthOverride": 3000
                   }
                 },
                 {
                   "level": 6,
                   "build_cost": 7500000,
-                  "build_time": 64800,
+                  "build_time": 50400,
                   "ability_data": {
-                    "HealthOverride": 3150
+                    "HealthOverride": 3500
                   }
                 },
                 {
                   "level": 7,
                   "build_cost": 8500000,
-                  "build_time": 154800,
+                  "build_time": 93600,
                   "ability_data": {
-                    "HealthOverride": 3900
+                    "HealthOverride": 4000
                   }
                 },
                 {
                   "level": 8,
                   "build_cost": 10000000,
-                  "build_time": 288000,
+                  "build_time": 187200,
                   "ability_data": {
                     "HealthOverride": 4500
                   }
@@ -10127,7 +10562,7 @@
                 {
                   "level": 9,
                   "build_cost": 11500000,
-                  "build_time": 496800,
+                  "build_time": 367200,
                   "ability_data": {
                     "HealthOverride": 5200
                   }
@@ -10135,7 +10570,7 @@
                 {
                   "level": 10,
                   "build_cost": 13000000,
-                  "build_time": 820800,
+                  "build_time": 734400,
                   "ability_data": {
                     "HealthOverride": 6000
                   }
@@ -10143,10 +10578,10 @@
               ]
             },
             {
-              "_id": 102000034,
-              "name": "Inferno Candle Attack Module",
+              "_id": 102000025,
+              "name": "Slowdown Tower Atk Module",
               "TID": {
-                "name": "TID_SEASONAL_DEFENSE_INFERNO_CANDLE_MODULE_ATTACK"
+                "name": "TID_SEASONAL_DEFENSE_ROASTER_MODULE_ATTACK"
               },
               "upgrade_resource": "Gold",
               "levels": [
@@ -10155,8 +10590,11 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 40
+                    "AttackSpeed": 1500,
+                    "Damage": 85,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit1-3",
+                    "Projectile": "Flamer_projectile1-3"
                   }
                 },
                 {
@@ -10164,8 +10602,11 @@
                   "build_cost": 4000000,
                   "build_time": 28800,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 50
+                    "AttackSpeed": 1500,
+                    "Damage": 90,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit1-3",
+                    "Projectile": "Flamer_projectile1-3"
                   }
                 },
                 {
@@ -10173,8 +10614,11 @@
                   "build_cost": 5000000,
                   "build_time": 36000,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 60
+                    "AttackSpeed": 1500,
+                    "Damage": 95,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit1-3",
+                    "Projectile": "Flamer_projectile1-3"
                   }
                 },
                 {
@@ -10182,8 +10626,11 @@
                   "build_cost": 6000000,
                   "build_time": 39600,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 75
+                    "AttackSpeed": 1500,
+                    "Damage": 100,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit4-6",
+                    "Projectile": "Flamer_projectile4-6"
                   }
                 },
                 {
@@ -10191,62 +10638,80 @@
                   "build_cost": 7500000,
                   "build_time": 46800,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 80
+                    "AttackSpeed": 1500,
+                    "Damage": 105,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit4-6",
+                    "Projectile": "Flamer_projectile4-6"
                   }
                 },
                 {
                   "level": 6,
                   "build_cost": 9000000,
-                  "build_time": 68400,
+                  "build_time": 54000,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 90
+                    "AttackSpeed": 1500,
+                    "Damage": 110,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit4-6",
+                    "Projectile": "Flamer_projectile4-6"
                   }
                 },
                 {
                   "level": 7,
                   "build_cost": 10500000,
-                  "build_time": 165600,
+                  "build_time": 97200,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 95
+                    "AttackSpeed": 1500,
+                    "Damage": 115,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit7-8",
+                    "Projectile": "Flamer_projectile7-8"
                   }
                 },
                 {
                   "level": 8,
                   "build_cost": 12000000,
-                  "build_time": 298800,
+                  "build_time": 194400,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 105
+                    "AttackSpeed": 1500,
+                    "Damage": 120,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit7-8",
+                    "Projectile": "Flamer_projectile7-8"
                   }
                 },
                 {
                   "level": 9,
                   "build_cost": 13500000,
-                  "build_time": 532800,
+                  "build_time": 388800,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 115
+                    "AttackSpeed": 1500,
+                    "Damage": 125,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit7-8",
+                    "Projectile": "Flamer_projectile7-8"
                   }
                 },
                 {
                   "level": 10,
                   "build_cost": 15000000,
-                  "build_time": 864000,
+                  "build_time": 777600,
                   "ability_data": {
-                    "AttackSpeed": 500,
-                    "Damage": 125
+                    "AttackSpeed": 1500,
+                    "Damage": 135,
+                    "AttackEffect": "Flamer_attack",
+                    "HitEffect": "Flamer_hit7-8",
+                    "Projectile": "Flamer_projectile7-8"
                   }
                 }
               ]
             },
             {
-              "_id": 102000035,
-              "name": "Inferno Candle Effect Module",
+              "_id": 102000026,
+              "name": "Slowdown Tower Effect Module",
               "TID": {
-                "name": "TID_SEASONAL_DEFENSE_INFERNO_CANDLE_MODULE_EFFECT"
+                "name": "TID_SEASONAL_DEFENSE_ROASTER_MODULE_EFFECT"
               },
               "upgrade_resource": "Dark Elixir",
               "levels": [
@@ -10255,9 +10720,8 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "1;1"
+                    "BurstCount": 8,
+                    "BurstDelay": 256
                   }
                 },
                 {
@@ -10265,9 +10729,8 @@
                   "build_cost": 30000,
                   "build_time": 14400,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "2;2"
+                    "BurstCount": 9,
+                    "BurstDelay": 256
                   }
                 },
                 {
@@ -10275,9 +10738,8 @@
                   "build_cost": 40000,
                   "build_time": 21600,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "3;3"
+                    "BurstCount": 10,
+                    "BurstDelay": 256
                   }
                 },
                 {
@@ -10285,9 +10747,8 @@
                   "build_cost": 50000,
                   "build_time": 28800,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "4;4"
+                    "BurstCount": 11,
+                    "BurstDelay": 256
                   }
                 },
                 {
@@ -10295,59 +10756,53 @@
                   "build_cost": 60000,
                   "build_time": 36000,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "5;5"
+                    "BurstCount": 12,
+                    "BurstDelay": 256
                   }
                 },
                 {
                   "level": 6,
                   "build_cost": 70000,
-                  "build_time": 57600,
+                  "build_time": 43200,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "6;6"
+                    "BurstCount": 13,
+                    "BurstDelay": 256
                   }
                 },
                 {
                   "level": 7,
                   "build_cost": 80000,
-                  "build_time": 144000,
+                  "build_time": 86400,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "7;7"
+                    "BurstCount": 14,
+                    "BurstDelay": 256
                   }
                 },
                 {
                   "level": 8,
                   "build_cost": 90000,
-                  "build_time": 266400,
+                  "build_time": 172800,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "8;8"
+                    "BurstCount": 15,
+                    "BurstDelay": 256
                   }
                 },
                 {
                   "level": 9,
                   "build_cost": 100000,
-                  "build_time": 453600,
+                  "build_time": 345600,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "9;9"
+                    "BurstCount": 16,
+                    "BurstDelay": 256
                   }
                 },
                 {
                   "level": 10,
                   "build_cost": 110000,
-                  "build_time": 777600,
+                  "build_time": 691200,
                   "ability_data": {
-                    "OverrideSWF": "sc/buildings.sc",
-                    "ExtraAbilities": "InfernoCandleEffectAbility2;InfernoCandleEffectAbility3",
-                    "ExtraAbilityLevels": "10;10"
+                    "BurstCount": 17,
+                    "BurstDelay": 256
                   }
                 }
               ]
@@ -10355,20 +10810,20 @@
           ]
         },
         {
-          "_id": 103000012,
-          "name": "Hero Hunter",
-          "info": "Headhunter wants to play a game!\\n\\nThis destructive deck dealer targets all troops but serves extra damage to Heroes! Card projectiles cause slowdown and result in poisoned paper cuts.",
+          "_id": 103000009,
+          "name": "Air Bombs",
+          "info": "Barrel after barrel, Air Bombs blast even the mightiest flying enemies out of the sky. Your village airspace isn’t safe with this Builder Base classic around!",
           "TID": {
-            "name": "TID_BUILDING_HEADHUNTER_TOWER",
-            "info": "TID_BUILDING_HEADHUNTER_TOWER_INFO"
+            "name": "TID_BUILDING_SD_AIR_BOMBS",
+            "info": "TID_BUILDING_SD_AIR_BOMBS_INFO"
           },
           "required_townhall": 18,
           "modules": [
             {
-              "_id": 102000036,
-              "name": "Headhunter Tower HP Module",
+              "_id": 102000027,
+              "name": "Air Bombs HP Module",
               "TID": {
-                "name": "TID_SEASONAL_DEFENSE_HEADHUNTER_TOWER_MODULE_HP"
+                "name": "TID_SEASONAL_DEFENSE_AIR_BOMBS_MODULE_HP"
               },
               "upgrade_resource": "Dark Elixir",
               "levels": [
@@ -10377,7 +10832,7 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "HealthOverride": 1600
+                    "HealthOverride": 600
                   }
                 },
                 {
@@ -10385,7 +10840,7 @@
                   "build_cost": 40000,
                   "build_time": 28800,
                   "ability_data": {
-                    "HealthOverride": 1800
+                    "HealthOverride": 1000
                   }
                 },
                 {
@@ -10393,7 +10848,7 @@
                   "build_cost": 50000,
                   "build_time": 36000,
                   "ability_data": {
-                    "HealthOverride": 2150
+                    "HealthOverride": 1500
                   }
                 },
                 {
@@ -10401,7 +10856,7 @@
                   "build_cost": 60000,
                   "build_time": 39600,
                   "ability_data": {
-                    "HealthOverride": 2500
+                    "HealthOverride": 2000
                   }
                 },
                 {
@@ -10409,29 +10864,29 @@
                   "build_cost": 70000,
                   "build_time": 46800,
                   "ability_data": {
-                    "HealthOverride": 2700
+                    "HealthOverride": 2600
                   }
                 },
                 {
                   "level": 6,
                   "build_cost": 80000,
-                  "build_time": 68400,
+                  "build_time": 54000,
                   "ability_data": {
-                    "HealthOverride": 3150
+                    "HealthOverride": 3200
                   }
                 },
                 {
                   "level": 7,
                   "build_cost": 90000,
-                  "build_time": 165600,
+                  "build_time": 97200,
                   "ability_data": {
-                    "HealthOverride": 3900
+                    "HealthOverride": 3800
                   }
                 },
                 {
                   "level": 8,
                   "build_cost": 100000,
-                  "build_time": 298800,
+                  "build_time": 194400,
                   "ability_data": {
                     "HealthOverride": 4400
                   }
@@ -10439,7 +10894,7 @@
                 {
                   "level": 9,
                   "build_cost": 110000,
-                  "build_time": 532800,
+                  "build_time": 388800,
                   "ability_data": {
                     "HealthOverride": 5200
                   }
@@ -10447,7 +10902,7 @@
                 {
                   "level": 10,
                   "build_cost": 120000,
-                  "build_time": 864000,
+                  "build_time": 777600,
                   "ability_data": {
                     "HealthOverride": 6000
                   }
@@ -10455,10 +10910,10 @@
               ]
             },
             {
-              "_id": 102000037,
-              "name": "Headhunter Tower Attack Module",
+              "_id": 102000028,
+              "name": "Air Bombs Atk Module",
               "TID": {
-                "name": "TID_SEASONAL_DEFENSE_HEADHUNTER_TOWER_MODULE_ATTACK"
+                "name": "TID_SEASONAL_DEFENSE_AIR_BOMBS_MODULE_ATTACK"
               },
               "upgrade_resource": "Elixir",
               "levels": [
@@ -10467,8 +10922,7 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 145
+                    "Damage": 590
                   }
                 },
                 {
@@ -10476,8 +10930,7 @@
                   "build_cost": 3000000,
                   "build_time": 14400,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 155
+                    "Damage": 620
                   }
                 },
                 {
@@ -10485,8 +10938,7 @@
                   "build_cost": 4000000,
                   "build_time": 21600,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 170
+                    "Damage": 650
                   }
                 },
                 {
@@ -10494,8 +10946,7 @@
                   "build_cost": 5000000,
                   "build_time": 28800,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 185
+                    "Damage": 680
                   }
                 },
                 {
@@ -10503,62 +10954,56 @@
                   "build_cost": 6000000,
                   "build_time": 36000,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 195
+                    "Damage": 710
                   }
                 },
                 {
                   "level": 6,
                   "build_cost": 7000000,
-                  "build_time": 57600,
+                  "build_time": 43200,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 210
+                    "Damage": 740
                   }
                 },
                 {
                   "level": 7,
                   "build_cost": 8000000,
-                  "build_time": 144000,
+                  "build_time": 86400,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 260
+                    "Damage": 775
                   }
                 },
                 {
                   "level": 8,
                   "build_cost": 9000000,
-                  "build_time": 266400,
+                  "build_time": 172800,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 325
+                    "Damage": 820
                   }
                 },
                 {
                   "level": 9,
                   "build_cost": 10000000,
-                  "build_time": 453600,
+                  "build_time": 345600,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 350
+                    "Damage": 880
                   }
                 },
                 {
                   "level": 10,
                   "build_cost": 11000000,
-                  "build_time": 777600,
+                  "build_time": 691200,
                   "ability_data": {
-                    "AttackSpeed": 600,
-                    "DPS": 385
+                    "Damage": 950
                   }
                 }
               ]
             },
             {
-              "_id": 102000038,
-              "name": "Headhunter Tower Effect Module",
+              "_id": 102000029,
+              "name": "Air Bombs Effect Module",
               "TID": {
-                "name": "TID_SEASONAL_DEFENSE_HEADHUNTER_TOWER_MODULE_EFFECT"
+                "name": "TID_SEASONAL_DEFENSE_AIR_BOMBS_MODULE_EFFECT"
               },
               "upgrade_resource": "Gold",
               "levels": [
@@ -10567,7 +11012,8 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 3
+                    "AttackSpeed": 3400,
+                    "Damage": 1
                   }
                 },
                 {
@@ -10575,7 +11021,8 @@
                   "build_cost": 3500000,
                   "build_time": 21600,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 4
+                    "AttackSpeed": 3200,
+                    "Damage": 1
                   }
                 },
                 {
@@ -10583,7 +11030,8 @@
                   "build_cost": 4500000,
                   "build_time": 28800,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 5
+                    "AttackSpeed": 3000,
+                    "Damage": 1
                   }
                 },
                 {
@@ -10591,7 +11039,8 @@
                   "build_cost": 5500000,
                   "build_time": 36000,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 6
+                    "AttackSpeed": 2800,
+                    "Damage": 1
                   }
                 },
                 {
@@ -10599,47 +11048,53 @@
                   "build_cost": 6500000,
                   "build_time": 43200,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 7
+                    "AttackSpeed": 2600,
+                    "Damage": 1
                   }
                 },
                 {
                   "level": 6,
                   "build_cost": 7500000,
-                  "build_time": 64800,
+                  "build_time": 50400,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 8
+                    "AttackSpeed": 2400,
+                    "Damage": 1
                   }
                 },
                 {
                   "level": 7,
                   "build_cost": 8500000,
-                  "build_time": 154800,
+                  "build_time": 93600,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 9
+                    "AttackSpeed": 2200,
+                    "Damage": 1
                   }
                 },
                 {
                   "level": 8,
                   "build_cost": 10000000,
-                  "build_time": 288000,
+                  "build_time": 187200,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 10
+                    "AttackSpeed": 2000,
+                    "Damage": 1
                   }
                 },
                 {
                   "level": 9,
                   "build_cost": 11500000,
-                  "build_time": 496800,
+                  "build_time": 367200,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 11
+                    "AttackSpeed": 1800,
+                    "Damage": 1
                   }
                 },
                 {
                   "level": 10,
                   "build_cost": 13000000,
-                  "build_time": 820800,
+                  "build_time": 734400,
                   "ability_data": {
-                    "PoisonOnHitSpellLevel": 12
+                    "AttackSpeed": 1600,
+                    "Damage": 1
                   }
                 }
               ]
@@ -10647,20 +11102,20 @@
           ]
         },
         {
-          "_id": 103000013,
-          "name": "Cake-A-Pult",
-          "info": "One splash-damage serving at a time!\\n\\n Cake surrounding enemies in destructive and delectable... cake. When this dessert drops, it leaves an explosive surprise, ensuring no one is around for seconds.",
+          "_id": 103000010,
+          "name": "Lava Launcher",
+          "info": "A hot delivery from Builder Base. Lava Launcher spits straight fire at a single target from afar! Its piping hot projectiles play a dangerous game of The Floor is Lava where ground troops always lose.",
           "TID": {
-            "name": "TID_BUILDING_CAKE_THROWER",
-            "info": "TID_BUILDING_CAKE_THROWER_INFO"
+            "name": "TID_BUILDING_SD_LAVA_LAUNCHER",
+            "info": "TID_BUILDING_SD_LAVA_LAUNCHER_INFO"
           },
           "required_townhall": 18,
           "modules": [
             {
-              "_id": 102000039,
-              "name": "Snow Mortar HP Module",
+              "_id": 102000030,
+              "name": "Lava Launcher HP Module",
               "TID": {
-                "name": "TID_SEASONAL_DEFENSE_SNOW_MORTAR_MODULE_HP"
+                "name": "TID_SEASONAL_DEFENSE_LAVA_LAUNCHER_MODULE_HP"
               },
               "upgrade_resource": "Gold",
               "levels": [
@@ -10669,7 +11124,7 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "HealthOverride": 1600
+                    "HealthOverride": 450
                   }
                 },
                 {
@@ -10677,7 +11132,7 @@
                   "build_cost": 3000000,
                   "build_time": 14400,
                   "ability_data": {
-                    "HealthOverride": 1800
+                    "HealthOverride": 800
                   }
                 },
                 {
@@ -10685,7 +11140,7 @@
                   "build_cost": 4000000,
                   "build_time": 21600,
                   "ability_data": {
-                    "HealthOverride": 2150
+                    "HealthOverride": 1200
                   }
                 },
                 {
@@ -10693,7 +11148,7 @@
                   "build_cost": 5000000,
                   "build_time": 28800,
                   "ability_data": {
-                    "HealthOverride": 2500
+                    "HealthOverride": 1600
                   }
                 },
                 {
@@ -10701,56 +11156,56 @@
                   "build_cost": 6000000,
                   "build_time": 36000,
                   "ability_data": {
-                    "HealthOverride": 2700
+                    "HealthOverride": 2100
                   }
                 },
                 {
                   "level": 6,
                   "build_cost": 7000000,
-                  "build_time": 57600,
+                  "build_time": 43200,
                   "ability_data": {
-                    "HealthOverride": 3150
+                    "HealthOverride": 2600
                   }
                 },
                 {
                   "level": 7,
                   "build_cost": 8000000,
-                  "build_time": 144000,
+                  "build_time": 86400,
                   "ability_data": {
-                    "HealthOverride": 3800
+                    "HealthOverride": 3100
                   }
                 },
                 {
                   "level": 8,
                   "build_cost": 9000000,
-                  "build_time": 266400,
+                  "build_time": 172800,
                   "ability_data": {
-                    "HealthOverride": 4300
+                    "HealthOverride": 3600
                   }
                 },
                 {
                   "level": 9,
                   "build_cost": 10000000,
-                  "build_time": 453600,
+                  "build_time": 345600,
                   "ability_data": {
-                    "HealthOverride": 4950
+                    "HealthOverride": 4200
                   }
                 },
                 {
                   "level": 10,
                   "build_cost": 11000000,
-                  "build_time": 777600,
+                  "build_time": 691200,
                   "ability_data": {
-                    "HealthOverride": 5800
+                    "HealthOverride": 4900
                   }
                 }
               ]
             },
             {
-              "_id": 102000040,
-              "name": "Snow Mortar Attack Module",
+              "_id": 102000031,
+              "name": "Lava Launcher Atk Module",
               "TID": {
-                "name": "TID_SEASONAL_DEFENSE_SNOW_MORTAR_MODULE_ATTACK"
+                "name": "TID_SEASONAL_DEFENSE_LAVA_LAUNCHER_MODULE_ATTACK"
               },
               "upgrade_resource": "Dark Elixir",
               "levels": [
@@ -10759,8 +11214,9 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 65
+                    "AttackSpeed": 7000,
+                    "DPS": 72,
+                    "Projectile": "Lava Ammo1_Seasonal_Defense"
                   }
                 },
                 {
@@ -10768,8 +11224,9 @@
                   "build_cost": 35000,
                   "build_time": 21600,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 70
+                    "AttackSpeed": 7000,
+                    "DPS": 75,
+                    "Projectile": "Lava Ammo2_Seasonal_Defense"
                   }
                 },
                 {
@@ -10777,8 +11234,9 @@
                   "build_cost": 45000,
                   "build_time": 28800,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 75
+                    "AttackSpeed": 7000,
+                    "DPS": 80,
+                    "Projectile": "Lava Ammo3_Seasonal_Defense"
                   }
                 },
                 {
@@ -10786,8 +11244,9 @@
                   "build_cost": 55000,
                   "build_time": 36000,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 82
+                    "AttackSpeed": 7000,
+                    "DPS": 85,
+                    "Projectile": "Lava Ammo4_Seasonal_Defense"
                   }
                 },
                 {
@@ -10795,62 +11254,68 @@
                   "build_cost": 65000,
                   "build_time": 43200,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 88
+                    "AttackSpeed": 7000,
+                    "DPS": 90,
+                    "Projectile": "Lava Ammo5_Seasonal_Defense"
                   }
                 },
                 {
                   "level": 6,
                   "build_cost": 75000,
-                  "build_time": 64800,
+                  "build_time": 50400,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 95
+                    "AttackSpeed": 7000,
+                    "DPS": 95,
+                    "Projectile": "Lava Ammo6_Seasonal_Defense"
                   }
                 },
                 {
                   "level": 7,
                   "build_cost": 85000,
-                  "build_time": 154800,
+                  "build_time": 93600,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 105
+                    "AttackSpeed": 7000,
+                    "DPS": 100,
+                    "Projectile": "Lava Ammo7_Seasonal_Defense"
                   }
                 },
                 {
                   "level": 8,
                   "build_cost": 95000,
-                  "build_time": 288000,
+                  "build_time": 187200,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 111
+                    "AttackSpeed": 7000,
+                    "DPS": 105,
+                    "Projectile": "Lava Ammo8_Seasonal_Defense"
                   }
                 },
                 {
                   "level": 9,
                   "build_cost": 105000,
-                  "build_time": 496800,
+                  "build_time": 367200,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 118
+                    "AttackSpeed": 7000,
+                    "DPS": 110,
+                    "Projectile": "Lava Ammo9_Seasonal_Defense"
                   }
                 },
                 {
                   "level": 10,
                   "build_cost": 115000,
-                  "build_time": 820800,
+                  "build_time": 734400,
                   "ability_data": {
-                    "AttackSpeed": 3000,
-                    "DPS": 125
+                    "AttackSpeed": 7000,
+                    "DPS": 115,
+                    "Projectile": "Lava Ammo10_Seasonal_Defense"
                   }
                 }
               ]
             },
             {
-              "_id": 102000041,
-              "name": "Snow Mortar Effect Module",
+              "_id": 102000032,
+              "name": "Lava Launcher Effect Module",
               "TID": {
-                "name": "TID_SEASONAL_DEFENSE_SNOW_MORTAR_MODULE_EFFECT"
+                "name": "TID_SEASONAL_DEFENSE_LAVA_LAUNCHER_MODULE_EFFECT"
               },
               "upgrade_resource": "Elixir",
               "levels": [
@@ -10859,7 +11324,7 @@
                   "build_cost": 0,
                   "build_time": 0,
                   "ability_data": {
-                    "HitSpellLevelOverride": 1
+                    "AttackRange": 1100
                   }
                 },
                 {
@@ -10867,7 +11332,7 @@
                   "build_cost": 4000000,
                   "build_time": 28800,
                   "ability_data": {
-                    "HitSpellLevelOverride": 2
+                    "AttackRange": 1150
                   }
                 },
                 {
@@ -10875,7 +11340,7 @@
                   "build_cost": 5000000,
                   "build_time": 36000,
                   "ability_data": {
-                    "HitSpellLevelOverride": 3
+                    "AttackRange": 1200
                   }
                 },
                 {
@@ -10883,7 +11348,7 @@
                   "build_cost": 6000000,
                   "build_time": 39600,
                   "ability_data": {
-                    "HitSpellLevelOverride": 4
+                    "AttackRange": 1250
                   }
                 },
                 {
@@ -10891,47 +11356,47 @@
                   "build_cost": 7500000,
                   "build_time": 46800,
                   "ability_data": {
-                    "HitSpellLevelOverride": 5
+                    "AttackRange": 1300
                   }
                 },
                 {
                   "level": 6,
                   "build_cost": 9000000,
-                  "build_time": 68400,
+                  "build_time": 54000,
                   "ability_data": {
-                    "HitSpellLevelOverride": 6
+                    "AttackRange": 1350
                   }
                 },
                 {
                   "level": 7,
                   "build_cost": 10500000,
-                  "build_time": 165600,
+                  "build_time": 97200,
                   "ability_data": {
-                    "HitSpellLevelOverride": 7
+                    "AttackRange": 1400
                   }
                 },
                 {
                   "level": 8,
                   "build_cost": 12000000,
-                  "build_time": 298800,
+                  "build_time": 194400,
                   "ability_data": {
-                    "HitSpellLevelOverride": 8
+                    "AttackRange": 1450
                   }
                 },
                 {
                   "level": 9,
                   "build_cost": 13500000,
-                  "build_time": 532800,
+                  "build_time": 388800,
                   "ability_data": {
-                    "HitSpellLevelOverride": 9
+                    "AttackRange": 1500
                   }
                 },
                 {
                   "level": 10,
                   "build_cost": 15000000,
-                  "build_time": 864000,
+                  "build_time": 777600,
                   "ability_data": {
-                    "HitSpellLevelOverride": 10
+                    "AttackRange": 1600
                   }
                 }
               ]
@@ -10943,7 +11408,7 @@
     {
       "_id": 1000102,
       "name": "Super Wizard Tower",
-      "info": "Super Wizard\u2019s first strike can shock up to fifteen nearby enemies. Chained targets take less damage.",
+      "info": "Super Wizard’s first strike can shock up to fifteen nearby enemies. Chained targets take less damage.",
       "TID": {
         "name": "TID_BUILDING_MERGED_WIZARD_TOWER",
         "info": "TID_MERGED_WIZARD_TOWER_INFO"
@@ -10963,6 +11428,7 @@
           "required_townhall": 18,
           "hitpoints": 6000,
           "dps": 290,
+          "attack_speed": 1300,
           "attack_range": 800,
           "strength_weight": 12000,
           "merge_requirement": [
@@ -10987,6 +11453,7 @@
           "required_townhall": 18,
           "hitpoints": 6300,
           "dps": 320,
+          "attack_speed": 1300,
           "attack_range": 800,
           "strength_weight": 14000,
           "supercharge": {
@@ -12526,7 +12993,7 @@
     {
       "_id": 4000003,
       "name": "Giant",
-      "info": "These big guys may seem calm, but show them a Cannon or Archer Tower and you\u00b4ll see their fury unleashed! Slow yet durable, these warriors are best used to soak up hits.",
+      "info": "These big guys may seem calm, but show them a Cannon or Archer Tower and you´ll see their fury unleashed! Slow yet durable, these warriors are best used to soak up hits.",
       "TID": {
         "name": "TID_GIANT",
         "info": "TID_CHARACTER_INFO_GIANT"
@@ -13448,7 +13915,7 @@
     {
       "_id": 4000009,
       "name": "P.E.K.K.A",
-      "info": "Is P.E.K.K.A a knight? A samurai? A robot? No one knows! P.E.K.K.A\u00b4s armor absorbs even the mightiest of blows.",
+      "info": "Is P.E.K.K.A a knight? A samurai? A robot? No one knows! P.E.K.K.A´s armor absorbs even the mightiest of blows.",
       "TID": {
         "name": "TID_PEKKA",
         "info": "TID_CHARACTER_INFO_PEKKA"
@@ -16637,7 +17104,7 @@
     {
       "_id": 4000037,
       "name": "Cannon Cart",
-      "info": "A Cannon on wheels?! Wait, did it just turn into a Mortar?? Bet they won\u00b4t see that coming! Both powerful and versatile!",
+      "info": "A Cannon on wheels?! Wait, did it just turn into a Mortar?? Bet they won´t see that coming! Both powerful and versatile!",
       "TID": {
         "name": "TID_MOVING_CANNON",
         "info": "TID_CHARACTER_INFO_MOVING_CANNON"
@@ -23469,7 +23936,7 @@
     {
       "_id": 4000142,
       "name": "Snake Barrel",
-      "info": "This Lunar New Year, it\u2019s raining snakes! These green menaces are barrels of fun, and bite chunks out of Defenses. They\u2019ll slither over Walls, and are effective in groups!",
+      "info": "This Lunar New Year, it’s raining snakes! These green menaces are barrels of fun, and bite chunks out of Defenses. They’ll slither over Walls, and are effective in groups!",
       "TID": {
         "name": "TID_CHARACTER_SNAKE_BARREL",
         "info": "TID_CHARACTER_INFO_SNAKE_BARREL"
@@ -23728,7 +24195,7 @@
     {
       "_id": 4000150,
       "name": "Furnace",
-      "info": "Furnace doesn\u2019t move, but it does spawn Firemites over time that target buildings. These curious little guys leave pools of fire where they visit!",
+      "info": "Furnace doesn’t move, but it does spawn Firemites over time that target buildings. These curious little guys leave pools of fire where they visit!",
       "TID": {
         "name": "TID_CHARACTER_FURNACE",
         "info": "TID_CHARACTER_INFO_FURNACE"
@@ -23790,7 +24257,7 @@
     {
       "_id": 4000156,
       "name": "Giant Giant",
-      "info": "With the might of 10 Giants, the Giant Giant clobbers Defenses with massive splash damage. Uh-oh! If he loses half of his max health, he\u2019ll rage out with increased speed and power.",
+      "info": "With the might of 10 Giants, the Giant Giant clobbers Defenses with massive splash damage. Uh-oh! If he loses half of his max health, he’ll rage out with increased speed and power.",
       "TID": {
         "name": "TID_CHARACTER_APRIL25GTG",
         "info": "TID_CHARACTER_INFO_APRIL25GTG"
@@ -24156,7 +24623,7 @@
     {
       "_id": 4000158,
       "name": "The Disarmer",
-      "info": "She is THE MAN! The Disarmer targets Defenses with spiteful blows of her bat and makes easy work of Walls by jumping right over them! She must be put down 3 times before she\u2019s out. Talk about tough!",
+      "info": "She is THE MAN! The Disarmer targets Defenses with spiteful blows of her bat and makes easy work of Walls by jumping right over them! She must be put down 3 times before she’s out. Talk about tough!",
       "TID": {
         "name": "TID_CHARACTER_APRIL25BLTM",
         "info": "TID_CHARACTER_INFO_APRIL25BLTM"
@@ -24675,7 +25142,7 @@
     {
       "_id": 4000165,
       "name": "The Disarmer",
-      "info": "She is THE MAN! The Disarmer targets Defenses with spiteful blows of her bat and makes easy work of Walls by jumping right over them! She must be put down 3 times before she\u2019s out. Talk about tough!",
+      "info": "She is THE MAN! The Disarmer targets Defenses with spiteful blows of her bat and makes easy work of Walls by jumping right over them! She must be put down 3 times before she’s out. Talk about tough!",
       "TID": {
         "name": "TID_CHARACTER_APRIL25BLTM",
         "info": "TID_CHARACTER_INFO_APRIL25BLTM"
@@ -25033,7 +25500,7 @@
     {
       "_id": 4000188,
       "name": "Sky Wagon",
-      "info": "Tell walls to take a hike and drop troops from above. Sky Wagon delivery services are fast, reliable, and destructive!\\n\\nThough its wooden body can\u2019t withstand a lot of damage, its mastery of the skies and immunity to spells more than make up for it.",
+      "info": "Tell walls to take a hike and drop troops from above. Sky Wagon delivery services are fast, reliable, and destructive!\\n\\nThough its wooden body can’t withstand a lot of damage, its mastery of the skies and immunity to spells more than make up for it.",
       "TID": {
         "name": "TID_SIEGE_MACHINE_AIR_TROOP_LAUNCHER",
         "info": "TID_CHARACTER_INFO_SIEGE_MACHINE_AIR_TROOP_LAUNCHER"
@@ -25213,7 +25680,7 @@
     {
       "_id": 107000008,
       "name": "Logger",
-      "info": "A hardened meteorite hunk with a fascination for forestry. When Logger isn\u2019t petting his mustache woodpeckers, he\u2019s lobbing bouncing logs that push and crush all troop types.\\n\\nThe timber may be slow, but it strikes with the full force of nature!",
+      "info": "A hardened meteorite hunk with a fascination for forestry. When Logger isn’t petting his mustache woodpeckers, he’s lobbing bouncing logs that push and crush all troop types.\\n\\nThe timber may be slow, but it strikes with the full force of nature!",
       "TID": {
         "name": "TID_LOGGER_GUARDIAN",
         "info": "TID_LOGGER_GUARDIAN_INFO"
@@ -26815,7 +27282,7 @@
     {
       "_id": 26000070,
       "name": "Overgrowth Spell",
-      "info": "Ever wish you could ignore a whole chunk of the enemy\u2019s base? The Overgrowth Spell traps nearby buildings in tough roots, preventing defenses from attacking. Troops ignore trapped buildings.",
+      "info": "Ever wish you could ignore a whole chunk of the enemy’s base? The Overgrowth Spell traps nearby buildings in tough roots, preventing defenses from attacking. Troops ignore trapped buildings.",
       "TID": {
         "name": "TID_SPELL_OVERGROWTH",
         "info": "TID_SPELL_OVERGROWTH_INFO"
@@ -27195,7 +27662,7 @@
     {
       "_id": 26000120,
       "name": "Totem Spell",
-      "info": "Incoming! Ground and air defenses in a Totem\u2019s landing zone are damaged and stunned. Stunned defenses will redirect their focus to the closest available unit. Forged from dense cosmic rock, Totems can soak up a lot of damage.",
+      "info": "Incoming! Ground and air defenses in a Totem’s landing zone are damaged and stunned. Stunned defenses will redirect their focus to the closest available unit. Forged from dense cosmic rock, Totems can soak up a lot of damage.",
       "TID": {
         "name": "TID_TOTEM_SPELL",
         "info": "TID_TOTEM_SPELL_INFO"
@@ -27254,7 +27721,7 @@
     {
       "_id": 26000123,
       "name": "Angry Spell",
-      "info": "Why I oughta!\\n\\n Distilled from the jelly of the Pet House\u2019s grumpiest resident, the Angry Spell infuriates troops within its ironically sweet-smelling radius, making them target defenses temporarily.",
+      "info": "Why I oughta!\\n\\n Distilled from the jelly of the Pet House’s grumpiest resident, the Angry Spell infuriates troops within its ironically sweet-smelling radius, making them target defenses temporarily.",
       "TID": {
         "name": "TID_ANGRY_SPELL_ANGER",
         "info": "TID_ANGRY_SPELL_ANGER_INFO"
@@ -29557,7 +30024,7 @@
     {
       "_id": 28000002,
       "name": "Grand Warden",
-      "info": "This powerful master of magic supports troops by blasting enemies with his staff! Grand Warden can even walk or fly over walls! He\u2019ll make a majestic stand at his Hero Banner when defending.",
+      "info": "This powerful master of magic supports troops by blasting enemies with his staff! Grand Warden can even walk or fly over walls! He’ll make a majestic stand at his Hero Banner when defending.",
       "TID": {
         "name": "TID_GRAND_WARDEN",
         "info": "TID_HERO_INSTRUCTIONS_WARDEN"
@@ -34465,7 +34932,7 @@
     {
       "_id": 73000017,
       "name": "Greedy Raven",
-      "info": "No scarecrow is frightening enough to keep Greedy Raven away from shiny loot! This masked bandit\u2019s swift feathers target and deal extra damage to resource buildings and egos.",
+      "info": "No scarecrow is frightening enough to keep Greedy Raven away from shiny loot! This masked bandit’s swift feathers target and deal extra damage to resource buildings and egos.",
       "TID": {
         "name": "TID_PET_RAVEN",
         "info": "TID_PET_RAVEN_INFO"
@@ -51454,7 +51921,7 @@
     {
       "_id": 90000047,
       "name": "Noble Iron",
-      "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks",
+      "info": "Increases the speed, range, and power of Minion Prince’s first few attacks",
       "TID": {
         "name": "TID_GEAR_TITLE_TURBO_START",
         "info": "TID_GEAR_INFO_TURBO_START",
@@ -51485,7 +51952,7 @@
               "ExtraDamageFlat": 350,
               "DeactivateAfterNumberOfHits": 5,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51509,7 +51976,7 @@
               "ExtraDamageFlat": 350,
               "DeactivateAfterNumberOfHits": 5,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51533,7 +52000,7 @@
               "ExtraDamageFlat": 420,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51557,7 +52024,7 @@
               "ExtraDamageFlat": 420,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51581,7 +52048,7 @@
               "ExtraDamageFlat": 420,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51605,7 +52072,7 @@
               "ExtraDamageFlat": 490,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51629,7 +52096,7 @@
               "ExtraDamageFlat": 490,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51653,7 +52120,7 @@
               "ExtraDamageFlat": 490,
               "DeactivateAfterNumberOfHits": 6,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51677,7 +52144,7 @@
               "ExtraDamageFlat": 560,
               "DeactivateAfterNumberOfHits": 7,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51701,7 +52168,7 @@
               "ExtraDamageFlat": 560,
               "DeactivateAfterNumberOfHits": 7,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51725,7 +52192,7 @@
               "ExtraDamageFlat": 560,
               "DeactivateAfterNumberOfHits": 7,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51749,7 +52216,7 @@
               "ExtraDamageFlat": 630,
               "DeactivateAfterNumberOfHits": 8,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51773,7 +52240,7 @@
               "ExtraDamageFlat": 630,
               "DeactivateAfterNumberOfHits": 8,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51797,7 +52264,7 @@
               "ExtraDamageFlat": 630,
               "DeactivateAfterNumberOfHits": 8,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51821,7 +52288,7 @@
               "ExtraDamageFlat": 700,
               "DeactivateAfterNumberOfHits": 9,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51845,7 +52312,7 @@
               "ExtraDamageFlat": 700,
               "DeactivateAfterNumberOfHits": 9,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51869,7 +52336,7 @@
               "ExtraDamageFlat": 700,
               "DeactivateAfterNumberOfHits": 9,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         },
@@ -51893,7 +52360,7 @@
               "ExtraDamageFlat": 770,
               "DeactivateAfterNumberOfHits": 10,
               "name": "Noble Iron",
-              "info": "Increases the speed, range, and power of Minion Prince\u2019s first few attacks"
+              "info": "Increases the speed, range, and power of Minion Prince’s first few attacks"
             }
           ]
         }
@@ -51902,7 +52369,7 @@
     {
       "_id": 90000048,
       "name": "Action Figure",
-      "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side",
+      "info": "Summons Giant Giant to fight by the Archer Queen’s side",
       "TID": {
         "name": "TID_GEAR_ACTION_FIGURE",
         "info": "TID_GEAR_INFO_ACTION_FIGURE",
@@ -51931,7 +52398,7 @@
               "Level": 1,
               "TroopLevel": 1,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 1,
@@ -51958,7 +52425,7 @@
               "Level": 1,
               "TroopLevel": 1,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 2,
@@ -51985,7 +52452,7 @@
               "Level": 2,
               "TroopLevel": 2,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 3,
@@ -52012,7 +52479,7 @@
               "Level": 2,
               "TroopLevel": 2,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 4,
@@ -52039,7 +52506,7 @@
               "Level": 2,
               "TroopLevel": 2,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 5,
@@ -52066,7 +52533,7 @@
               "Level": 3,
               "TroopLevel": 3,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 6,
@@ -52093,7 +52560,7 @@
               "Level": 3,
               "TroopLevel": 3,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 7,
@@ -52120,7 +52587,7 @@
               "Level": 3,
               "TroopLevel": 3,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 8,
@@ -52147,7 +52614,7 @@
               "Level": 4,
               "TroopLevel": 4,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 9,
@@ -52174,7 +52641,7 @@
               "Level": 4,
               "TroopLevel": 4,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 10,
@@ -52201,7 +52668,7 @@
               "Level": 4,
               "TroopLevel": 4,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 11,
@@ -52228,7 +52695,7 @@
               "Level": 5,
               "TroopLevel": 5,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 12,
@@ -52255,7 +52722,7 @@
               "Level": 5,
               "TroopLevel": 5,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 13,
@@ -52282,7 +52749,7 @@
               "Level": 5,
               "TroopLevel": 5,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 14,
@@ -52309,7 +52776,7 @@
               "Level": 6,
               "TroopLevel": 6,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 15,
@@ -52336,7 +52803,7 @@
               "Level": 6,
               "TroopLevel": 6,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 16,
@@ -52363,7 +52830,7 @@
               "Level": 6,
               "TroopLevel": 6,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 17,
@@ -52390,7 +52857,7 @@
               "Level": 7,
               "TroopLevel": 7,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 18,
@@ -52417,7 +52884,7 @@
               "Level": 7,
               "TroopLevel": 7,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 19,
@@ -52444,7 +52911,7 @@
               "Level": 7,
               "TroopLevel": 7,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 20,
@@ -52471,7 +52938,7 @@
               "Level": 8,
               "TroopLevel": 8,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 21,
@@ -52498,7 +52965,7 @@
               "Level": 8,
               "TroopLevel": 8,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 22,
@@ -52525,7 +52992,7 @@
               "Level": 8,
               "TroopLevel": 8,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 23,
@@ -52552,7 +53019,7 @@
               "Level": 9,
               "TroopLevel": 9,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 24,
@@ -52579,7 +53046,7 @@
               "Level": 9,
               "TroopLevel": 9,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 25,
@@ -52606,7 +53073,7 @@
               "Level": 9,
               "TroopLevel": 9,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 26,
@@ -52633,7 +53100,7 @@
               "Level": 10,
               "TroopLevel": 10,
               "name": "Action Figure",
-              "info": "Summons Giant Giant to fight by the Archer Queen\u2019s side"
+              "info": "Summons Giant Giant to fight by the Archer Queen’s side"
             },
             {
               "Level": 27,
@@ -56575,7 +57042,7 @@
     {
       "_id": 90000059,
       "name": "Electro Fangs",
-      "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain",
+      "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain",
       "TID": {
         "name": "TID_GEAR_TITLE_ELECTRO_ATTACK",
         "info": "TID_GEAR_INFO_ELECTRO_ATTACK",
@@ -56605,7 +57072,7 @@
               "Damage": 330,
               "ChainAttackDepth": 2,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56628,7 +57095,7 @@
               "Damage": 330,
               "ChainAttackDepth": 2,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56651,7 +57118,7 @@
               "Damage": 340,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56674,7 +57141,7 @@
               "Damage": 340,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56697,7 +57164,7 @@
               "Damage": 340,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56720,7 +57187,7 @@
               "Damage": 350,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56743,7 +57210,7 @@
               "Damage": 350,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56766,7 +57233,7 @@
               "Damage": 350,
               "ChainAttackDepth": 3,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56789,7 +57256,7 @@
               "Damage": 360,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56812,7 +57279,7 @@
               "Damage": 360,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56835,7 +57302,7 @@
               "Damage": 360,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56858,7 +57325,7 @@
               "Damage": 370,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56881,7 +57348,7 @@
               "Damage": 370,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56904,7 +57371,7 @@
               "Damage": 370,
               "ChainAttackDepth": 4,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56927,7 +57394,7 @@
               "Damage": 380,
               "ChainAttackDepth": 5,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56950,7 +57417,7 @@
               "Damage": 380,
               "ChainAttackDepth": 5,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56973,7 +57440,7 @@
               "Damage": 380,
               "ChainAttackDepth": 5,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         },
@@ -56996,7 +57463,7 @@
               "Damage": 400,
               "ChainAttackDepth": 5,
               "name": "Electro Fangs",
-              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke\u2019s target, the electrickery damage decreases by <num>% with each chain"
+              "info": "Chomps a chain reaction through buildings surrounding Dragon Duke’s target, the electrickery damage decreases by <num>% with each chain"
             }
           ]
         }
@@ -58210,7 +58677,7 @@
     },
     {
       "_id": 18000113,
-      "name": "Woodcutter\u2019s Pile",
+      "name": "Woodcutter’s Pile",
       "TID": {
         "name": "TID_DECO_HD_WOOD_PILE"
       },
@@ -59708,7 +60175,7 @@
     },
     {
       "_id": 18000221,
-      "name": "Medusa\u2019s Masterpiece",
+      "name": "Medusa’s Masterpiece",
       "TID": {
         "name": "TID_DECO_ODD_CHALLENGE_VALKYRIE"
       },
@@ -59741,9 +60208,9 @@
         "name": "TID_ARCH_DECO_CLAN_CHIEF"
       },
       "width": 2,
-      "not_in_shop": false,
+      "not_in_shop": true,
       "pass_reward": false,
-      "max_count": 1,
+      "max_count": 2,
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
@@ -59755,9 +60222,9 @@
         "name": "TID_ARCH_DECO_LONE_CHIEF"
       },
       "width": 2,
-      "not_in_shop": false,
+      "not_in_shop": true,
       "pass_reward": false,
-      "max_count": 1,
+      "max_count": 2,
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
@@ -59769,9 +60236,9 @@
         "name": "TID_ARCH_DECO_NEW_CHIEF"
       },
       "width": 2,
-      "not_in_shop": false,
+      "not_in_shop": true,
       "pass_reward": false,
-      "max_count": 1,
+      "max_count": 2,
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
@@ -59783,9 +60250,9 @@
         "name": "TID_ARCH_DECO_SOCIAL_CHIEF"
       },
       "width": 2,
-      "not_in_shop": false,
+      "not_in_shop": true,
       "pass_reward": false,
-      "max_count": 1,
+      "max_count": 2,
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
@@ -59797,9 +60264,9 @@
         "name": "TID_ARCH_DECO_WELCOME_BACK_CHIEF"
       },
       "width": 2,
-      "not_in_shop": false,
+      "not_in_shop": true,
       "pass_reward": false,
-      "max_count": 1,
+      "max_count": 2,
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
@@ -59811,9 +60278,9 @@
         "name": "TID_ARCH_DECO_WAR_CHIEF"
       },
       "width": 2,
-      "not_in_shop": false,
+      "not_in_shop": true,
       "pass_reward": false,
-      "max_count": 1,
+      "max_count": 2,
       "build_resource": "Gems",
       "build_cost": 500,
       "village": "home"
@@ -59869,20 +60336,6 @@
       "width": 2,
       "not_in_shop": true,
       "pass_reward": false,
-      "max_count": 1,
-      "build_resource": "Gems",
-      "build_cost": 500,
-      "village": "home"
-    },
-    {
-      "_id": 18000233,
-      "name": "Card Flipper",
-      "TID": {
-        "name": "TID_SUPERDECO_CARD_CONJUROR"
-      },
-      "width": 3,
-      "not_in_shop": true,
-      "pass_reward": true,
       "max_count": 1,
       "build_resource": "Gems",
       "build_cost": 500,
@@ -73246,7 +73699,7 @@
     {
       "_id": 509612545377542,
       "name": "Builder Bite",
-      "info": "A hearty bite that makes your Builders work <num>x as fast for <time>. Works in the Home Village! Sadly, the Builder\u2019s Apprentice is a vegetarian and won't be boosted!",
+      "info": "A hearty bite that makes your Builders work <num>x as fast for <time>. Works in the Home Village! Sadly, the Builder’s Apprentice is a vegetarian and won't be boosted!",
       "TID": {
         "name": "TID_CONSUMABLE_BOOST_BUILDER",
         "info": "TID_CONSUMABLE_BOOST_BUILDER_INFO"
@@ -73567,7 +74020,7 @@
     },
     {
       "locale": "FR",
-      "name": "Fran\u00e7ais"
+      "name": "Français"
     },
     {
       "locale": "DE",
@@ -73575,7 +74028,7 @@
     },
     {
       "locale": "ES",
-      "name": "Espa\u00f1ol"
+      "name": "Español"
     },
     {
       "locale": "IT",
@@ -73591,39 +74044,39 @@
     },
     {
       "locale": "PT",
-      "name": "Portugu\u00eas"
+      "name": "Português"
     },
     {
       "locale": "TR",
-      "name": "T\u00fcrk\u00e7e"
+      "name": "Türkçe"
     },
     {
       "locale": "CN",
-      "name": "\u7b80\u4f53\u4e2d\u6587"
+      "name": "简体中文"
     },
     {
       "locale": "JP",
-      "name": "\u65e5\u672c\u8a9e"
+      "name": "日本語"
     },
     {
       "locale": "KR",
-      "name": "\ud55c\uad6d\uc5b4"
+      "name": "한국어"
     },
     {
       "locale": "RU",
-      "name": "P\u0443\u0441\u0441\u043a\u0438\u0439"
+      "name": "Pусский"
     },
     {
       "locale": "CNT",
-      "name": "\u7e41\u9ad4\u4e2d\u6587"
+      "name": "繁體中文"
     },
     {
       "locale": "AR",
-      "name": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+      "name": "العربية"
     },
     {
       "locale": "FA",
-      "name": "\u0641\u0627\u0631\u0633\u06cc"
+      "name": "فارسی"
     },
     {
       "locale": "ID",
@@ -73635,11 +74088,11 @@
     },
     {
       "locale": "VI",
-      "name": "Ti\u1ebfng Vi\u1ec7t"
+      "name": "Tiếng Việt"
     },
     {
       "locale": "TH",
-      "name": "\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"
+      "name": "ภาษาไทย"
     },
     {
       "locale": "FI",
@@ -75650,7 +76103,7 @@
       ]
     },
     {
-      "name": "Crafter\u2019s Nightmare",
+      "name": "Crafter’s Nightmare",
       "info": "Destroy <number> Crafted Defenses in Multiplayer Battles",
       "completed_message": "Total Crafted Defenses Destroyed: <value>",
       "TID": {
