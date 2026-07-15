@@ -4,8 +4,8 @@ import logging
 import traceback
 
 from collections.abc import Iterable
-from datetime import datetime, timedelta, timezone
 
+import pendulum
 import coc.raid
 from .client import Client
 from .clans import Clan
@@ -394,13 +394,12 @@ class EventsClient(Client):
     __doc__ = Client.__doc__
 
     def __init__(self, **options):
+        self._events_auto_start = options.pop("start_events", True)
         super().__init__(**options)
         self._setup()
 
-        self._in_maintenance_event = asyncio.Event()
-        self._in_maintenance_event.set()  # only block when maintenance is on
-
-        self._keys_ready = asyncio.Event()
+        self._in_maintenance_event = None
+        self._keys_ready = None
 
         self.clan_retry_interval = 0
         self.player_retry_interval = 0
@@ -420,6 +419,32 @@ class EventsClient(Client):
         self._locks = {}
 
     def _setup(self):
+        self._updater_tasks = {}
+
+        self._clan_updates = set()
+        self._player_updates = set()
+        self._war_updates = set()
+
+        self._listeners = {"clan": [], "player": [], "war": [], "client": {}}
+
+        self._clans = {}
+        self._players = {}
+        self._wars = {}
+
+    def _setup_loop_state(self):
+        if self._in_maintenance_event is None:
+            self._in_maintenance_event = asyncio.Event()
+            self._in_maintenance_event.set()  # only block when maintenance is on
+
+        if self._keys_ready is None:
+            self._keys_ready = asyncio.Event()
+
+    def _start_event_tasks(self):
+        self._setup_loop_state()
+
+        if any(not task.done() for task in self._updater_tasks.values()):
+            return
+
         self._updater_tasks = {
             "clan": self.loop.create_task(self._clan_updater()),
             "player": self.loop.create_task(self._player_updater()),
@@ -433,15 +458,34 @@ class EventsClient(Client):
         for task in self._updater_tasks.values():
             task.add_done_callback(self._task_callback_check)
 
-        self._clan_updates = set()
-        self._player_updates = set()
-        self._war_updates = set()
+    def start_events(self):
+        """Start background event polling tasks.
 
-        self._listeners = {"clan": [], "player": [], "war": [], "client": {}}
+        This is called automatically after login unless ``start_events=False`` is passed to
+        :class:`EventsClient`.
+        """
+        if self.http is None:
+            raise RuntimeError("Client must be logged in before starting event polling.")
 
-        self._clans = {}
-        self._players = {}
-        self._wars = {}
+        if self.loop is None:
+            self._get_or_create_loop()
+
+        self._start_event_tasks()
+
+    async def login(self, email: str, password: str) -> None:
+        await super().login(email, password)
+        if self._events_auto_start:
+            self._start_event_tasks()
+
+    def login_with_keys(self, *keys: str) -> None:
+        super().login_with_keys(*keys)
+        if self._events_auto_start:
+            self._start_event_tasks()
+
+    async def login_with_tokens(self, *tokens: str) -> None:
+        await super().login_with_tokens(*tokens)
+        if self._events_auto_start:
+            self._start_event_tasks()
 
     def add_clan_updates(self, *tags):
         """Add clan tags to receive updates for.
@@ -740,10 +784,23 @@ class EventsClient(Client):
                 client.loop.close()
 
         """
+        loop = self._get_or_create_loop()
+        if self.http is not None and self._events_auto_start:
+            self._start_event_tasks()
+
         try:
-            self.loop.run_forever()
+            loop.run_forever()
         except KeyboardInterrupt:
-            self.close()
+            loop.run_until_complete(self.close())
+
+    async def close(self) -> None:
+        for task in self._updater_tasks.values():
+            task.cancel()
+
+        if self._updater_tasks and self.loop is not None and self.loop.is_running():
+            await asyncio.gather(*self._updater_tasks.values(), return_exceptions=True)
+
+        await super().close()
 
     def dispatch(self, event_name: str, *args, **kwargs):
         # pylint: disable=broad-except
@@ -757,7 +814,7 @@ class EventsClient(Client):
         else:
             for event in registered:
                 try:
-                    asyncio.ensure_future(event(*args, **kwargs))
+                    self._get_or_create_loop().create_task(event(*args, **kwargs))
                 except (BaseException, Exception):
                     LOG.exception("Ignoring exception in %s.", event_name)
 
@@ -779,7 +836,9 @@ class EventsClient(Client):
             "player": self._player_updater,
             "war": self._war_updater,
             "maintenance": self._maintenance_poller,
-            "season": self._end_of_season_poller
+            "season": self._end_of_season_poller,
+            "raid_weekend": self._raid_poller,
+            "clan_games": self._clan_games_poller
         }
 
         for name, value in self._updater_tasks.items():
@@ -820,7 +879,7 @@ class EventsClient(Client):
         try:
             while self.loop.is_running():
                 end_of_season = get_season_end()
-                now = datetime.now(tz=timezone.utc).replace(tzinfo=None)
+                now = pendulum.now("UTC")
                 await asyncio.sleep((end_of_season - now).total_seconds())
                 self.dispatch("new_season_start")
         except asyncio.CancelledError:
@@ -834,7 +893,7 @@ class EventsClient(Client):
             while self.loop.is_running():
                 clan_games_start = get_clan_games_start()
                 clan_games_end = get_clan_games_end()
-                now = datetime.now(tz=timezone.utc).replace(tzinfo=None)
+                now = pendulum.now("UTC")
                 if now < clan_games_start:
                     event = "clan_games_start"
                     mute_time = clan_games_start - now
@@ -860,7 +919,7 @@ class EventsClient(Client):
                 except Maintenance:
                     if maintenance_start is None:
                         self._in_maintenance_event.clear()
-                        maintenance_start = datetime.now(tz=timezone.utc).replace(tzinfo=None)
+                        maintenance_start = pendulum.now("UTC")
                         self.dispatch("maintenance_start")
 
                     await asyncio.sleep(15)

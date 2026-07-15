@@ -21,6 +21,9 @@ class TestEnums(unittest.TestCase):
         self.assertEqual(coc.WarRound.current_war.in_game_name, "Current War")
         self.assertEqual(str(coc.WarState.not_in_war), "Not in War")
         self.assertEqual(coc.WarState.war_ended.in_game_name, "War Ended")
+        self.assertEqual(coc.BattleModifier.hard_mode.value, "hardMode")
+        self.assertEqual(coc.BattleModifier.minus_one.value, "minusOne")
+        self.assertEqual(coc.BattleModifier.minus_three.in_game_name, "Minus Three")
 
     def test_clan_type(self):
         self.assertEqual(coc.ClanType.open.value, "open")

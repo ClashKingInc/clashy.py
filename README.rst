@@ -37,7 +37,7 @@ Installing
     python3 -m pip install -U clashy.py
 
     # Windows
-    py -3 -m pip install -U clashy.py}
+    py -3 -m pip install -U clashy.py
 
     # to install the development version:
     python3 -m pip install -U git+https://github.com/ClashKingInc/clashy.py
@@ -165,6 +165,5 @@ Disclaimer
 This content is not affiliated with, endorsed, sponsored, or specifically
 approved by Supercell and Supercell is not responsible for it.
 For more information see `Supercell's Fan Content Policy. <https://www.supercell.com/fan-content-policy.>`_
-
 
 

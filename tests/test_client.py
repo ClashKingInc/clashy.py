@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import Mock, patch
 
 import coc
 
@@ -12,11 +13,11 @@ class FakeHTTP:
 
     async def get_player_battlelog(self, player_tag, **kwargs):
         self.calls.append(("get_player_battlelog", player_tag, kwargs))
-        return {"items": [{"battleType": "legendLeague", "opponentPlayerTag": "#ABC", "stars": 3}]}
+        return {"items": [{"battleType": "LEGEND", "opponentPlayerTag": "#ABC", "stars": 3}]}
 
     async def get_player_league_history(self, player_tag, **kwargs):
         self.calls.append(("get_player_league_history", player_tag, kwargs))
-        return {"items": [{"leagueSeasonId": 202605, "leagueTierId": 105000033}]}
+        return {"items": [{"leagueSeasonId": "2026-06-02", "leagueTierId": 105000033}]}
 
     async def get_player_league_group(self, player_tag, league_group_tag, league_season_id, **kwargs):
         self.calls.append(("get_player_league_group", player_tag, league_group_tag, league_season_id, kwargs))
@@ -33,6 +34,24 @@ class FakeHTTP:
     async def get_league_tier(self, league_id, **kwargs):
         self.calls.append(("get_league_tier", league_id, kwargs))
         return {"id": league_id, "name": "Electro League 33", "iconUrls": {}}
+
+
+class TestClientEventLoop(unittest.TestCase):
+
+    def test_get_or_create_loop_creates_and_owns_fallback(self):
+        client = coc.Client()
+        loop = Mock()
+
+        with (
+            patch("coc.client.asyncio.get_running_loop", side_effect=RuntimeError),
+            patch("coc.client.asyncio.new_event_loop", return_value=loop) as new_event_loop,
+            patch("coc.client.asyncio.set_event_loop") as set_event_loop,
+        ):
+            self.assertIs(client._get_or_create_loop(), loop)
+
+        new_event_loop.assert_called_once_with()
+        set_event_loop.assert_called_once_with(loop)
+        self.assertTrue(client._owns_loop)
 
 
 class TestClientNewEndpoints(unittest.IsolatedAsyncioTestCase):
@@ -56,9 +75,9 @@ class TestClientNewEndpoints(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(entries[0].league_tier_id, 105000033)
 
     async def test_get_player_league_group(self):
-        group = await self.client.get_player_league_group("2pp", "abc", 202605)
+        group = await self.client.get_player_league_group("2pp", "abc", "2026-06-02")
 
-        self.assertEqual(self.client.http.calls[0][1:4], ("#2PP", "#ABC", 202605))
+        self.assertEqual(self.client.http.calls[0][1:4], ("#2PP", "#ABC", "2026-06-02"))
         self.assertIsInstance(group, LeagueTierGroup)
         self.assertEqual(group.members[0].player_tag, "#2PP")
 
@@ -84,10 +103,10 @@ class TestHTTPNewRoutes(unittest.IsolatedAsyncioTestCase):
 
         http.request = request
 
-        await http.get_player_league_group("#2PP", "#GROUP", 202605, lookup_cache=True)
+        await http.get_player_league_group("#2PP", "#GROUP", "2026-06-02", lookup_cache=True)
 
         self.assertEqual(captured["route"].url,
-                         "https://api.example.test/v1/leaguegroup/%23GROUP/202605?playerTag=%232PP")
+                         "https://api.example.test/v1/leaguegroup/%23GROUP/2026-06-02?playerTag=%232PP")
         self.assertTrue(captured["kwargs"]["lookup_cache"])
 
     def test_route_encodes_hash_in_path_and_query(self):

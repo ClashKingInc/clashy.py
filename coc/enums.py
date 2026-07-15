@@ -77,15 +77,60 @@ class WarRound(ExtendedEnum):
         return lookup[self.value]
 
 
+class BattleType(ExtendedEnum):
+    """Enum to map player battle log battle types.
+
+    Attributes
+    ----------
+    home_village:
+        A home village battle.
+    ranked:
+        A ranked battle.
+    legend:
+        A Legend League battle.
+    """
+    home_village = "HOME_VILLAGE"
+    ranked = "RANKED"
+    legend = "LEGEND"
+
+    @property
+    def in_game_name(self) -> str:
+        lookup = {"HOME_VILLAGE": "Home Village", "RANKED": "Ranked", "LEGEND": "Legend"}
+        return lookup[self.value]
+
+
 class BattleModifier(ExtendedEnum):
-    """Enum to map the type of battle modifiers."""
+    """Enum to map the type of battle modifiers.
+
+    Attributes
+    ----------
+    none:
+        A war with no battle modifier.
+    hard_mode:
+        The esports hard mode modifier.
+    minus_one:
+        The Legend I battle modifier.
+    minus_two:
+        The Legend II battle modifier.
+    minus_three:
+        The Legend III battle modifier.
+    """
     none = "none"
     hard_mode = "hardMode"
+    minus_one = "minusOne"
+    minus_two = "minusTwo"
+    minus_three = "minusThree"
 
     @property
     def in_game_name(self) -> str:
         """Get a neat client-facing string value for the battle modifier."""
-        lookup = {"none": "None", "hardMode": "Hard Mode"}
+        lookup = {
+            "none": "None",
+            "hardMode": "Hard Mode",
+            "minusOne": "Minus One",
+            "minusTwo": "Minus Two",
+            "minusThree": "Minus Three",
+        }
         return lookup[self.value]
 
 
@@ -189,6 +234,3 @@ class SkinTier(ExtendedEnum):
     standard = "Basic"
     gold = "Gold"
     legendary = "Legendary"
-
-
-

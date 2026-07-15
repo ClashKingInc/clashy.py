@@ -7,6 +7,32 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
+v26.6.5
+-------
+
+Additions:
+~~~~~~~~~~
+- Added :class:`coc.BattleType` and exposed new battle log fields for battle timestamp, duration, opponent name,
+  and opponent Town Hall level
+
+Changes:
+~~~~~~~~
+- Battle log entries now parse ``battleType`` as :class:`coc.BattleType`, including ``BattleType.legend`` for
+  Legend League battles
+- Current war and war log entries now parse the current ``battleModifier`` API values, including hard mode and
+  Legend I, II, and III modifiers
+- Ranked players now expose the ranking ``leagueTier`` field as ``league_tier``
+- League season identifiers are treated as strings so full-date IDs such as ``2026-06-02`` pass through unchanged
+- Event polling starts after login and can be deferred with ``start_events=False`` until
+  :meth:`coc.EventsClient.start_events` is called
+
+Bugs Fixed:
+~~~~~~~~~~~
+- Kept :attr:`coc.BattleLogEntry.timestamp` as the public attribute while reading the renamed
+  ``battleTimestamp`` API field
+- Fixed fallback event-loop creation for synchronous entry points on Python 3.14
+- Automated static-data releases now dispatch the existing trusted PyPI publishing workflow
+
 v26.6.0
 -------
 

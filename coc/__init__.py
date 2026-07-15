@@ -32,6 +32,7 @@ from .enums import (
     Resource,
     Role,
     WarRound,
+    BattleType,
     WarState,
     BattleModifier,
     WarResult,

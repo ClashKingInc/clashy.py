@@ -35,6 +35,14 @@ WarRound
     :member-order: bysource
 
 
+BattleType
+~~~~~~~~~~
+.. autoclass:: BattleType()
+    :members:
+    :undoc-members:
+    :member-order: bysource
+
+
 BattleModifier
 ~~~~~~~~~~~~~~
 .. autoclass:: BattleModifier()

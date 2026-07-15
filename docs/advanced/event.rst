@@ -32,6 +32,9 @@ and allows all of the same operations, as well as more specific to events.
 
 You just create a :class:`EventsClient` instead of :class:`Client` before you login.
 
+Event polling starts automatically after login. If you need to finish other bot startup work first, pass
+``start_events=False`` and call :meth:`EventsClient.start_events` when you are ready.
+
 
 Decorators
 ~~~~~~~~~~
@@ -362,4 +365,3 @@ Exception is an exception class that can be passed into an exception log, for ex
     @coc.ClientEvents.event_error()
     async def callback(exception):
         log.error("events had an error!", exc_info=exception)
-
