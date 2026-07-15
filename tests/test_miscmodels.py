@@ -36,7 +36,7 @@ class TestBattlelogModels(unittest.TestCase):
 
         self.assertEqual(entry.battle_type, BattleType.legend)
         self.assertEqual(entry.battle_type, "LEGEND")
-        self.assertEqual(entry.battle_timestamp, pendulum.datetime(2026, 5, 1, 1, 2, 3, tz="UTC"))
+        self.assertEqual(entry.timestamp, pendulum.datetime(2026, 5, 1, 1, 2, 3, tz="UTC"))
         self.assertEqual(entry.duration, 138)
         self.assertEqual(entry.opponent_name, "Opponent")
         self.assertEqual(entry.opponent_town_hall_level, 17)

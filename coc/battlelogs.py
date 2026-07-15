@@ -50,7 +50,7 @@ class BattleLogEntry:
         Optional[:class:`BattleType`]: The type of battle, such as ranked or legend.
     attack:
         :class:`bool`: Whether this entry was an attack by the requested player.
-    battle_timestamp:
+    timestamp:
         Optional[:class:`pendulum.DateTime`]: The time the battle happened.
     duration:
         :class:`int`: The length of the battle, in seconds.
@@ -77,7 +77,7 @@ class BattleLogEntry:
     __slots__ = (
         "battle_type",
         "attack",
-        "battle_timestamp",
+        "timestamp",
         "duration",
         "army_share_code",
         "opponent_player_tag",
@@ -106,7 +106,7 @@ class BattleLogEntry:
         raw_battle_type = data_get("battleType")
         self.battle_type: Optional[BattleType] = raw_battle_type and BattleType(raw_battle_type)
         self.attack: bool = data_get("attack")
-        self.battle_timestamp = _parse_datetime(data_get("battleTimestamp"))
+        self.timestamp = _parse_datetime(data_get("battleTimestamp"))
         self.duration: int = data_get("battleTime")
         self.army_share_code: str = data_get("armyShareCode")
         self.opponent_player_tag: str = data_get("opponentPlayerTag")

@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
 
 jobs:
@@ -74,3 +75,12 @@ jobs:
           gh release create "v${{ steps.version.outputs.version }}" \
             --title "v${{ steps.version.outputs.version }}" \
             --notes "Automated static assets update."
+
+      - name: Publish release to PyPI
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run push-to-pypi.yml \
+            --ref "v${{ steps.version.outputs.version }}" \
+            --field confirmation=true

@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import Mock, patch
 
 import coc
 
@@ -33,6 +34,24 @@ class FakeHTTP:
     async def get_league_tier(self, league_id, **kwargs):
         self.calls.append(("get_league_tier", league_id, kwargs))
         return {"id": league_id, "name": "Electro League 33", "iconUrls": {}}
+
+
+class TestClientEventLoop(unittest.TestCase):
+
+    def test_get_or_create_loop_creates_and_owns_fallback(self):
+        client = coc.Client()
+        loop = Mock()
+
+        with (
+            patch("coc.client.asyncio.get_running_loop", side_effect=RuntimeError),
+            patch("coc.client.asyncio.new_event_loop", return_value=loop) as new_event_loop,
+            patch("coc.client.asyncio.set_event_loop") as set_event_loop,
+        ):
+            self.assertIs(client._get_or_create_loop(), loop)
+
+        new_event_loop.assert_called_once_with()
+        set_event_loop.assert_called_once_with(loop)
+        self.assertTrue(client._owns_loop)
 
 
 class TestClientNewEndpoints(unittest.IsolatedAsyncioTestCase):

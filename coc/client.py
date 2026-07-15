@@ -353,7 +353,9 @@ class Client:
         try:
             loop = asyncio.get_running_loop()
         except RuntimeError:
-            loop = asyncio.get_event_loop_policy().get_event_loop()
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            self._owns_loop = True
 
         self.loop = loop
         return loop
