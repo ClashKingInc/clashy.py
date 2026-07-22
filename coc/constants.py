@@ -101,8 +101,6 @@ SEASONAL_TROOP_ORDER = [
     'K.A.N.E',
     'The Disarmer',
     'YEETer',
-    'YEETer',
-    'The Disarmer',
     'Meteor Golem',
 ]
 
