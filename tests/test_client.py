@@ -13,7 +13,7 @@ class FakeHTTP:
 
     async def get_player_battlelog(self, player_tag, **kwargs):
         self.calls.append(("get_player_battlelog", player_tag, kwargs))
-        return {"items": [{"battleType": "LEGEND", "opponentPlayerTag": "#ABC", "stars": 3}]}
+        return {"items": [{"battleType": "homeVillage", "opponentPlayerTag": "#ABC", "stars": 3}]}
 
     async def get_player_league_history(self, player_tag, **kwargs):
         self.calls.append(("get_player_league_history", player_tag, kwargs))
@@ -65,6 +65,7 @@ class TestClientNewEndpoints(unittest.IsolatedAsyncioTestCase):
 
         self.assertEqual(self.client.http.calls[0][1], "#2PP")
         self.assertIsInstance(entries[0], BattleLogEntry)
+        self.assertIs(entries[0].battle_type, coc.BattleType.home_village)
         self.assertEqual(entries[0].stars, 3)
 
     async def test_get_player_league_history(self):

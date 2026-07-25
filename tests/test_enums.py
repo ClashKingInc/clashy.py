@@ -25,6 +25,12 @@ class TestEnums(unittest.TestCase):
         self.assertEqual(coc.BattleModifier.minus_one.value, "minusOne")
         self.assertEqual(coc.BattleModifier.minus_three.in_game_name, "Minus Three")
 
+    def test_battle_type_accepts_api_values(self):
+        self.assertIs(coc.BattleType("homeVillage"), coc.BattleType.home_village)
+        self.assertIs(coc.BattleType("ranked"), coc.BattleType.ranked)
+        self.assertIs(coc.BattleType("legend"), coc.BattleType.legend)
+        self.assertEqual(coc.BattleType.home_village.value, "homeVillage")
+
     def test_clan_type(self):
         self.assertEqual(coc.ClanType.open.value, "open")
         self.assertEqual(str(coc.ClanType.invite_only), "Invite Only")

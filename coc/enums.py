@@ -89,13 +89,13 @@ class BattleType(ExtendedEnum):
     legend:
         A Legend League battle.
     """
-    home_village = "HOME_VILLAGE"
-    ranked = "RANKED"
-    legend = "LEGEND"
+    home_village = "homeVillage"
+    ranked = "ranked"
+    legend = "legend"
 
     @property
     def in_game_name(self) -> str:
-        lookup = {"HOME_VILLAGE": "Home Village", "RANKED": "Ranked", "LEGEND": "Legend"}
+        lookup = {"homeVillage": "Home Village", "ranked": "Ranked", "legend": "Legend"}
         return lookup[self.value]
 
 
