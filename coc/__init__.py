@@ -75,6 +75,7 @@ from .miscmodels import (
     Icon,
     Label,
     League,
+    ExtendedLeagueTier,
     LegendStatistics,
     LoadGameData,
     Location,
