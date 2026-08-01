@@ -234,6 +234,14 @@ class Player(ClanMember):
         The player's total contribution to clan capitals
     legend_statistics: Optional[:class:`LegendStatistics`]
         The player's legend statistics, or ``None`` if they have never been in the legend league.
+    current_league_group_tag: Optional[:class:`str`]
+        The group tag of the player's current league, or ``None`` if the player has not registered in a league.
+    current_league_season_id: :class:`int`
+        The ID of the player's current league season.
+    previous_league_group_tag: :class:`str`
+        The group tag of the player's previous league.
+    previous_league_season_id: :class:`int`
+        The ID of the player's previous league season.
     war_opted_in: Optional[:class:`bool`]
         Whether the player has selected that they are opted "in" (True) for wars, or opted "out" (False).
         This will be ``None`` if the player is not in a clan.
@@ -250,6 +258,10 @@ class Player(ClanMember):
         "best_builder_base_trophies",
         "clan_capital_contributions",
         "legend_statistics",
+        "current_league_group_tag",
+        "current_league_season_id",
+        "previous_league_group_tag",
+        "previous_league_season_id",
         "war_opted_in",
         "_achievements",
         "_heroes",
@@ -339,6 +351,10 @@ class Player(ClanMember):
         self.best_builder_base_trophies: int = data_get("bestBuilderBaseTrophies")
         self.clan_capital_contributions: int = data_get("clanCapitalContributions")
         self.legend_statistics = try_enum(LegendStatistics, data=data_get("legendStatistics"))
+        self.current_league_group_tag: Optional[str] = data_get("currentLeagueGroupTag")
+        self.current_league_season_id: int = data_get("currentLeagueSeasonId")
+        self.previous_league_group_tag: str = data_get("previousLeagueGroupTag")
+        self.previous_league_season_id: int = data_get("previousLeagueSeasonId")
 
         try:
             self.war_opted_in: Optional[bool] = True if data["warPreference"] == "in" else False
