@@ -523,7 +523,7 @@ class ClanWarLeagueGroup:
 
 class ExtendedCWLGroup:
     def __init__(self, data: dict):
-        self._id: int = data["id"]
+        self._id: int = data["_id"]
         self.name: str = data["name"]
         self.TID = TID(data=data["TID"])
         self.first_place_medals: int = data["cwl_medals"]["first_place"]
@@ -532,4 +532,5 @@ class ExtendedCWLGroup:
         self.minimum_number_of_bonuses: int = data["cwl_medals"]["minimum_bonus_amount"]
         self.promotions: int = data["promotions"]
         self.demotions: int = data["demotions"]
-        self.only15v15: bool = data["only15v15"]
+        self.only15v15: bool = data["15v15_only"]
+        self.battle_modifier: BattleModifier = try_enum(BattleModifier, data=data.get("battle_modifier", "none"))

@@ -133,6 +133,15 @@ class BattleModifier(ExtendedEnum):
         }
         return lookup[self.value]
 
+    @classmethod
+    def _missing_(cls, value):
+        if isinstance(value, str):
+            normalized = value.replace(" ", "").lower()
+            for member in cls:
+                if member.value.lower() == normalized:
+                    return member
+        return super()._missing_(value)
+
 
 class WarState(ExtendedEnum):
     """Enum to map the state of the war.
