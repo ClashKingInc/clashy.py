@@ -54,6 +54,27 @@ class TestClientEventLoop(unittest.TestCase):
         self.assertTrue(client._owns_loop)
 
 
+class TestClientStaticData(unittest.TestCase):
+
+    def test_extended_legend_league_tiers_have_unique_names(self):
+        client = coc.Client()
+        client._load_static()
+
+        expected_tiers = {
+            "Legend League III": 105000034,
+            "Legend League II": 105000035,
+            "Legend League I": 105000036,
+        }
+
+        for name, league_id in expected_tiers.items():
+            with self.subTest(name=name):
+                tier = client.get_extended_league_tier_data(name)
+                self.assertIsNotNone(tier)
+                self.assertEqual(tier.id, league_id)
+
+        self.assertIsNone(client.get_extended_league_tier_data("Legend League"))
+
+
 class TestClientNewEndpoints(unittest.IsolatedAsyncioTestCase):
 
     def setUp(self):

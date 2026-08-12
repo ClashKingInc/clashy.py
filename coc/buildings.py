@@ -23,6 +23,8 @@ class SeasonalDefenseModule(LeveledUnit):
         The cost to build/upgrade to this level.
     build_time: :class:`TimeDelta`
         The time required to build/upgrade to this level.
+    required_townhall: :class:`int`
+        The Town Hall level required to upgrade to this module level.
     ability_data: :class:`dict`
         The ability data for this module.
     
@@ -39,6 +41,7 @@ class SeasonalDefenseModule(LeveledUnit):
         "max_level",
         "build_cost",
         "build_time",
+        "required_townhall",
         "ability_data",
     )
 
@@ -65,6 +68,7 @@ class SeasonalDefenseModule(LeveledUnit):
 
         self.build_cost: int = level_data.get("build_cost")
         self.build_time: TimeDelta = TimeDelta(seconds=level_data.get("build_time"))
+        self.required_townhall: int = level_data.get("required_townhall")
         self.ability_data: dict = level_data.get("ability_data")
 
 class SeasonalDefense(BaseDataClass):

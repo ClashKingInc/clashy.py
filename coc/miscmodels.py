@@ -4,7 +4,7 @@ from typing import Any, Optional, Type, TypeVar
 
 import pendulum
 
-from .enums import ExtendedEnum, PlayerHouseElementType, VillageType
+from .enums import ExtendedEnum, PlayerHouseElementType, VillageType, BattleModifier
 
 T = TypeVar("T")
 TIMESTAMP_FORMAT = "YYYYMMDD[T]HHmmss.SSS[Z]"
@@ -293,6 +293,154 @@ class League(BaseLeague):
         # pylint: disable=invalid-name
         data_get = data.get
         self.icon = try_enum(Icon, data=data_get("iconUrls"), client=self._client)
+
+
+class LeagueTierBattleResources:
+    """Represents the battle resources awarded by a league tier.
+
+    Attributes
+    ----------
+    gold:
+        :class:`int`: The amount of gold awarded.
+    elixir:
+        :class:`int`: The amount of elixir awarded.
+    dark_elixir:
+        :class:`int`: The amount of dark elixir awarded.
+    """
+
+    __slots__ = ("gold", "elixir", "dark_elixir")
+
+    def __init__(self, *, data: dict):
+        self.gold: int = data["gold"]
+        self.elixir: int = data["elixir"]
+        self.dark_elixir: int = data["dark_elixir"]
+
+    def __repr__(self):
+        return (
+            f"<{self.__class__.__name__} gold={self.gold} "
+            f"elixir={self.elixir} dark_elixir={self.dark_elixir}>"
+        )
+
+
+class LeagueTierStarBonus:
+    """Represents the star bonus awarded by a league tier.
+
+    Attributes
+    ----------
+    gold:
+        :class:`int`: The amount of gold awarded.
+    elixir:
+        :class:`int`: The amount of elixir awarded.
+    dark_elixir:
+        :class:`int`: The amount of dark elixir awarded.
+    shiny_ore:
+        :class:`int`: The amount of shiny ore awarded.
+    glowy_ore:
+        :class:`int`: The amount of glowy ore awarded.
+    starry_ore:
+        :class:`int`: The amount of starry ore awarded.
+    """
+
+    __slots__ = ("gold", "elixir", "dark_elixir", "shiny_ore", "glowy_ore", "starry_ore")
+
+    def __init__(self, *, data: dict):
+        self.gold: int = data["gold"]
+        self.elixir: int = data["elixir"]
+        self.dark_elixir: int = data["dark_elixir"]
+        self.shiny_ore: int = data["shiny_ore"]
+        self.glowy_ore: int = data["glowy_ore"]
+        self.starry_ore: int = data["starry_ore"]
+
+    def __repr__(self):
+        return (
+            f"<{self.__class__.__name__} gold={self.gold} elixir={self.elixir} "
+            f"dark_elixir={self.dark_elixir} shiny_ore={self.shiny_ore} "
+            f"glowy_ore={self.glowy_ore} starry_ore={self.starry_ore}>"
+        )
+
+
+class LeagueTierReward:
+    """Represents a league tier reward for a Town Hall level.
+
+    Attributes
+    ----------
+    townhall_level:
+        :class:`int`: The Town Hall level this reward applies to.
+    resources:
+        :class:`LeagueTierBattleResources`: The resources awarded for a battle.
+    star_bonus:
+        :class:`LeagueTierStarBonus`: The resources awarded for a star bonus.
+    """
+
+    __slots__ = ("townhall_level", "resources", "star_bonus")
+
+    def __init__(self, *, data: dict):
+        self.townhall_level: int = data["townhall_level"]
+        self.resources: LeagueTierBattleResources = LeagueTierBattleResources(data=data["resources"])
+        self.star_bonus: LeagueTierStarBonus = LeagueTierStarBonus(data=data["star_bonus"])
+
+    def __repr__(self):
+        return f"<{self.__class__.__name__} townhall_level={self.townhall_level}>"
+
+
+class ExtendedLeagueTier:
+    """Represents extended league tier data.
+
+    Attributes
+    ----------
+    id:
+        :class:`int`: The league ID.
+    name:
+        :class:`str` The league name.
+    league_tier:
+        :class:`int`: The league tier.
+    TID:
+        :class:`TID`: The Translation ID object for the league.
+    group_size:
+        :class:`int`: The size of the group in the league.
+    demote_percentage:
+        :class:`int`: The percentage of demotions.
+    promote_percentage:
+        :class:`int`: The percentage of promotions.
+    battle_count:
+        :class:`int`: The battle count.
+    trophy_start:
+        :class:`int`: The starting trophies for the league.
+    clan_score:
+        :class:`int`: The base clan score given.
+    townhall_cap:
+        :class:`int`: The townhall cap for this league.
+    rewards:
+        List[:class:`LeagueTierReward`]: The rewards available for each Town Hall level.
+    battle_modifier:
+        :class:`BattleModifier`: The battle modifier for this league.
+    """
+
+    def __init__(self, data: dict):
+        self.id: int = data["_id"]
+        self.name: str = data["name"]
+        self.league_tier: int = data["league_tier"]
+        self.TID = TID(data=data["TID"]) if "TID" in data else None
+        self.group_size: int = data["group_size"]
+        self.demote_percentage: Optional[int] = data["demote_percentage"]
+        self.promote_percentage: Optional[int] = data["promote_percentage"]
+        self.battle_count: int = data["battle_count"]
+        self.trophy_start: int = data["trophy_start"]
+        self.clan_score: int = data["clan_score"]
+        self.townhall_cap: int = data["townhall_cap"]
+        self.rewards: list[LeagueTierReward] = [
+            LeagueTierReward(data=reward_data) for reward_data in data["rewards"]
+        ]
+        self.battle_modifier: BattleModifier = try_enum(BattleModifier, data=data.get("battle_modifier", "none"))
+
+    def __repr__(self):
+        return f"<{self.__class__.__name__} id={self.id} name={self.name}>"
+
+    def __str__(self):
+        return self.name
+
+    def __eq__(self, other):
+        return isinstance(self, other.__class__) and other.id == self.id
 
 
 class Season:

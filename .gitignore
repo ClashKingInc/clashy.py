@@ -112,3 +112,7 @@ examples/creds.py
 
 # vscode
 .vscode/
+
+# T3 Code workspace metadata
+.t3/
+t3.json

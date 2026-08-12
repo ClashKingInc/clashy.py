@@ -150,6 +150,29 @@ class TestPlayers(unittest.TestCase):
             player = Player(data=case, client=self.client)
             self.assertEqual(player.builder_hall, case.get("builderHallLevel", 0))
 
+    def test_current_league_season_id(self):
+        data = [{"currentLeagueSeasonId": 1783314000}, {"currentLeagueSeasonId": 0}, {}]
+        for case in data:
+            player = Player(data=case, client=self.client)
+            self.assertEqual(player.current_league_season_id, case.get("currentLeagueSeasonId"))
+
+    def test_previous_league_season_id(self):
+        data = [{"previousLeagueSeasonId": 1783314000}, {"previousLeagueSeasonId": 0}, {}]
+        for case in data:
+            player = Player(data=case, client=self.client)
+            self.assertEqual(player.previous_league_season_id, case.get("previousLeagueSeasonId"))
+
+    def test_current_league_group_tag(self):
+        data = [{"currentLeagueGroupTag": "#89PCGUJ"}, {"currentLeagueGroupTag": "#8YR09G9"}, {}]
+        for case in data:
+            player = Player(data=case, client=self.client)
+            self.assertEqual(player.current_league_group_tag, case.get("currentLeagueGroupTag"))
+
+    def test_previous_league_group_tag(self):
+        data = [{"previousLeagueGroupTag": "#89PCGUJ"}, {"previousLeagueGroupTag": "#0"}, {}]
+        for case in data:
+            player = Player(data=case, client=self.client)
+            self.assertEqual(player.previous_league_group_tag, case.get("previousLeagueGroupTag"))
 
     def test_legend_statistics(self):
         data = {

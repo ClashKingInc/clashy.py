@@ -3,13 +3,44 @@ import unittest
 
 from pathlib import Path
 
-from coc.buildings import Building
+from coc.buildings import Building, SeasonalDefenseModule
 
 
 STATIC_DATA_PATH = Path(__file__).parent.parent / "coc" / "static" / "static_data.json"
 
 
 class TestBuildingStaticData(unittest.TestCase):
+
+    def test_seasonal_defense_module_loads_level_townhall_requirement(self):
+        module = SeasonalDefenseModule(
+            level=2,
+            data={
+                "_id": 102000001,
+                "name": "Seasonal Module",
+                "TID": {"name": "TID_SEASONAL_MODULE"},
+                "upgrade_resource": "Gold",
+                "levels": [
+                    {
+                        "level": 1,
+                        "required_townhall": 12,
+                        "build_cost": 0,
+                        "build_time": 0,
+                        "ability_data": {},
+                    },
+                    {
+                        "level": 2,
+                        "required_townhall": 13,
+                        "build_cost": 100,
+                        "build_time": 60,
+                        "ability_data": {},
+                    },
+                ],
+            },
+        )
+
+        self.assertEqual(module.required_townhall, 13)
+        self.assertEqual(module.get_max_level_for_townhall(12), 1)
+        self.assertEqual(module.get_max_level_for_townhall(13), 2)
 
     @classmethod
     def setUpClass(cls):

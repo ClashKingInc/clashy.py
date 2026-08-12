@@ -14,7 +14,7 @@ from .battlelogs import BattleLogEntry, LeagueHistoryEntry, LeagueTierGroup
 from .clans import Clan, RankedClan
 from .errors import Forbidden, GatewayError, NotFound, PrivateWarLog
 from .enums import WarRound
-from .miscmodels import BaseLeague, GoldPassSeason, Label, League, Location, LoadGameData, Translation
+from .miscmodels import BaseLeague, ExtendedLeagueTier, GoldPassSeason, Label, League, Location, LoadGameData, Translation
 from .http import HTTPClient, BasicThrottler, BatchThrottler
 from .iterators import (
     PlayerIterator,
@@ -2814,3 +2814,32 @@ class Client:
         if not cwl_data:
             return None
         return ExtendedCWLGroup(data=cwl_data)
+
+    def get_extended_league_tier_data(self, name: str) -> Optional[ExtendedLeagueTier]:
+        """Get extended league tier data by league name.
+
+        Example
+        -------
+
+        .. code-block:: python3
+
+            league = client.get_extended_league_tier_data("Legend League III")
+            print(f"{league.name} battle count: {league.battle_count}")
+
+        Parameters
+        ----------
+        name: str
+            The league name, which must match in-game **exactly**, and is case-sensitive.
+
+        Returns
+        --------
+        Optional[:class:`ExtendedLeagueTier`]
+            An ExtendedLeagueTier object containing league tier information, or ``None`` if not found.
+        """
+        league_data: Optional[dict] = self._get_static_data(
+            item_name=name,
+            section="league_tiers",
+        )
+        if not league_data:
+            return None
+        return ExtendedLeagueTier(data=league_data)

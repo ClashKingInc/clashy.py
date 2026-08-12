@@ -7,6 +7,28 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
+v26.8.0
+-------
+
+Additions:
+~~~~~~~~~~
+- Added :meth:`coc.Client.get_extended_league_tier_data` for detailed league information, including battle limits,
+  promotion and demotion rates, the Town Hall cap, base clan score, rewards, and battle modifier
+- League rewards now include the Town Hall level, resources earned from battles, and the full star bonus for that
+  Town Hall level
+- Players now show their current and previous league group tags and season IDs
+- Seasonal defense modules now show the Town Hall level required for each level
+
+Changes:
+~~~~~~~~
+- Legend League I, II, and III can now be looked up separately by name
+- Static data downloads now request a fresh copy instead of using an older cached copy
+
+Bugs Fixed:
+~~~~~~~~~~~
+- Fixed extended Clan War League data so its ID, 15v15 setting, and battle modifier load correctly
+- Battle modifiers written as ``Minus One``, ``Minus Two``, or ``Minus Three`` now load correctly
+
 v26.6.5
 -------
 
