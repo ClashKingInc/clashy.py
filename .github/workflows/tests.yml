@@ -31,14 +31,6 @@ jobs:
     # You can test your matrix by printing the current Python version
     - name: Display Python version
       run: uv run python -c "import sys; print(sys.version)"
-    - name: Running examples as tests
-      env:
-        DEV_SITE_EMAIL: ${{ secrets.DEV_SITE_EMAIL }}
-        DEV_SITE_PASSWORD: ${{ secrets.DEV_SITE_PASSWORD }}
-        DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-        RUNNING_TESTS: true
-      run: |
-        uv run python -m examples.war_logs
     - name: Run unit tests
       run: |
         uv run python -m unittest

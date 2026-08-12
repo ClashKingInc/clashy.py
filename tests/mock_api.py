@@ -5,7 +5,7 @@ from typing import Any
 import orjson
 
 
-MOCK_API_BASE_URL = "https://api.clashapi.dev"
+MOCK_API_BASE_URL = "https://mock.clashk.ing"
 
 
 def load_mock_api(endpoint: str) -> dict[str, Any]:
@@ -16,4 +16,3 @@ def load_mock_api(endpoint: str) -> dict[str, Any]:
     )
     with urllib.request.urlopen(request, timeout=15) as response:
         return orjson.loads(response.read())
-
