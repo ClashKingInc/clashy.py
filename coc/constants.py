@@ -102,6 +102,7 @@ SEASONAL_TROOP_ORDER = [
     'The Disarmer',
     'YEETer',
     'Meteor Golem',
+    'Elephant Rider',
 ]
 
 BUILDER_TROOPS_ORDER = [
@@ -223,6 +224,7 @@ EQUIPMENT = [
     'Stun Blaster',
     'Flame Blower',
     'Electro Fangs',
+    'Revenge Deck',
 ]
 
 HV_BUILDINGS = [
