@@ -1,4 +1,5 @@
 from pathlib import Path
+from time import time_ns
 from urllib.request import Request, urlopen
 import json
 
@@ -12,7 +13,11 @@ CONSTANTS_PATH = STATIC_DIR.parent / "constants.py"
 
 
 def download_json(url: str) -> bytes:
-    request = Request(url, headers={"User-Agent": "clashy.py constants generator"})
+    separator = "&" if "?" in url else "?"
+    request = Request(
+        f"{url}{separator}cache={time_ns()}",
+        headers={"User-Agent": "clashy.py constants generator"},
+    )
     with urlopen(request, timeout=30) as response:
         data = response.read()
     json.loads(data)

@@ -8,7 +8,13 @@ import pendulum
 
 from coc.battlelogs import BattleLogEntry, LeagueHistoryEntry, LeagueTierGroup
 from coc.enums import BattleType
-from coc.miscmodels import SeasonWindow
+from coc.miscmodels import (
+    ExtendedLeagueTier,
+    LeagueTierBattleResources,
+    LeagueTierReward,
+    LeagueTierStarBonus,
+    SeasonWindow,
+)
 from coc.static import generate_constants
 from coc.utils import get_season_by_id, get_season_end, get_season_start
 
@@ -95,6 +101,55 @@ class TestBattlelogModels(unittest.TestCase):
         self.assertEqual(group.members[0].player_tag, "#2PP")
         self.assertEqual(group.attack_logs[0].creation_time, pendulum.datetime(2026, 5, 1, 1, 2, 3, tz="UTC"))
         self.assertEqual(group.defense_logs, [])
+
+
+class TestExtendedLeagueTier(unittest.TestCase):
+
+    def test_rewards_are_typed_models(self):
+        tier = ExtendedLeagueTier(data={
+            "_id": 105000001,
+            "name": "Skeleton League 1",
+            "league_tier": 1,
+            "TID": {"name": "TID_LEAGUE_TIER_1_RANK_3"},
+            "group_size": 100,
+            "demote_percentage": 0,
+            "promote_percentage": 50,
+            "battle_count": 6,
+            "trophy_start": 0,
+            "clan_score": 100,
+            "townhall_cap": 7,
+            "rewards": [{
+                "townhall_level": 2,
+                "resources": {
+                    "gold": 300,
+                    "elixir": 300,
+                    "dark_elixir": 0,
+                },
+                "star_bonus": {
+                    "gold": 20000,
+                    "elixir": 20000,
+                    "dark_elixir": 0,
+                    "shiny_ore": 0,
+                    "glowy_ore": 0,
+                    "starry_ore": 0,
+                },
+            }],
+        })
+
+        reward = tier.rewards[0]
+        self.assertIsInstance(reward, LeagueTierReward)
+        self.assertEqual(reward.townhall_level, 2)
+        self.assertIsInstance(reward.resources, LeagueTierBattleResources)
+        self.assertEqual(reward.resources.gold, 300)
+        self.assertEqual(reward.resources.elixir, 300)
+        self.assertEqual(reward.resources.dark_elixir, 0)
+        self.assertIsInstance(reward.star_bonus, LeagueTierStarBonus)
+        self.assertEqual(reward.star_bonus.gold, 20000)
+        self.assertEqual(reward.star_bonus.elixir, 20000)
+        self.assertEqual(reward.star_bonus.dark_elixir, 0)
+        self.assertEqual(reward.star_bonus.shiny_ore, 0)
+        self.assertEqual(reward.star_bonus.glowy_ore, 0)
+        self.assertEqual(reward.star_bonus.starry_ore, 0)
 
 
 class TestSeasonWindows(unittest.TestCase):

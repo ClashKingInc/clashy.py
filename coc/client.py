@@ -2823,7 +2823,7 @@ class Client:
 
         .. code-block:: python3
 
-            league = client.get_extended_league_tier_data("Bronze League III")
+            league = client.get_extended_league_tier_data("Legend League III")
             print(f"{league.name} battle count: {league.battle_count}")
 
         Parameters
