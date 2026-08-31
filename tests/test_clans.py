@@ -18,6 +18,12 @@ class TestClans(unittest.TestCase):
 		clan = Clan(data=MOCK_CLAN, client=None)
 		self.assertEqual(clan.points, MOCK_CLAN["clanPoints"])
 
+	def test_clan_gold_sink_total(self):
+		data = dict(MOCK_CLAN)
+		data["clanCapital"] = dict(data.get("clanCapital", {}), clanGoldSinkTotal=9876543210)
+		clan = Clan(data=data, client=None)
+		self.assertEqual(clan.clan_gold_sink_total, 9876543210)
+
 	def test_member_count(self):
 		clan = Clan(data=MOCK_CLAN, client=None)
 		self.assertEqual(clan.member_count, MOCK_CLAN["members"])

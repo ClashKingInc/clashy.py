@@ -12,6 +12,8 @@ v26.8.0
 
 Additions:
 ~~~~~~~~~~
+- Clans now expose the lifetime Capital Gold deposited into their Capital as
+  :attr:`coc.Clan.clan_gold_sink_total`
 - Added :meth:`coc.Client.get_extended_league_tier_data` for detailed league information, including battle limits,
   promotion and demotion rates, the Town Hall cap, base clan score, rewards, and battle modifier
 - League rewards now include the Town Hall level, resources earned from battles, and the full star bonus for that
