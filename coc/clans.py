@@ -224,11 +224,10 @@ class Clan(BaseClan):
         )
 
         capital_district_cls = self.capital_district_cls
-        if data_get("clanCapital"):
-            self._iter_capital_districts = (capital_district_cls(data=cddata, client=self._client) for cddata in
-                                            data_get("clanCapital")["districts"])
-        else:
-            self._iter_capital_districts = ()
+        self._iter_capital_districts = (
+            capital_district_cls(data=cddata, client=self._client)
+            for cddata in clan_capital.get("districts", [])
+        )
 
     @cached_property("_cs_labels")
     def labels(self) -> typing.List[Label]:
