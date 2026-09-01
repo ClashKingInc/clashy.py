@@ -7,13 +7,27 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
-v26.8.0
+v26.8.1
 -------
 
 Additions:
 ~~~~~~~~~~
 - Clans now expose the lifetime Capital Gold deposited into their Capital as
   :attr:`coc.Clan.clan_gold_sink_total`
+
+Changes:
+~~~~~~~~
+- Updated static data and translations from ``assets.clashk.ing``
+
+Bugs Fixed:
+~~~~~~~~~~~
+- Clan Capital payloads that contain a Capital Gold total but omit districts now load correctly
+
+v26.8.0
+-------
+
+Additions:
+~~~~~~~~~~
 - Added :meth:`coc.Client.get_extended_league_tier_data` for detailed league information, including battle limits,
   promotion and demotion rates, the Town Hall cap, base clan score, rewards, and battle modifier
 - League rewards now include the Town Hall level, resources earned from battles, and the full star bonus for that
