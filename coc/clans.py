@@ -95,6 +95,8 @@ class Clan(BaseClan):
         The clan's builder base trophy count. This is calculated according to members' builder base trophy counts.
     capital_points: :class:`int`
         The clan's clan capital points. Unsure how this is calculated.
+    clan_gold_sink_total: :class:`int`
+        The lifetime Capital Gold deposited into the clan's Capital.
     required_trophies: :class:`int`
         The minimum trophies required to apply to this clan.
     required_builder_base_trophies: :class:`int`
@@ -142,6 +144,7 @@ class Clan(BaseClan):
         "points",
         "builder_base_points",
         "capital_points",
+        "clan_gold_sink_total",
         "required_trophies",
         "required_builder_base_trophies",
         "war_frequency",
@@ -186,6 +189,8 @@ class Clan(BaseClan):
         self.points: int = data_get("clanPoints")
         self.builder_base_points: int = data_get("clanBuilderBasePoints")
         self.capital_points: int = data_get("clanCapitalPoints")
+        clan_capital = data_get("clanCapital") or {}
+        self.clan_gold_sink_total: int = clan_capital.get("clanGoldSinkTotal")
         self.member_count: int = data_get("members")
         self.location = try_enum(Location, data=data_get("location"))
 
@@ -219,11 +224,10 @@ class Clan(BaseClan):
         )
 
         capital_district_cls = self.capital_district_cls
-        if data_get("clanCapital"):
-            self._iter_capital_districts = (capital_district_cls(data=cddata, client=self._client) for cddata in
-                                            data_get("clanCapital")["districts"])
-        else:
-            self._iter_capital_districts = ()
+        self._iter_capital_districts = (
+            capital_district_cls(data=cddata, client=self._client)
+            for cddata in clan_capital.get("districts", [])
+        )
 
     @cached_property("_cs_labels")
     def labels(self) -> typing.List[Label]:

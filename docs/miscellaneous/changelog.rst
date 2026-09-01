@@ -7,6 +7,18 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
+v26.9.0
+-------
+
+Additions:
+~~~~~~~~~~
+- Clans now expose the lifetime Capital Gold deposited into their Capital as
+  :attr:`coc.Clan.clan_gold_sink_total`
+
+Changes:
+~~~~~~~~
+- Updated static data and translations for August update
+
 v26.8.0
 -------
 
