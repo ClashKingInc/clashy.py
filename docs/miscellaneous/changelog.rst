@@ -17,7 +17,7 @@ Additions:
 
 Changes:
 ~~~~~~~~
-- Updated static data and translations from ``assets.clashk.ing``
+- Updated static data and translations for August update
 
 v26.8.0
 -------
