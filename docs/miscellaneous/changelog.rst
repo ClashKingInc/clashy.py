@@ -7,7 +7,7 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
-v26.8.1
+v26.9.0
 -------
 
 Additions:
@@ -18,10 +18,6 @@ Additions:
 Changes:
 ~~~~~~~~
 - Updated static data and translations from ``assets.clashk.ing``
-
-Bugs Fixed:
-~~~~~~~~~~~
-- Clan Capital payloads that contain a Capital Gold total but omit districts now load correctly
 
 v26.8.0
 -------
