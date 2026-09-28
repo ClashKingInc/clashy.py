@@ -103,6 +103,7 @@ SEASONAL_TROOP_ORDER = [
     'YEETer',
     'Meteor Golem',
     'Elephant Rider',
+    'Yeti Undertaker',
 ]
 
 BUILDER_TROOPS_ORDER = [
