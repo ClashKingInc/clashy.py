@@ -104,6 +104,7 @@ SEASONAL_TROOP_ORDER = [
     'Meteor Golem',
     'Elephant Rider',
     'Yeti Undertaker',
+    'Totem Thrower',
 ]
 
 BUILDER_TROOPS_ORDER = [
@@ -226,6 +227,7 @@ EQUIPMENT = [
     'Flame Blower',
     'Electro Fangs',
     'Revenge Deck',
+    'Portal Pendant',
 ]
 
 HV_BUILDINGS = [
