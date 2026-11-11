@@ -842,7 +842,7 @@ class Client:
                                              before=before,
                                              **{**self._defaults, **kwargs})
         except Forbidden as exception:
-            if exception.reason not in ("accessDenied", "accessDenied.privateWarLog"):
+            if not (exception.reason == "accessDenied.privateWarLog" or (exception.reason == "accessDenied" and "private" in (exception.message or "").lower() and "war log" in (exception.message or "").lower())):
                 raise
             raise PrivateWarLog(exception.response,
                                 exception.reason) from exception
@@ -985,7 +985,7 @@ class Client:
         try:
             data = await self.http.get_clan_current_war(clan_tag, **{**self._defaults, **kwargs})
         except Forbidden as exception:
-            if exception.reason not in ("accessDenied", "accessDenied.privateWarLog"):
+            if not (exception.reason == "accessDenied.privateWarLog" or (exception.reason == "accessDenied" and "private" in (exception.message or "").lower() and "war log" in (exception.message or "").lower())):
                 raise
             raise PrivateWarLog(exception.response, exception.reason) from exception
 
@@ -1290,9 +1290,8 @@ class Client:
 
         try:
             league_group = await self.get_league_group(clan_tag, **kwargs)
-        except (NotFound, GatewayError) as exception:
-            # either they're not in cwl (NotFound)
-            # or it's an API bug where league group endpoint will timeout when the clan is searching (GatewayError)
+        except NotFound as exception:
+            # A missing group is absence; an outage or timeout must propagate.
             if get_war is None:
                 raise PrivateWarLog(exception.response, exception.reason) from exception
             return get_war
