@@ -842,6 +842,8 @@ class Client:
                                              before=before,
                                              **{**self._defaults, **kwargs})
         except Forbidden as exception:
+            if exception.reason not in ("accessDenied", "accessDenied.privateWarLog"):
+                raise
             raise PrivateWarLog(exception.response,
                                 exception.reason) from exception
 
@@ -897,8 +899,8 @@ class Client:
         NotFound
             No clan was found with the supplied tag.
 
-        PrivateWarLog
-            The clan's warlog is private.
+        Forbidden
+            The API credential does not allow this request.
 
         Maintenance
             The API is currently in maintenance.
@@ -928,19 +930,16 @@ class Client:
         if page:
             limit = limit if limit else 10
 
-        try:
-            return await RaidLog.init_cls(client=self,
-                                          clan_tag=clan_tag,
-                                          page=page,
-                                          limit=limit,
-                                          model=cls,
-                                          after=after,
-                                          before=before,
-                                          **{**self._defaults, **kwargs}
-                                          )
-        except Forbidden as exception:
-            raise PrivateWarLog(exception.response,
-                                exception.reason) from exception
+        # Raid logs are public; a forbidden response is not private-war data.
+        return await RaidLog.init_cls(client=self,
+                                      clan_tag=clan_tag,
+                                      page=page,
+                                      limit=limit,
+                                      model=cls,
+                                      after=after,
+                                      before=before,
+                                      **{**self._defaults, **kwargs}
+                                      )
 
     async def get_clan_war(self, clan_tag: str, cls: Type[ClanWar] = None, **kwargs) -> ClanWar:
         """
@@ -986,6 +985,8 @@ class Client:
         try:
             data = await self.http.get_clan_current_war(clan_tag, **{**self._defaults, **kwargs})
         except Forbidden as exception:
+            if exception.reason not in ("accessDenied", "accessDenied.privateWarLog"):
+                raise
             raise PrivateWarLog(exception.response, exception.reason) from exception
 
         return cls(data=data, client=self, clan_tag=clan_tag, **kwargs)
@@ -1102,8 +1103,6 @@ class Client:
 
         try:
             data = await self.http.get_clan_war_league_group(clan_tag, **{**self._defaults, **kwargs})
-        except Forbidden as exception:
-            raise PrivateWarLog(exception.response, exception.reason) from exception
         except asyncio.TimeoutError:
             raise GatewayError(
                 "Client timed out waiting for %s clan tag. This may be the result of an API bug which times out "
@@ -1153,10 +1152,8 @@ class Client:
         if self.correct_tags:
             war_tag = correct_tag(war_tag)
 
-        try:
-            data = await self.http.get_cwl_wars(war_tag, **{**self._defaults, **kwargs})
-        except Forbidden as exception:
-            raise PrivateWarLog(exception.response, exception.reason) from exception
+        # CWL endpoints do not expose private war logs; preserve credential failures.
+        data = await self.http.get_cwl_wars(war_tag, **{**self._defaults, **kwargs})
 
         data["tag"] = war_tag  # API doesn't return this, even though it is in docs.
         return cls(data=data, client=self, **kwargs)

@@ -293,7 +293,10 @@ class HTTPClient:
                 elif status_code == 404:
                     raise NotFound(404, data)
                 elif status_code == 503:
-                    raise Maintenance(503, data)
+                    # Only a declared game-maintenance reason warrants that label.
+                    if isinstance(data, dict) and str(data.get("reason", "")).strip().lower() in ("maintenance", "inmaintenance"):
+                        raise Maintenance(503, data)
+                    raise GatewayError(503, data)
             except KeyError:
                 pass
         request_kwargs = {k: v for k, v in kwargs.items() if k in self.aiohttp_request_kwargs}
@@ -358,12 +361,9 @@ class HTTPClient:
                             raise HTTPException(response, data)
 
                         if response.status == 503:
-                            if isinstance(data, str):
-                                # weird case where a 503 will be raised, but html returned.
-                                text = re.compile(r"<[^>]+>").sub(data, "")
-                                raise Maintenance(response, text)
-
-                            raise Maintenance(response, data)
+                            if isinstance(data, dict) and str(data.get("reason", "")).strip().lower() in ("maintenance", "inmaintenance"):
+                                raise Maintenance(response, data)
+                            raise GatewayError(response, data)
 
                         if response.status in (500, 502, 504):
                             # gateway error, retry again
