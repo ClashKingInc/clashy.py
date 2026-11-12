@@ -4,7 +4,7 @@ import asyncio
 
 from collections.abc import Iterable
 
-from .errors import Maintenance, NotFound, Forbidden
+from .errors import NotFound, PrivateWarLog
 
 
 class _AsyncIterator:
@@ -67,7 +67,8 @@ class TaggedIterator(_AsyncIterator):
             if self.cls:
                 return await self.get_method(tag, cls=self.cls, **self.kwargs)
             return await self.get_method(tag, **self.kwargs)
-        except (NotFound, Forbidden, Maintenance):
+        # Bulk reads may omit absent/private items, never credential or outage failures.
+        except (NotFound, PrivateWarLog):
             return None
 
     async def _fill_queue(self):
