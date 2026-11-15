@@ -183,6 +183,7 @@ class ClanType(ExtendedEnum):
         return lookup[self.value]
 
 class ProductionBuildingType(ExtendedEnum):
+    squad_barracks = "Squad Barracks"
     barracks = "Barracks"
     dark_barracks = "Dark Barracks"
     spell_factory = "Spell Factory"

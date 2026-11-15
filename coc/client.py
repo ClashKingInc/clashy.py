@@ -380,6 +380,8 @@ class Client:
                     else:
                         self._name_to_id_mapping[(item['name'], section)] = item['_id']
 
+            for variant in self.static_data.building_variants:
+                id_mapped_static_data[variant["_id"]] = variant
             self._static_data = id_mapped_static_data
 
     def _get_static_data(self,

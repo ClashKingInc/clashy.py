@@ -50,4 +50,4 @@ include-package-data = true
 [tool.setuptools.dynamic]
 version = { attr = "coc._version.__version__" }
 [tool.setuptools.package-data]
-coc = ["events.pyi"]
+coc = ["events.pyi", "static/*.json"]

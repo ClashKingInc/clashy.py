@@ -1,3 +1,12 @@
+import json
+from pathlib import Path
+from functools import lru_cache
+
+@lru_cache(maxsize=1)
+def _equipment_abilities():
+    with (Path(__file__).parent / "static" / "abilities.json").open() as source:
+        return {item["_id"]: item["abilities"] for item in json.load(source)["items"]}
+
 
 
 from .abc import LeveledUnit
@@ -395,4 +404,8 @@ class Equipment(LeveledUnit):
         self.glowy_ore: int = level_data["upgrade_cost"]["glowy_ore"]
         self.starry_ore: int = level_data["upgrade_cost"]["starry_ore"]
 
-        self.abilities: list[dict] = level_data.get("abilities", [])
+        self.abilities = [
+            {**{key: value for key, value in ability.items() if key != "levels"}, **row}
+            for ability in _equipment_abilities().get(self.id, [])
+            for row in ability["levels"] if row["level"] == self._level
+        ]

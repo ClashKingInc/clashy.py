@@ -5,6 +5,7 @@ import json
 
 
 STATIC_DATA_URL = "https://assets.clashk.ing/static_data.json"
+ABILITIES_URL = "https://assets.clashk.ing/static_data/abilities.json"
 TRANSLATIONS_URL = "https://assets.clashk.ing/translations.json"
 STATIC_DIR = Path(__file__).parent
 STATIC_DATA_PATH = STATIC_DIR / "static_data.json"
@@ -34,6 +35,7 @@ def update_static_files(
     translations = download_json(translations_url)
     static_data_path.write_bytes(static_data)
     translations_path.write_bytes(translations)
+    (static_data_path.parent / "abilities.json").write_bytes(download_json(ABILITIES_URL))
 
 
 def build_constants(static_data: dict) -> dict:
@@ -46,6 +48,7 @@ def build_constants(static_data: dict) -> dict:
     achievements = static_data["achievements"]
 
     return {
+        'SQUAD_ORDER': [t["name"] for t in troops if t["production_building"] == "Squad Barracks"],
         'ELIXIR_TROOP_ORDER': [
             t["name"] for t in troops
             if t["production_building"] == "Barracks"

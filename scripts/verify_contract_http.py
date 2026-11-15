@@ -8,6 +8,14 @@ async def main():
     origin=os.environ['CLASH_CONTRACT_TEST_ORIGIN']
     assert origin.startswith('http://127.0.0.1:')
     client=Client()
+    client._load_static()
+    assert len(client.static_data.emotes) == 20
+    assert len(client.static_data.star_bonus) == 19
+    assert len(client.static_data.building_variants) == 3
+    squad = client.get_troop('Barch Squad')
+    assert squad.production_building.value == 'Squad Barracks'
+    assert squad.required_lab_level is None
+    assert client.get_equipment('Barbarian Puppet').abilities
     client.loop=asyncio.get_running_loop()
     service=HTTPClient(client,asyncio.get_running_loop(),None,None,'fixture',1,[],100,cache_max_size=0,base_url=origin)
     service.keys=cycle(['disposable'])

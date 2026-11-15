@@ -167,6 +167,9 @@ class StaticData:
     
     __slots__ = (
         "_data",
+        "emotes",
+        "star_bonus",
+        "building_variants",
         "helpers",
         "guardians",
         "buildings",
@@ -186,6 +189,10 @@ class StaticData:
     
     def __init__(self, data: dict):
         self._data = data
+        self.emotes = list(data.get("emotes", []))
+        self.star_bonus = list(data.get("star_bonus", []))
+        self.building_variants = [variant for building in data.get("buildings", [])
+                                  for level in building.get("levels", []) for variant in level.get("variants", [])]
 
         self.buildings: list[Building] = []
         self.capital_house_parts: list[ClanCapitalHousePart] = []
@@ -285,6 +292,8 @@ class AccountData:
 
     __slots__ = (
         "_client",
+        "emotes",
+        "building_variants",
         "townhall_level",
         "helpers",
         "guardians",
@@ -306,6 +315,9 @@ class AccountData:
 
     def __init__(self, data: dict, client: 'Client'):
         self._client = client
+        # Ownership is optional and does not identify a selected Town Hall variant.
+        self.emotes = tuple(data["emotes"]) if "emotes" in data else None
+        self.building_variants = tuple(data["building_variants"]) if "building_variants" in data else None
         self.townhall_level: int = 0
 
         self.buildings: list[tuple[Building, int]] = []

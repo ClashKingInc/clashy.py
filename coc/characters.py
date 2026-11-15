@@ -122,6 +122,9 @@ class Helper(LeveledUnit):
         "upgrade_resource",
         "upgrade_cost",
         "required_townhall",
+        "requires_gold_pass",
+        "boost_time_seconds",
+        "boost_multiplier",
     )
 
     def __init__(self, data: dict, level: int = 0):
@@ -132,7 +135,12 @@ class Helper(LeveledUnit):
         self.id: int = data["_id"]
         self.name: str = data["name"]
         self.TID: TID = TID(data=data["TID"])
-        self.upgrade_resource: Resource = Resource(value=data["upgrade_resource"])
+        self.requires_gold_pass = data.get("requires_gold_pass", False)
+        self.boost_time_seconds = data.get("boost_time_seconds")
+        self.boost_multiplier = data.get("boost_multiplier")
+        self.upgrade_resource = Resource(value=data["upgrade_resource"]) if data.get("upgrade_resource") else None
+        self.upgrade_cost = 0
+        self.required_townhall = data.get("required_townhall")
 
         self._load_level_data()
 
