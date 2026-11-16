@@ -30,12 +30,16 @@ def update_static_files(
     translations_url: str = TRANSLATIONS_URL,
     static_data_path: Path = STATIC_DATA_PATH,
     translations_path: Path = TRANSLATIONS_PATH,
+    abilities_url: str = ABILITIES_URL,
+    abilities_path: Path | None = None,
 ) -> None:
     static_data = download_json(static_data_url)
     translations = download_json(translations_url)
+    abilities = download_json(abilities_url)
+    # Validate every response before replacing any of the bundled files.
     static_data_path.write_bytes(static_data)
     translations_path.write_bytes(translations)
-    (static_data_path.parent / "abilities.json").write_bytes(download_json(ABILITIES_URL))
+    (abilities_path or static_data_path.parent / "abilities.json").write_bytes(abilities)
 
 
 def build_constants(static_data: dict) -> dict:

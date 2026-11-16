@@ -188,3 +188,46 @@ Game data provides many attributes for troops, spells, heroes, pets, and equipme
 See the API documentation for :class:`Troop`, :class:`Spell`, :class:`Hero`, :class:`Pet`, and :class:`Equipment` 
 for complete attribute lists
 
+
+
+Town Hall Variants
+------------------
+
+After loading static data, pass an in-game account export to
+:meth:`Client.parse_account_data`. The home Town Hall is available as
+``account.townhall``. Its ``variants`` contains :class:`BuildingVariant` objects
+for its current level, in the game's display order.
+
+.. code-block:: python3
+
+    account = client.parse_account_data(export_data)
+    townhall = account.townhall
+    if townhall is not None:
+        for variant in townhall.variants:
+            print(variant.id, variant.name, variant.info)
+            if variant.required_troop is not None:
+                troop = variant.required_troop
+                print(f"Requires {troop.name} level {variant.required_troop_level}")
+                print(troop.hitpoints, troop.dps)
+
+``required_troop`` is a separate :class:`Troop` initialized at the required
+level. It is not the player's owned troop. Changing that object's level does
+not change ``required_troop_level`` or the account's troop data. Variants without
+a troop requirement have ``None`` for both requirement fields.
+
+Each variant has an ``is_owned`` field. It is ``True`` or ``False`` when the
+account export includes ownership IDs, and ``None`` if ownership was omitted.
+An explicit empty ownership list makes every variant's ``is_owned`` false.
+The wrapper does not infer ownership from troop levels, and ownership does not
+identify the currently selected variant. If no home Town Hall was exported,
+``account.townhall`` is ``None``.
+
+.. code-block:: python3
+
+    if townhall is not None:
+        for variant in townhall.variants:
+            print(variant.name, variant.is_owned)
+
+``client.static_data.building_variants`` also contains typed variants from all
+building levels, while each building's ``variants`` is limited to its current
+level. No extra HTTP request is needed to resolve a required troop.

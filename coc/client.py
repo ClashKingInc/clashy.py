@@ -380,8 +380,12 @@ class Client:
                     else:
                         self._name_to_id_mapping[(item['name'], section)] = item['_id']
 
-            for variant in self.static_data.building_variants:
-                id_mapped_static_data[variant["_id"]] = variant
+            # The private lookup remains raw data for model constructors; the
+            # public static_data.building_variants catalog exposes typed objects.
+            for building in static_data.get("buildings", []):
+                for level in building.get("levels", []):
+                    for variant in level.get("variants", []):
+                        id_mapped_static_data[variant["_id"]] = variant
             self._static_data = id_mapped_static_data
 
     def _get_static_data(self,

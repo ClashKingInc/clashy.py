@@ -12,6 +12,7 @@ from .battlelogs import (
 )
 from .buildings import (
     Building,
+    BuildingVariant,
     GearUp,
     MergeRequirement,
     SeasonalDefenseModule,

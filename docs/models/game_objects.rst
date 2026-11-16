@@ -52,6 +52,12 @@ Building
     :private-members:
 
 
+BuildingVariant
+~~~~~~~~~~~~~~~
+.. autoclass:: BuildingVariant()
+    :members:
+
+
 SeasonalDefenseModule
 ~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: SeasonalDefenseModule()

@@ -1,5 +1,5 @@
 from .characters import Guardian, Helper
-from .buildings import Trap, Building, SeasonalDefense, SeasonalDefenseModule
+from .buildings import Trap, Building, BuildingVariant, SeasonalDefense, SeasonalDefenseModule
 from .cosmetics import Decoration, Obstacle, Skin, Scenery, ClanCapitalHousePart
 from. hero import Hero, Pet, Equipment
 from .troop import Troop
@@ -137,6 +137,8 @@ class StaticData:
     ----------
     buildings: List[:class:`Building`]
         List of all available buildings.
+    building_variants: List[:class:`BuildingVariant`]
+        Typed variant definitions from all building levels in the catalog.
     capital_house_parts: List[:class:`ClanCapitalHousePart`]
         List of all available clan capital house parts.
     decorations: List[:class:`Decoration`]
@@ -191,8 +193,13 @@ class StaticData:
         self._data = data
         self.emotes = list(data.get("emotes", []))
         self.star_bonus = list(data.get("star_bonus", []))
-        self.building_variants = [variant for building in data.get("buildings", [])
-                                  for level in building.get("levels", []) for variant in level.get("variants", [])]
+        troop_data = {troop["_id"]: troop for troop in data.get("troops", [])}
+        self.building_variants: list[BuildingVariant] = [
+            BuildingVariant(data=variant, troop_data=troop_data)
+            for building in data.get("buildings", [])
+            for level in building.get("levels", [])
+            for variant in level.get("variants", [])
+        ]
 
         self.buildings: list[Building] = []
         self.capital_house_parts: list[ClanCapitalHousePart] = []
@@ -212,7 +219,7 @@ class StaticData:
         self._load_data()
 
     def _load_data(self):
-
+        troop_data = {troop["_id"]: troop for troop in self._data.get("troops", [])}
         section_class_mapping = {
             "helpers": Helper,
             "buildings": Building,
@@ -240,6 +247,8 @@ class StaticData:
                     static_data = item
                     data = {}
                     self.__getattribute__(section).append(cls(data=data, static_data=static_data))
+                elif section == "buildings":
+                    self.buildings.append(Building(data=data, troop_data=troop_data))
                 else:
                     self.__getattribute__(section).append(cls(data=data))
 
@@ -253,6 +262,8 @@ class AccountData:
 
     Attributes
     ----------
+    townhall: Optional[:class:`Building`]
+        Home Town Hall, including typed level-specific variants with optional ownership.
     townhall_level: :class:`int`
         The player's current townhall level.
     buildings: List[Tuple[:class:`Building`, :class:`int`]]
@@ -293,7 +304,7 @@ class AccountData:
     __slots__ = (
         "_client",
         "emotes",
-        "building_variants",
+        "townhall",
         "townhall_level",
         "helpers",
         "guardians",
@@ -317,7 +328,7 @@ class AccountData:
         self._client = client
         # Ownership is optional and does not identify a selected Town Hall variant.
         self.emotes = tuple(data["emotes"]) if "emotes" in data else None
-        self.building_variants = tuple(data["building_variants"]) if "building_variants" in data else None
+        self.townhall: Building | None = None
         self.townhall_level: int = 0
 
         self.buildings: list[tuple[Building, int]] = []
@@ -443,9 +454,15 @@ class AccountData:
                         data=item_data,
                         weapon_level=item.get("weapon", 0),
                         supercharge_level=item.get("supercharge", 0),
-                        seasonal_defenses=seasonal_defenses
+                        seasonal_defenses=seasonal_defenses,
+                        troop_data=self._client._static_data,
+                        owned_variant_ids=(
+                            tuple(account_data["building_variants"])
+                            if "building_variants" in account_data else None
+                        ),
                     )
                     if building.type == BuildingType.town_hall:
+                        self.townhall = building
                         self.townhall_level = building.level
                     self.add_upgrade(item, building)
                     self.buildings.append((building, item.get("cnt", 1)))
