@@ -10,6 +10,7 @@ from .constants import (
     HERO_ORDER,
     BUILDER_TROOPS_ORDER,
     HOME_TROOP_ORDER,
+    SQUAD_ORDER,
     SPELL_ORDER,
     SIEGE_MACHINE_ORDER,
     ACHIEVEMENT_ORDER,
@@ -532,7 +533,7 @@ class Player(ClanMember):
         - Siege Machines (Log Launcher, etc.)
         - **Boosted** Super Troops
         """
-        order = {k: v for v, k in enumerate(HOME_TROOP_ORDER)}
+        order = {k: v for v, k in enumerate(HOME_TROOP_ORDER + SQUAD_ORDER)}
 
         if not self._home_troops:
             _ = self.troops
