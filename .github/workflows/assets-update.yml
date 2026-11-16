@@ -27,7 +27,7 @@ jobs:
       - name: Check for generated asset changes
         id: changes
         run: |
-          if git diff --quiet -- coc/static/static_data.json coc/static/translations.json coc/constants.py; then
+          if git diff --quiet -- coc/static/static_data.json coc/static/translations.json coc/static/abilities.json coc/constants.py; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -61,7 +61,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add coc/static/static_data.json coc/static/translations.json coc/constants.py coc/_version.py
+          git add coc/static/static_data.json coc/static/translations.json coc/static/abilities.json coc/constants.py coc/_version.py
           git commit -m "chore: assets update"
           git tag "v${{ steps.version.outputs.version }}"
           git push

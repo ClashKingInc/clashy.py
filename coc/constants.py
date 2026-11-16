@@ -1,5 +1,20 @@
 """Auto-generated constants from static game data."""
 
+SQUAD_ORDER = [
+    'Barch Squad',
+    'Giant Wizard Squad',
+    'Wall Breaker Squad',
+    'Minion Squad',
+    'Balloon Squad',
+    'Golem Witch Squad',
+    'Hog Rider Squad',
+    'Miner Squad',
+    'Healer Squad',
+    'P.E.K.K.A Titan Squad',
+    'Dragons Squad',
+    'Baby Dragon Squad',
+]
+
 ELIXIR_TROOP_ORDER = [
     'Barbarian',
     'Archer',
@@ -133,6 +148,7 @@ ELIXIR_SPELL_ORDER = [
     'Recall Spell',
     'Revive Spell',
     'Totem Spell',
+    'Heroic Spell',
 ]
 
 DARK_ELIXIR_SPELL_ORDER = [
@@ -275,6 +291,10 @@ HV_BUILDINGS = [
     'Helper Hut',
     'Crafting Station',
     'Super Wizard Tower',
+    'Guardian Shrine',
+    'Squad Barracks',
+    'Spiky Tower',
+    'Firecracker Tower',
 ]
 
 ACHIEVEMENT_ORDER = [

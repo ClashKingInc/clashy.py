@@ -7,6 +7,36 @@ Changelog
 This page keeps a fairly detailed, human readable version
 of what has changed, and whats new for each version of the lib.
 
+v26.11.0
+--------
+
+Additions:
+~~~~~~~~~~
+- Added :class:`coc.BuildingVariant` for typed Town Hall variants, including names,
+  descriptions, translation IDs, per-variant ownership, and required :class:`coc.Troop`
+  objects at their unlock levels.
+- Added ``AccountData.townhall`` and level-specific ``Building.variants``. Missing
+  ownership stays unknown; explicit empty ownership is preserved. No selected
+  variant is inferred from ownership or troop levels.
+- Added emote ownership from in-game account exports, plus static emote, star bonus,
+  and building variant catalogs.
+- Added Squad Barracks support and helper Gold Pass/boost metadata.
+
+Changes:
+~~~~~~~~
+- Updated static data, translations, constants, and equipment abilities for Town Hall 19
+  and the Assets 2.5 export.
+- Resolved equipment abilities from the dedicated bundled abilities catalog.
+- Kept squad troops after other home-village troops in player troop ordering.
+- Updated variant definitions and corrected squad metadata in the bundled catalog.
+
+Compatibility:
+~~~~~~~~~~~~~~
+- The draft dictionary-based building variants now use named attributes such as
+  ``variant.id`` and ``variant.required_troop.name``.
+- Account variant ownership is available through ``account.townhall.variants`` and
+  each variant's ``is_owned`` field. There is no separate ``owned_variants`` list.
+
 v26.9.0
 -------
 

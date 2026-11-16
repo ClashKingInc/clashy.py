@@ -96,6 +96,7 @@ class Guardian(LeveledUnit):
         self.required_townhall: int = level_data["required_townhall"]
 
 
+
 class Helper(LeveledUnit):
     """Represents a Helper character as returned by the API, optionally filled with game data.
 
@@ -122,6 +123,9 @@ class Helper(LeveledUnit):
         "upgrade_resource",
         "upgrade_cost",
         "required_townhall",
+        "requires_gold_pass",
+        "boost_time_seconds",
+        "boost_multiplier",
     )
 
     def __init__(self, data: dict, level: int = 0):
@@ -132,7 +136,12 @@ class Helper(LeveledUnit):
         self.id: int = data["_id"]
         self.name: str = data["name"]
         self.TID: TID = TID(data=data["TID"])
-        self.upgrade_resource: Resource = Resource(value=data["upgrade_resource"])
+        self.requires_gold_pass = data.get("requires_gold_pass", False)
+        self.boost_time_seconds = data.get("boost_time_seconds")
+        self.boost_multiplier = data.get("boost_multiplier")
+        self.upgrade_resource = Resource(value=data["upgrade_resource"]) if data.get("upgrade_resource") else None
+        self.upgrade_cost = 0
+        self.required_townhall = data.get("required_townhall")
 
         self._load_level_data()
 
@@ -148,3 +157,6 @@ class Helper(LeveledUnit):
 
         self.upgrade_cost: int = level_data["upgrade_cost"]
         self.required_townhall: int = level_data["required_townhall"]
+        # Leveled helpers override the catalog-wide values used by Prospector.
+        self.boost_time_seconds = level_data.get("boost_time_seconds", self._static_data.get("boost_time_seconds"))
+        self.boost_multiplier = level_data.get("boost_multiplier", self._static_data.get("boost_multiplier"))

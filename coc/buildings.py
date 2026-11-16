@@ -2,6 +2,13 @@
 from .abc import BaseDataClass, LeveledUnit, LevelManager
 from .enums import Resource, VillageType, BuildingType
 from .miscmodels import TID, TimeDelta
+from .troop import Troop
+
+from functools import lru_cache
+from pathlib import Path
+from typing import Mapping
+
+import orjson
 
 
 class SeasonalDefenseModule(LeveledUnit):
@@ -184,6 +191,68 @@ class TownhallUnlock:
         self._id: int = data["_id"]
         self.quantity: int = data["quantity"]
 
+@lru_cache(maxsize=1)
+def _packaged_troop_data() -> dict[int, dict]:
+    # Direct Building construction has no Client/StaticData context. Resolve its
+    # requirements from the bundled catalog, once, without network access.
+    path = Path(__file__).parent / "static" / "static_data.json"
+    with path.open("rb") as source:
+        return {troop["_id"]: troop for troop in orjson.loads(source.read())["troops"]}
+
+
+class BuildingVariant(BaseDataClass):
+    """A level-specific building variant, such as Archer Hall at Town Hall 19.
+
+    Attributes
+    ----------
+    id: :class:`int`
+        The variant's unique identifier.
+    name: :class:`str`
+        The variant's name.
+    info: :class:`str`
+        The variant's description.
+    TID: :class:`TID`
+        Translation IDs for the name and description.
+    is_owned: Optional[:class:`bool`]
+        Whether the account export lists this variant as owned. ``None`` means
+        ownership was not included, or this is a static catalog definition.
+    required_troop: Optional[:class:`Troop`]
+        A separate troop object at the minimum required level, or ``None`` if
+        this variant has no troop requirement. This is not the player's troop
+        and changing its level does not change the unlock requirement.
+    required_troop_level: Optional[:class:`int`]
+        The minimum required troop level, independent of required_troop.level.
+    """
+
+    __slots__ = (
+        "id", "name", "info", "TID", "is_owned", "required_troop",
+        "required_troop_level",
+    )
+
+    def __init__(self, data: dict, troop_data: Mapping[int, dict] | None = None,
+                 is_owned: bool | None = None):
+        self.id: int = data["_id"]
+        self.is_owned = is_owned
+        self.name: str = data["name"]
+        self.info: str = data["info"]
+        self.TID = TID(data=data["TID"])
+        self.required_troop: Troop | None = None
+        self.required_troop_level: int | None = None
+        requirement = data.get("required_troop")
+        if requirement is not None:
+            troop_id = requirement["_id"]
+            self.required_troop_level = requirement["level"]
+            catalog = _packaged_troop_data() if troop_data is None else troop_data
+            definition = catalog.get(troop_id)
+            if definition is None:
+                raise ValueError(
+                    f"Building variant {self.id} requires unknown troop {troop_id}"
+                )
+            self.required_troop = Troop(
+                data={}, static_data=definition, level=self.required_troop_level
+            )
+
+
 class TownhallWeapon(LeveledUnit):
     """Represents a Townhall Weapon.
 
@@ -358,6 +427,8 @@ class Building(LeveledUnit):
         The merge requirements for this building.
     unlocks: List[:class:`TownhallUnlock`]
         The unlocks provided by this building (only for townhall).
+    variants: Tuple[:class:`BuildingVariant`, ...]
+        Variant definitions available at this building's current level.
     
     Note
     ----
@@ -393,17 +464,27 @@ class Building(LeveledUnit):
         "supercharge",
         "merge_requirement",
         "unlocks",
+        "variants",
+        "_owned_variant_ids",
+        "_troop_data",
     )
 
     def __init__(self,
          data: dict, level: int = 0, weapon_level: int = 0,
          supercharge_level: int = 0,
-         seasonal_defenses: list[SeasonalDefense] = None
+         seasonal_defenses: list[SeasonalDefense] = None,
+         troop_data: Mapping[int, dict] | None = None,
+         owned_variant_ids: tuple[int, ...] | None = None
     ):
         super().__init__(
             initial_level=level,
             static_data=data
         )
+        self._troop_data = troop_data
+        # Preserve absent versus empty ownership while rebuilding level-specific
+        # variants. Ownership never identifies which variant is currently active.
+        self._owned_variant_ids = None if owned_variant_ids is None else frozenset(owned_variant_ids)
+        self.variants: tuple[BuildingVariant, ...] = ()
         self._supercharge_level = supercharge_level
         self._weapon_level = weapon_level
 
@@ -450,6 +531,17 @@ class Building(LeveledUnit):
         except IndexError:
             return
 
+        self.variants = tuple(
+            BuildingVariant(
+                data=variant,
+                troop_data=self._troop_data,
+                is_owned=(
+                    variant["_id"] in self._owned_variant_ids
+                    if self._owned_variant_ids is not None else None
+                ),
+            )
+            for variant in level_data.get("variants", ())
+        )
         self.weapon: TownhallWeapon | None = None
         if "weapon" in level_data:
             self.weapon = TownhallWeapon(level=self._weapon_level, data=level_data["weapon"])
