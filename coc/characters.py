@@ -94,9 +94,7 @@ class Guardian(LeveledUnit):
         self.upgrade_time = TimeDelta(seconds=level_data["upgrade_time"])
         self.upgrade_cost: int = level_data["upgrade_cost"]
         self.required_townhall: int = level_data["required_townhall"]
-        # Leveled helpers override the catalog-wide values used by Prospector.
-        self.boost_time_seconds = level_data.get("boost_time_seconds", self._static_data.get("boost_time_seconds"))
-        self.boost_multiplier = level_data.get("boost_multiplier", self._static_data.get("boost_multiplier"))
+
 
 
 class Helper(LeveledUnit):

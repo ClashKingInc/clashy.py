@@ -37,6 +37,11 @@ async def main():
     assert squad.production_building.value == 'Squad Barracks'
     assert squad.required_lab_level is None
     assert client.get_equipment('Barbarian Puppet').abilities
+    for helper in client.static_data.helpers:
+        for row in helper._static_data["levels"]:
+            helper.level = row["level"]
+            assert helper.boost_time_seconds == row.get("boost_time_seconds", helper._static_data.get("boost_time_seconds"))
+            assert helper.boost_multiplier == row.get("boost_multiplier", helper._static_data.get("boost_multiplier"))
     client.loop=asyncio.get_running_loop()
     service=HTTPClient(client,asyncio.get_running_loop(),None,None,'fixture',1,[],100,cache_max_size=0,base_url=origin)
     service.keys=cycle(['disposable'])

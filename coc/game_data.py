@@ -382,7 +382,7 @@ class AccountData:
                     target=target,
                     timer=TimeDelta(seconds=item["timer"]),
                     helper_timer=helper_timer,
-                    recurrent_helper=item.get("recurrent_helper", False)
+                    recurrent_helper=item.get("helper_recurrent", False)
                 )
             )
 
