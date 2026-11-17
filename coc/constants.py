@@ -283,7 +283,6 @@ HV_BUILDINGS = [
     'Spell Tower',
     'Monolith',
     'Multi-Gear Tower',
-    'Sour Elixir Cauldron',
     'Multi-Archer Tower',
     'Ricochet Cannon',
     'Revenge Tower',
